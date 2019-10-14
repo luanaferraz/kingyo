@@ -11004,3 +11004,54 @@ body.sidebar-toggled footer.sticky-footer {
   padding-bottom: 20px;
 }
 
+.bg-pet{
+  background-image: url("../images/pet.png");
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.position-ref {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.top-left {
+  position: absolute;
+  left: 25px;
+  top: 1px;
+}
+
+.content {
+  text-align: center;
+}
+
+/*.title {*/
+/*  font-size: 84px;*/
+/*}*/
+
+.links > a {
+  color: #ffffff;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}

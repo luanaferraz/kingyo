@@ -31,62 +31,78 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/all.min.js') }}" defer></script>
+
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
+
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-    <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>InfyOm </b>Generator</a>
-    </div>
+<body class="hold-transition">
+<div class="container-fluid p-0">
+    <div class="row">
+        <div class="bg-gradient-primary col-12 p-0" style="height: 80px"></div>
+        <div class="col-12">
+            <div class="login-logo col-md-6 col-12">
+                <a href="{{ url('/home') }}"><b>InfyOm </b>Generator</a>
+            </div>
 
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+            <!-- /.login-logo -->
+            <div class="login-box-body col-md-6 col-12">
+                <p class="login-box-msg">Sign in to start your session</p>
 
-        <form method="post" action="{{ url('/login') }}">
-            {!! csrf_field() !!}
+                <form method="post" action="{{ url('/login') }}">
+                    {!! csrf_field() !!}
 
-            <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
-                <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                @if ($errors->has('email'))
-                    <span class="help-block">
+                    <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
+                        <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
                     <strong>{{ $errors->first('email') }}</strong>
                 </span>
-                @endif
-            </div>
+                        @endif
+                    </div>
 
-            <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" placeholder="Password" name="password">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                @if ($errors->has('password'))
-                    <span class="help-block">
+                    <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <input type="password" class="form-control" placeholder="Password" name="password">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        @if ($errors->has('password'))
+                            <span class="help-block">
                     <strong>{{ $errors->first('password') }}</strong>
                 </span>
-                @endif
+                        @endif
 
-            </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox" name="remember"> Remember Me
-                        </label>
                     </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-                </div>
-                <!-- /.col -->
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="checkbox icheck">
+                                <label>
+                                    <input type="checkbox" name="remember"> Remember Me
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-xs-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+                <a href="{{ url('/password/reset') }}">I forgot my password</a><br>
+                <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
+
             </div>
-        </form>
-
-        <a href="{{ url('/password/reset') }}">I forgot my password</a><br>
-        <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
-
+            <!-- /.login-box-body -->
+        </div>
+        <div class="bg-gradient-primary col-12 p-0" style="height: 80px"></div>
     </div>
-    <!-- /.login-box-body -->
 </div>
+
 <!-- /.login-box -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
