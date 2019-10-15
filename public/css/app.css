@@ -11055,3 +11055,42 @@ body.sidebar-toggled footer.sticky-footer {
   text-decoration: none;
   text-transform: uppercase;
 }
+
+
+.login{
+  background-color: white;
+  padding: 25px 15px;
+  margin-top: 25px;
+  margin-bottom: 90px;
+}
+
+.login a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo-login{
+  padding: 10px 0;
+  max-width: 130px;
+}
+
+.login-f{
+  padding: 20px 0 0 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+
+
+.btn-login{
+  background-color: #B2CC85;
+  color: white;
+}
+
+.btn-login:hover{
+  background-color: #5E8844;
+  color: white;
+}
+
