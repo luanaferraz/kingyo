@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\TutorRepository;
 use App\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
 
 class RegisterController extends Controller
 {
@@ -35,9 +39,11 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(TutorRepository $tutorRepository)
     {
         $this->middleware('guest');
+        $this->tutorRepository = $tutorRepository;
+
     }
 
     /**
@@ -46,10 +52,35 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+//    public function register(Request $request)
+//    {
+//        $validate = $this->validator($request->all());
+//
+//        dd($validate);
+//        die();
+//
+//        if($validate){
+//
+//            return response()->json([
+//                'Status' => 'FAIL',
+//                'Message' => $validate
+//            ]);
+//        }
+//
+//        event(new Registered($user = $this->create($request->all())));
+//
+//        $this->guard()->login($user);
+//
+//        return response()->json([
+//            'Status' => 'DONE',
+//            'Message' => 'Cadastro realizado com sucesso!'
+//        ]);
+//    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'nome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -63,10 +94,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $usuario =  User::create([
+            'name' => $data['nome'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $data['usuario_id'] = $usuario->id;
+        $tutor = $this->tutorRepository->create($data);
+
+        return $usuario;
     }
 }
+
+

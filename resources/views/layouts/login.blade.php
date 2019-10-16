@@ -45,7 +45,7 @@
     </div>
 </section>
 
-<footer class="bg-gradient-primary  login-f">
+<footer class="  login-f">
     <div class="container-fluid">
         <div class="row footer-login">
 
@@ -54,6 +54,7 @@
 </footer>
 
 <script src="/js/app.js"></script>
+<script src="/js/cadastrar.js"></script>
 
 @yield('scripts')
 
