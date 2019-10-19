@@ -43,81 +43,81 @@ var validator=function(r){for(r=(r=(r=jQuery.trim(r)).replace(".","")).replace("
 
 var validateFields = function(){
 
-    // var tempString = $('#nome').val();
-    // if(tempString.length < 3){
-    //     showError('#nome','Olá!','O campo nome é obrigatório.');
-    //     return false;
-    // }
-    //
-    //
-    // var tempString = /^(\([1-9][1-9]\) [0-9][0-9]{4}-[0-9]{4})|(\([1-9][1-9]\) [0-9]{4}-[0-9]{4})$/;
-    // var tempBoolean = true;
-    // if(!tempString.test($('#telefone').val()))
-    //     tempBoolean = false;
-    // if(!tempBoolean){
-    //     showError('#telefone','Ops!','O campo telefone é obrigatório, preencha somente com números conforme o exemplo<br> Ex: (12) 3333-3333<br> DDD mais o número do telefone!');
-    //     return false;
-    // }
-    //
-    //
-    //
-    // var tempString = $('#rua').val();
-    // if(tempString.length == 0){
-    //     showError('#rua','Olá!','O campo Logradouro é obrigatório.');
-    //     return false;
-    // }
-    //
-    // var tempString = $('#numero').val();
-    // if(tempString.length == 0){
-    //     showError('#numero','Olá!','O campo Nº é obrigatório.');
-    //     return false;
-    // }
-    //
-    // var tempString = $('#bairro').val();
-    // if(tempString.length == 0){
-    //     showError('#bairro','Olá!','O campo Bairro é obrigatório.');
-    //     return false;
-    // }
-    //
-    // var tempString = $('#cidade').val();
-    // if(tempString.length == 0){
-    //     showError('#cidade','Olá!','O campo Cidade é obrigatório.');
-    //     return false;
-    // }
-    //
-    // var tempString = $('#estado').val();
-    // if(tempString.length != 2){
-    //     showError('#estado','Olá!','O campo Estado é obrigatório.');
-    //     return false;
-    // }
-    //
-    //
-    // var tempString = /^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*@([a-zA-Z0-9])+(\.[a-zA-Z0-9_-]+)+$/;
-    // var tempBoolean = true;
-    // if(!tempString.test($('#email').val()))
-    //     tempBoolean = false;
-    // if(!tempBoolean){
-    //     showError('#contatoEmail','Olá!','O campo email é obrigatório, preencha com um e-mail válido!<br> Ex: seuemail@seuprovedor.com.br');
-    //     return false;
-    // }
-    //
-    // var tempString = $('#email_confirm').val();
-    // if(tempString.length == 0 || tempString != $('#email').val()){
-    //     showError('#email_confirm','Olá!','Os campos de E-mail devem ser idênticos.');
-    //     return false;
-    // }
-    //
-    // var tempString = $('#password').val();
-    // if(tempString.length < 8){
-    //     showError('#password','Olá!','O campo Senha é obrigatório e deve ter no mínimo 8 caracteres.');
-    //     return false;
-    // }
-    //
-    // var tempString = $('#password_confirmation').val();
-    // if(tempString.length == 0 || tempString != $('#password').val()){
-    //     showError('#password_confirmation','Olá!','Os campos de Senha devem ser idênticos.');
-    //     return false;
-    // }
+    var tempString = $('#nome').val();
+    if(tempString.length < 3){
+        showError('#nome','Olá!','O campo nome é obrigatório.');
+        return false;
+    }
+
+
+    var tempString = /^(\([1-9][1-9]\) [0-9][0-9]{4}-[0-9]{4})|(\([1-9][1-9]\) [0-9]{4}-[0-9]{4})$/;
+    var tempBoolean = true;
+    if(!tempString.test($('#telefone').val()))
+        tempBoolean = false;
+    if(!tempBoolean){
+        showError('#telefone','Ops!','O campo telefone é obrigatório, preencha somente com números conforme o exemplo<br> Ex: (12) 3333-3333<br> DDD mais o número do telefone!');
+        return false;
+    }
+
+
+
+    var tempString = $('#rua').val();
+    if(tempString.length == 0){
+        showError('#rua','Olá!','O campo Logradouro é obrigatório.');
+        return false;
+    }
+
+    var tempString = $('#numero').val();
+    if(tempString.length == 0){
+        showError('#numero','Olá!','O campo Nº é obrigatório.');
+        return false;
+    }
+
+    var tempString = $('#bairro').val();
+    if(tempString.length == 0){
+        showError('#bairro','Olá!','O campo Bairro é obrigatório.');
+        return false;
+    }
+
+    var tempString = $('#cidade').val();
+    if(tempString.length == 0){
+        showError('#cidade','Olá!','O campo Cidade é obrigatório.');
+        return false;
+    }
+
+    var tempString = $('#estado').val();
+    if(tempString.length != 2){
+        showError('#estado','Olá!','O campo Estado é obrigatório.');
+        return false;
+    }
+
+
+    var tempString = /^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*@([a-zA-Z0-9])+(\.[a-zA-Z0-9_-]+)+$/;
+    var tempBoolean = true;
+    if(!tempString.test($('#email').val()))
+        tempBoolean = false;
+    if(!tempBoolean){
+        showError('#contatoEmail','Olá!','O campo email é obrigatório, preencha com um e-mail válido!<br> Ex: seuemail@seuprovedor.com.br');
+        return false;
+    }
+
+    var tempString = $('#email_confirm').val();
+    if(tempString.length == 0 || tempString != $('#email').val()){
+        showError('#email_confirm','Olá!','Os campos de E-mail devem ser idênticos.');
+        return false;
+    }
+
+    var tempString = $('#password').val();
+    if(tempString.length < 8){
+        showError('#password','Olá!','O campo Senha é obrigatório e deve ter no mínimo 8 caracteres.');
+        return false;
+    }
+
+    var tempString = $('#password_confirmation').val();
+    if(tempString.length == 0 || tempString != $('#password').val()){
+        showError('#password_confirmation','Olá!','Os campos de Senha devem ser idênticos.');
+        return false;
+    }
 
     return true;
 };
