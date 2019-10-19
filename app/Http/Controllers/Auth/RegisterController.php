@@ -77,14 +77,58 @@ class RegisterController extends Controller
 //        ]);
 //    }
 
-    protected function validator(array $data)
+//    protected function validator(array $data)
+//    {
+//        return Validator::make($data, [
+//            'nome' => ['required', 'string', 'max:255'],
+//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+//            'password' => ['required', 'string', 'min:8', 'confirmed'],
+//        ]);
+//    }
+
+
+    public function register(Request $request)
     {
-        return Validator::make($data, [
-            'nome' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        $validate = $this->validator($request->all());
+
+        if($validate){
+            return response()->json([
+                'Status' => 'FAIL',
+                'Message' => $validate[0]
+            ]);
+        }
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        return response()->json([
+            'Status' => 'DONE',
+            'Message' => 'Cadastro realizado com sucesso!'
         ]);
     }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
+    {
+        $validator = Validator::make($data, [
+            'nome' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            $errors = $validator->errors()->all();
+            return $errors;
+        }
+        return false;
+    }
+
 
     /**
      * Create a new user instance after a valid registration.
