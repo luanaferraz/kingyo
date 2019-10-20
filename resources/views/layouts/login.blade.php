@@ -60,6 +60,7 @@
 {{--<script src="/js/config.js"></script>--}}
 
 <script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
 <script src="{{ asset('js/jquery.mask.min.js') }}" defer></script>
 <script src="{{ asset('js/all.min.js') }}" defer></script>
 <script src="{{ asset('js/config.js') }}" defer></script>
