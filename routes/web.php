@@ -29,3 +29,6 @@ Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterControlle
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('tutors', 'TutorController');
 Route::resource('pets', 'PetController');
+
+
+Route::resource('eventoPets', 'EventoPetController');

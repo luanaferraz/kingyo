@@ -53,8 +53,18 @@
     </div>
 </footer>
 
-<script src="/js/app.js"></script>
-<script src="/js/cadastrar.js"></script>
+{{--<script src="/js/jquery-3.3.1.min.js"></script>--}}
+{{--<script src="/js/jquery.mask.min.js"></script>--}}
+{{--<script src="/js/app.js"></script>--}}
+{{--<script src="/js/cadastrar.js"></script>--}}
+{{--<script src="/js/config.js"></script>--}}
+
+<script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+<script src="{{ asset('js/jquery.mask.min.js') }}" defer></script>
+<script src="{{ asset('js/all.min.js') }}" defer></script>
+<script src="{{ asset('js/config.js') }}" defer></script>
+<script src="{{ asset('js/cadastrar.js') }}" defer></script>
 
 @yield('scripts')
 
