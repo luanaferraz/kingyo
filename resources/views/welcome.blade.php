@@ -86,6 +86,7 @@
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Cadastra-se</a>
                         @endif
+
                     @endauth
                 </div>
             @endif

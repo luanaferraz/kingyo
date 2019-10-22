@@ -17,9 +17,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/cadastro', ['as' => 'cadastro', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
 Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterController@register']);
 
+
+//Route::group(['middleware' => ['auth','tutor']], function() {
+//
+//});
+Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('tutors', 'TutorController');
+Route::resource('pets', 'PetController');
+
+
+Route::resource('eventoPets', 'EventoPetController');
