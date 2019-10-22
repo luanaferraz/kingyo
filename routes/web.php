@@ -32,3 +32,6 @@ Route::resource('pets', 'PetController');
 
 
 Route::resource('eventoPets', 'EventoPetController');
+
+
+Route::resource('vacinas', 'VacinaController');

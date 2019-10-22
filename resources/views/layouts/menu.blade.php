@@ -15,3 +15,8 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Pet</span></a>
     </li>
+ <li class="nav-item {{ Request::is('vacinas*') ? 'active' : '' }}">
+        <a class="nav-link" href="{!! route('vacinas.index') !!}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Vacinas</span></a>
+    </li>
