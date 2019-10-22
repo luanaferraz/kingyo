@@ -2,14 +2,13 @@
     <table class="table" id="pets-table">
         <thead class="bg-gradient-primary text-white">
             <tr>
-                <th>Especie</th>
+                <th>Espécie</th>
         <th>Porte</th>
-        <th>Raca</th>
+        <th>Raça</th>
         <th>Nome</th>
         <th>Idade</th>
         <th>Status</th>
         <th>Sexo</th>
-        <th>Tutor Id</th>
                 <th colspan="3">Ações</th>
             </tr>
         </thead>
@@ -21,9 +20,11 @@
             <td>{!! $pet->raca !!}</td>
             <td>{!! $pet->nome !!}</td>
             <td>{!! $pet->idade !!}</td>
-            <td>{!! $pet->status !!}</td>
-            <td>{!! $pet->sexo !!}</td>
-            <td>{!! $pet->tutor_id !!}</td>
+                <td>
+                    <span class="badge {{ $pet->status == 1 ? ' badge-success':' badge-warning' }}">{{ $pet->status == 1 ? 'Ativo':'Inativo' }}</span>
+                </td>
+                <td>{!! $pet->sexo !!}</td>
+
                 <td>
                     {!! Form::open(['route' => ['pets.destroy', $pet->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
