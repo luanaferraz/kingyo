@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="" />
     <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -12,6 +13,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -265,7 +269,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -273,11 +277,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\cuidaPet\app" />
-      <recent name="C:\wamp64\www\cuidaPet\public\js" />
       <recent name="C:\wamp64\www\cuidaPet\app\Http\Middleware" />
+      <recent name="C:\wamp64\www\cuidaPet\public\js" />
       <recent name="C:\wamp64\www\cuidaPet\public\images" />
       <recent name="C:\wamp64\www\cuidaPet\public\css" />
+      <recent name="C:\wamp64\www\cuidaPet\resources\views\layouts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -315,6 +319,7 @@
       <workItem from="1571354666564" duration="603000" />
       <workItem from="1571518806549" duration="11754000" />
       <workItem from="1571698975534" duration="1057000" />
+      <workItem from="1571518806549" duration="3964000" />
     </task>
     <task id="LOCAL-00001" summary="projeto">
       <created>1571058337872</created>
@@ -372,6 +377,22 @@
       <option name="project" value="LOCAL" />
       <updated>1571525418508</updated>
     </task>
+    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00007" summary="Cadastrar pet">
+      <created>1571697258188</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571697258188</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Cadastrar pet">
+      <created>1571697833306</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571697833306</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <task id="LOCAL-00009" summary="cadastrar tutor">
       <created>1571703995094</created>
       <option name="number" value="00009" />
@@ -421,6 +442,8 @@
     <MESSAGE value="index" />
     <MESSAGE value="login" />
     <MESSAGE value="cadastrar tutor quase completo" />
+    <MESSAGE value="Cadastrar pet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cadastrar pet" />
     <MESSAGE value="cadastrar tutor" />
     <option name="LAST_COMMIT_MESSAGE" value="cadastrar tutor" />
   </component>

@@ -9,3 +9,9 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Evento</span></a>
     </li>
+
+ <li class="nav-item {{ Request::is('pets*') ? 'active' : '' }}">
+        <a class="nav-link" href="{!! route('pets.index') !!}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Pet</span></a>
+    </li>
