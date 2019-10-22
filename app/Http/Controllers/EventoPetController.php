@@ -6,8 +6,10 @@ use App\Http\Requests\CreateEventoPetRequest;
 use App\Http\Requests\UpdateEventoPetRequest;
 use App\Repositories\EventoPetRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\PetRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Auth;
 use Response;
 
 class EventoPetController extends AppBaseController
@@ -15,9 +17,10 @@ class EventoPetController extends AppBaseController
     /** @var  EventoPetRepository */
     private $eventoPetRepository;
 
-    public function __construct(EventoPetRepository $eventoPetRepo)
+    public function __construct(EventoPetRepository $eventoPetRepo, PetRepository $petRepository)
     {
         $this->eventoPetRepository = $eventoPetRepo;
+        $this->petRepository = $petRepository;
     }
 
     /**
@@ -31,6 +34,7 @@ class EventoPetController extends AppBaseController
     {
         $eventoPets = $this->eventoPetRepository->all();
 
+
         return view('evento_pets.index')
             ->with('eventoPets', $eventoPets);
     }
@@ -42,7 +46,9 @@ class EventoPetController extends AppBaseController
      */
     public function create()
     {
-        return view('evento_pets.create');
+        $pets = $this->petRepository->findPet(Auth::user()->id);
+
+        return view('evento_pets.create')->with('pets', $pets);
     }
 
     /**
@@ -100,7 +106,9 @@ class EventoPetController extends AppBaseController
             return redirect(route('eventoPets.index'));
         }
 
-        return view('evento_pets.edit')->with('eventoPet', $eventoPet);
+        $pets = $this->petRepository->findPet(Auth::user()->id);
+
+        return view('evento_pets.edit')->with('eventoPet', $eventoPet)->with('pets', $pets);
     }
 
     /**
