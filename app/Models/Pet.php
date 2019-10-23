@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -31,7 +32,7 @@ class Pet extends Model
     use SoftDeletes;
 
     public $table = 'pet';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -132,4 +133,7 @@ class Pet extends Model
     {
         return $this->hasMany(\App\Models\Vacina::class, 'pet_id');
     }
+
+
+
 }

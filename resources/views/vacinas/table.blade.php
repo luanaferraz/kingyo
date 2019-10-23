@@ -3,9 +3,9 @@
         <thead class="bg-gradient-primary text-white">
             <tr>
                 <th>Nome</th>
-        <th>Dataaplicacao</th>
-        <th>Dataproxima</th>
-        <th>Pet Id</th>
+        <th>Data de Aplicação</th>
+        <th>Data de Retorno</th>
+        <th>Pet </th>
                 <th colspan="3">Ações</th>
             </tr>
         </thead>

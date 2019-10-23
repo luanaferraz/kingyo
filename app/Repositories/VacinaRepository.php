@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class VacinaRepository
  * @package App\Repositories
- * @version October 22, 2019, 1:02 am UTC
+ * @version October 23, 2019, 12:41 am UTC
 */
 
 class VacinaRepository extends BaseRepository

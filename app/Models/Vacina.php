@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Vacina
  * @package App\Models
- * @version October 22, 2019, 1:02 am UTC
+ * @version October 23, 2019, 12:41 am UTC
  *
  * @property \App\Models\Pet pet
  * @property string nome
@@ -21,7 +22,7 @@ class Vacina extends Model
     use SoftDeletes;
 
     public $table = 'vacina';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -67,4 +68,15 @@ class Vacina extends Model
     {
         return $this->belongsTo(\App\Models\Pet::class, 'pet_id');
     }
+
+
+
+    public function getDataAplicacaoAttribute($date){
+        return Carbon::createFromFormat('Y-m-d', $date)->format('d/m/Y');
+    }
+
+    public function getDataProximaAttribute($date){
+        return Carbon::createFromFormat('Y-m-d', $date)->format('d/m/Y');
+    }
+
 }
