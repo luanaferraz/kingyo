@@ -14,7 +14,7 @@
         @foreach($eventoPets as $eventoPet)
             <tr>
                 <td>{!! $eventoPet->data !!}</td>
-                <td>{!! $eventoPet->pet->nome !!}</td>
+                <td>{!! $eventoPet->pet_id !!}</td>
                 <td>{!! $eventoPet->tipo !!}</td>
                 <td>{!! $eventoPet->descricao !!}</td>
                 <td>
@@ -34,3 +34,10 @@
         </tbody>
     </table>
 </div>
+
+
+<h3>Calendar</h3>
+
+<div id='calendar'></div>
+
+

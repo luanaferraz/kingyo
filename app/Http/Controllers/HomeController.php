@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\EventoPetRepository;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,9 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(EventoPetRepository $eventoPetRepo)
     {
         $this->middleware('auth');
+        $this->eventoPetRepository = $eventoPetRepo;
     }
 
     /**
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.app');
+        $eventoPets = $this->eventoPetRepository->all();
+        return view('layouts.app')->with('eventoPets', $eventoPets);;
     }
 }
