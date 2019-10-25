@@ -1,6 +1,6 @@
 <!-- Especie Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('especie', 'Especie:') !!}
+    {!! Form::label('especie', 'Espécie:') !!}
     {!! Form::text('especie', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -12,7 +12,7 @@
 
 <!-- Raca Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('raca', 'Raca:') !!}
+    {!! Form::label('raca', 'Raça:') !!}
     {!! Form::text('raca', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -29,9 +29,10 @@
 </div>
 
 <!-- Status Field -->
+
 <div class="form-group col-sm-6">
     {!! Form::label('status', 'Status:') !!}
-    {!! Form::number('status', null, ['class' => 'form-control']) !!}
+    {!! Form::select('status', array(1 => 'Ativo', 2 => 'Inativo'),null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Sexo Field -->

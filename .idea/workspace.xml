@@ -8,6 +8,12 @@
       <change beforePath="$PROJECT_DIR$/resources/views/evento_pets/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/evento_pets/table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Pet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Vacina.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Vacina.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/VacinaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/VacinaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pets/fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pets/fields.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vacinas/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vacinas/table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,6 +123,9 @@
         </entry>
       </file>
     </leaf>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -493,6 +502,14 @@
       <updated>1571714718614</updated>
     </task>
     <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00010" summary="Vacinas e Pets">
+      <created>1571713015469</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1571713015469</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -536,6 +553,8 @@
     <MESSAGE value="cadastrar tutor quase completo" />
     <MESSAGE value="Cadastrar pet" />
     <MESSAGE value="cadastrar tutor" />
+    <MESSAGE value="Vacinas e Pets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vacinas e Pets" />
     <MESSAGE value="Adicionar pet ao evento" />
     <option name="LAST_COMMIT_MESSAGE" value="Adicionar pet ao evento" />
   </component>

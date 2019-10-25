@@ -72,11 +72,6 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Home</span></a>
     </li>
-    <li class="nav-item active">
-        <a class="nav-link" href="{{ url('resources\views\pets') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Pets</span></a>
-    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
