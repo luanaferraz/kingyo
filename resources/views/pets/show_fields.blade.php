@@ -1,48 +1,41 @@
-<!-- Especie Field -->
-<div class="form-group">
-    {!! Form::label('especie', 'Especie:') !!}
-    <p>{!! $pet->especie !!}</p>
+
+<div class="col-12 bg-gradient-primary text-white d-flex py-2">
+
+    <div class="px-2 align-self-center">
+        <img src="/images/patinha.png" class="img-fluid" width="80px">
+    </div>
+
+    <div class="px-2 align-self-center">
+        <h3 class="font-weight-bold mb-0">{!! $pet->nome !!}</h3>
+        <p class="mb-0">{!! $pet->raca !!}</p>
+        <p class="mb-0">{!! $pet->especie !!} - {!! $pet->sexo !!}</p>
+        <p class="mb-0">{!! $pet->idade !!}</p>
+    </div>
+
+    <div class="px-2 align-self-center ml-auto">
+        {!! Form::open(['route' => ['pets.destroy', $pet->id], 'method' => 'delete']) !!}
+        <div class='btn-group'>
+            <a href="{!! route('pets.edit', [$pet->id]) !!}" class='btn btn-secondary border-right-dark btn-xs'><i class="fas fa-edit"></i></a>
+            {!! Form::button('<i class="fas fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Deseja realmente excluir?')"]) !!}
+        </div>
+        {!! Form::close() !!}
+    </div>
 </div>
 
-<!-- Porte Field -->
-<div class="form-group">
-    {!! Form::label('porte', 'Porte:') !!}
-    <p>{!! $pet->porte !!}</p>
+
+<div class="col-12 col-md-3 py-3">
+    <div class="col-12 bg-light py-2 text-center">
+        <i class="fas fa-syringe fa-5x pb-2"></i>
+        <h5>Vacinas</h5>
+        <a href="#" class="card-link"></a>
+    </div>
 </div>
 
-<!-- Raca Field -->
-<div class="form-group">
-    {!! Form::label('raca', 'Raca:') !!}
-    <p>{!! $pet->raca !!}</p>
-</div>
-
-<!-- Nome Field -->
-<div class="form-group">
-    {!! Form::label('nome', 'Nome:') !!}
-    <p>{!! $pet->nome !!}</p>
-</div>
-
-<!-- Idade Field -->
-<div class="form-group">
-    {!! Form::label('idade', 'Idade:') !!}
-    <p>{!! $pet->idade !!}</p>
-</div>
-
-<!-- Status Field -->
-<div class="form-group">
-    {!! Form::label('status', 'Status:') !!}
-    <p>{!! $pet->status !!}</p>
-</div>
-
-<!-- Sexo Field -->
-<div class="form-group">
-    {!! Form::label('sexo', 'Sexo:') !!}
-    <p>{!! $pet->sexo !!}</p>
-</div>
-
-<!-- Tutor Id Field -->
-<div class="form-group">
-    {!! Form::label('tutor_id', 'Tutor Id:') !!}
-    <p>{!! $pet->tutor_id !!}</p>
+<div class="col-12 col-md-3 py-3">
+    <div class="col-12 bg-light py-2 text-center">
+        <i class="fas fa-calendar-alt fa-5x pb-2"></i>
+        <h5>Eventos</h5>
+        <a href="#" class="card-link"></a>
+    </div>
 </div>
 
