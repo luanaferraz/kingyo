@@ -12,11 +12,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(EventoPetRepository $eventoPetRepo)
+    public function __construct()
     {
         $this->middleware('auth');
-        $this->eventoPetRepository = $eventoPetRepo;
-    }
+
+}
 
     /**
      * Show the application dashboard.
@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $eventoPets = $this->eventoPetRepository->all();
-        return view('layouts.app')->with('eventoPets', $eventoPets);;
+
+        return view('layouts.app');
     }
 }
