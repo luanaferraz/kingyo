@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="Adicionar pet ao evento">
+    <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VacinaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VacinaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Pet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Vacina.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Vacina.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vacinas/fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vacinas/fields.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vacinas/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vacinas/table.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -256,14 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571713015469</updated>
     </task>
-    <task id="LOCAL-00011" summary="Adicionar pet ao evento">
-      <created>1571714718614</created>
+    <task id="LOCAL-00011" summary="Correções vacinas">
+      <created>1572111044629</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1571714718614</updated>
+      <updated>1572111044629</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +287,7 @@
     <MESSAGE value="cadastrar tutor" />
     <MESSAGE value="Vacinas e Pets" />
     <MESSAGE value="Adicionar pet ao evento" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionar pet ao evento" />
+    <MESSAGE value="Correções vacinas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correções vacinas" />
   </component>
 </project>
