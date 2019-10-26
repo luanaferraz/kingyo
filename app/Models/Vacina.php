@@ -64,12 +64,11 @@ class Vacina extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
+
     public function pet()
     {
-        return $this->belongsTo(\App\Models\Pet::class, 'pet_id');
+        return $this->belongsTo('App\Models\Pet', 'pet_id');
     }
-
-
 
     public function getDataAplicacaoAttribute($date){
         return Carbon::createFromFormat('Y-m-d', $date)->format('d/m/Y');

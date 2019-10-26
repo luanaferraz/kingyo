@@ -34,7 +34,11 @@ class VacinaController extends AppBaseController
         return view('vacinas.index')
             ->with('vacinas', $vacinas);
     }
-
+    public function getIndex()
+    {
+        $vacinas = Vacina::with('pet')->get();
+        return view('vacinas.index', compact(['vacinas']));
+    }
     /**
      * Show the form for creating a new Vacina.
      *
@@ -153,4 +157,6 @@ class VacinaController extends AppBaseController
 
         return redirect(route('vacinas.index'));
     }
+
+
 }
