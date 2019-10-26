@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\EventoPetRepository;
+use App\Repositories\PetRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -12,11 +14,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(PetRepository $petRepository)
     {
         $this->middleware('auth');
-
-}
+        $this->petRepository = $petRepository;
+    }
 
     /**
      * Show the application dashboard.
@@ -25,7 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $pets = $this->petRepository->findPet(Auth::user()->id);
 
-        return view('layouts.app');
+        return view('home')->with('pets', $pets);
     }
 }

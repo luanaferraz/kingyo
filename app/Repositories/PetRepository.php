@@ -45,8 +45,13 @@ class PetRepository extends BaseRepository
         return Pet::class;
     }
 
+//    public function findPet($tutor)
+//    {
+//        return Pet::where('tutor_id', $tutor)->orderBy('nome')->pluck('nome','id');
+//    }
+
     public function findPet($tutor)
     {
-        return Pet::where('tutor_id', $tutor)->orderBy('nome')->pluck('nome','id');
+        return Pet::where('tutor_id', $tutor)->where('status', 1)->orderBy('nome')->get();
     }
 }

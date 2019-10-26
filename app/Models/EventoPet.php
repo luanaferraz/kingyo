@@ -75,6 +75,9 @@ class EventoPet extends Model
 //        return Carbon::createFromFormat('Y-m-d', $date)->format('d/m/Y');
 //    }
 
+    /**
+     * @return mixed
+     */
     public function pet()
     {
         return $this->belongsTo(\App\Models\Pet::class, 'pet_id');
