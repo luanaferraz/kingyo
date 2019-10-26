@@ -1,22 +1,23 @@
+
 <div class="table-responsive">
     <table class="table" id="vacinas-table">
         <thead class="bg-gradient-primary text-white">
             <tr>
-                <th>Nome</th>
-        <th>Data de Aplicação</th>
-        <th>Data de Retorno</th>
-        <th>Pet Id</th>
+                <th>Vacina</th>
+        <th>Data da Aplicação</th>
+        <th>Próxima Vacina</th>
+        <th>Pet</th>
                 <th colspan="3">Ações</th>
             </tr>
         </thead>
         <tbody>
         @foreach($vacinas as $vacina)
+
             <tr>
                 <td>{!! $vacina->nome !!}</td>
             <td>{!! $vacina->dataAplicacao !!}</td>
             <td>{!! $vacina->dataProxima !!}</td>
-            <td>{!! $vacina->pet_id !!}</td>
-
+                <td>{{ !is_null($vacina->pet)?$vacina->pet->nome:'' }}</td>
                 <td>
                     {!! Form::open(['route' => ['vacinas.destroy', $vacina->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
@@ -27,6 +28,7 @@
                 </td>
             </tr>
         @endforeach
+
         </tbody>
     </table>
 </div>

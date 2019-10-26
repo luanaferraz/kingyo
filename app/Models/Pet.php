@@ -129,11 +129,13 @@ class Pet extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function vacinas()
+    public function vacina()
     {
         return $this->hasMany(\App\Models\Vacina::class, 'pet_id');
+
     }
 
 
 
 }
+
