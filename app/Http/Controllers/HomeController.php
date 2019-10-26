@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pets = $this->petRepository->findPet(Auth::user()->id);
+        $pets = $this->petRepository->findByTutor(Auth::user()->id);
 
         return view('home')->with('pets', $pets);
     }

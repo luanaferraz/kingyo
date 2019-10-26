@@ -36,6 +36,6 @@ Route::resource('eventoPets', 'EventoPetController');
 
 Route::resource('vacinas', 'VacinaController');
 
-Route::resource('vacinas', 'VacinaController');
-
-Route::resource('vacinas', 'VacinaController');
+Route::get('eventos/{pet?}', ['as'=> 'eventos.index', 'uses' => 'EventoPetController@index']);
+Route::post('eventos/store/{pet?}', ['as'=> 'eventos.store', 'uses' => 'EventoPetController@store']);
+Route::get('eventos/create/{pet}', ['as'=> 'eventos.create', 'uses' => 'EventoPetController@create']);

@@ -35,7 +35,7 @@
     <div class="col-12 bg-light py-2 text-center">
         <i class="fas fa-calendar-alt fa-5x pb-2"></i>
         <h5>Eventos</h5>
-        <a href="#" class="card-link"></a>
+        <a href="{!! route('eventos.index', [$pet->id]) !!}" class="card-link"></a>
     </div>
 </div>
 

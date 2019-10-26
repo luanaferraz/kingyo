@@ -3,8 +3,14 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <section class="col-12 d-flex">
+                <h1 class="pull-left">Pets</h1>
+                <h1 class="ml-auto">
+                    <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('pets.create') !!}"><i class="fas fa-plus"></i></a>
+                </h1>
+            </section>
             @foreach($pets as $pet)
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 my-2">
                     <div class="col-12 bg-light d-flex py-2">
 
                         <div class="px-2 ">

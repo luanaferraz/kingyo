@@ -44,10 +44,12 @@
 @endsection
 
 <!-- Pet Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('pet_id', 'Pet:') !!}
-    {!! Form::select('pet_id', $pets,null, ['class' => 'form-control', 'value' => isset($eventoPets) ? $eventoPets['pet_id']:'']) !!}
-</div>
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('pet_id', 'Pet:') !!}--}}
+{{--    {!! Form::select('pet_id', $pets,null, ['class' => 'form-control', 'value' => isset($eventoPets) ? $eventoPets['pet_id']:'']) !!}--}}
+{{--</div>--}}
+
+
 
 <!-- Tipo Field -->
 <div class="form-group col-sm-6">
@@ -68,7 +70,7 @@
 </div>
 
 
-
+<input type="hidden" name="pet_id" value="{!! $pet->id !!}">
 
 
 <!-- Submit Field -->
