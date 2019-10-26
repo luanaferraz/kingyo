@@ -190,4 +190,14 @@ abstract class BaseRepository
 
         return $model->delete();
     }
+
+    public function findByField($field, $value = null, $columns = ['*'])
+    {
+        $this->applyCriteria();
+        $this->applyScope();
+        $model = $this->model->where($field, '=', $value)->get($columns);
+        $this->resetModel();
+
+        return $this->parserResult($model);
+    }
 }

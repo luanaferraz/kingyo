@@ -30,13 +30,23 @@ class EventoPetController extends AppBaseController
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index($pet = null,Request $request)
     {
-        $eventoPets = $this->eventoPetRepository->all();
+        if($pet){
+//            $pet = base64_decode($pet);
+            $eventoPets = $this->eventoPetRepository->findByPet($pet);
+
+            $pet = $this->petRepository->findByPet($pet);
+            return view('evento_pets.index')
+                ->with('eventoPets', $eventoPets)
+                ->with('pet', $pet);
+        }else{
+            $eventoPets = $this->eventoPetRepository->all();
+            return view('evento_pets.index')
+                ->with('eventoPets', $eventoPets);
+        }
 
 
-        return view('evento_pets.index')
-            ->with('eventoPets', $eventoPets);
     }
 
     /**
@@ -44,11 +54,13 @@ class EventoPetController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create($pet_id = null)
     {
         $pets = $this->petRepository->findPet(Auth::user()->id);
+        $pet = $this->petRepository->findByPet($pet_id);
 
-        return view('evento_pets.create')->with('pets', $pets);
+
+        return view('evento_pets.create')->with('pet', $pet);
     }
 
     /**
@@ -58,7 +70,7 @@ class EventoPetController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateEventoPetRequest $request)
+    public function store($pet = null, CreateEventoPetRequest $request)
     {
         $input = $request->all();
 
@@ -66,7 +78,7 @@ class EventoPetController extends AppBaseController
 
         Flash::success('Evento Pet salvo com sucesso.');
 
-        return redirect(route('eventoPets.index'));
+        return redirect(route('eventos.index', [$pet]));
     }
 
     /**

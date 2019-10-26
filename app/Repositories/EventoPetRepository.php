@@ -43,4 +43,9 @@ class EventoPetRepository extends BaseRepository
     {
         return EventoPet::class;
     }
+
+    public function findByPet($pet)
+    {
+        return EventoPet::where('pet_id',$pet)->orderBy('data')->get();
+    }
 }
