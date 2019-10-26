@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Pet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Vacina.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Vacina.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/VacinaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/VacinaRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pets/fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pets/fields.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/evento_pets/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/evento_pets/table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vacinas/show_fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vacinas/show_fields.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vacinas/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vacinas/table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,11 +126,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
-  </component>
+  <component name="ProjectId" id="1Sk5sUIKe6dCHcr7XXFKodHpTBl" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -188,6 +181,7 @@
       <workItem from="1571518806549" duration="11754000" />
       <workItem from="1571698975534" duration="1057000" />
       <workItem from="1571518806549" duration="3964000" />
+      <workItem from="1572094968189" duration="680000" />
     </task>
     <task id="LOCAL-00001" summary="projeto">
       <created>1571058337872</created>
@@ -259,11 +253,29 @@
       <option name="project" value="LOCAL" />
       <updated>1571713015469</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Vacinas e Pets">
+      <created>1571792307155</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571792307155</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />

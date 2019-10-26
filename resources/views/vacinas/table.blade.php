@@ -5,7 +5,7 @@
                 <th>Nome</th>
         <th>Data de Aplicação</th>
         <th>Data de Retorno</th>
-        <th>Pet </th>
+        <th>Pet Id</th>
                 <th colspan="3">Ações</th>
             </tr>
         </thead>
@@ -16,6 +16,7 @@
             <td>{!! $vacina->dataAplicacao !!}</td>
             <td>{!! $vacina->dataProxima !!}</td>
             <td>{!! $vacina->pet_id !!}</td>
+
                 <td>
                     {!! Form::open(['route' => ['vacinas.destroy', $vacina->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
