@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header d-flex">
-        <h1 class="pull-left">Medicação</h1>
+        <h1 class="pull-left">Medicamentos</h1>
         <h1 class="ml-auto">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('medicacaos.create') !!}"><i class="fas fa-plus"></i></a>
         </h1>

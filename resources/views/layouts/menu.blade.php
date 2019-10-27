@@ -23,10 +23,10 @@
  <li class="nav-item {{ Request::is('petdocs*') ? 'active' : '' }}">
         <a class="nav-link" href="{!! route('petdocs.index') !!}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Petdocs</span></a>
+            <span>Documentos</span></a>
     </li>
  <li class="nav-item {{ Request::is('medicacaos*') ? 'active' : '' }}">
         <a class="nav-link" href="{!! route('medicacaos.index') !!}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Medicacaos</span></a>
+            <span>Medicamentos</span></a>
     </li>
