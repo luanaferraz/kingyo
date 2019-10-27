@@ -7,9 +7,9 @@
 
 <!-- File Field -->
 
-<form class="form-group col-sm-6"  action="url-aqui"  method="post" enctype="multipart/form-data">
+
     <input type="file" name="image">
-</form>
+
 
 
 <!-- Submit Field -->

@@ -56,7 +56,7 @@ class PetdocController extends AppBaseController
     {
         $input = $request->all();
 
-        $petdoc = $this->petdocRepository->create($input);
+        $petdoc = $this->petdocRepository->create_with_upload($input);
 
         Flash::success('Petdoc salvo com sucesso.');
 

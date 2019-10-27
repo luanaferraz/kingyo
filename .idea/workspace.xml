@@ -120,7 +120,6 @@
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SkAuvf88PN7IAZxSAdCfqwbTxd" />
@@ -132,12 +131,6 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
