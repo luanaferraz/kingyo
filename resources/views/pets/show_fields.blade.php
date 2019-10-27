@@ -39,3 +39,4 @@
     </div>
 </div>
 
+<a href="{!! route('petdocs.index', [$pet->id]) !!}" class="">Documentos</a>

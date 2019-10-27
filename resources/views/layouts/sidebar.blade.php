@@ -69,7 +69,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="{{ url('/home') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-paw"></i>
             <span>Home</span></a>
     </li>
 
@@ -78,7 +78,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Interface
+        Menu
     </div>
 
     @include('layouts.menu')

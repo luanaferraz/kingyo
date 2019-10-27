@@ -29,11 +29,12 @@ class VacinaController extends AppBaseController
      *
      * @return Response
      */
-    public function index_pet($pet = null,Request $request)
+    public function index_pet($pet_id = null,Request $request)
     {
 
-        $vacinas = $this->vacinaRepository->findByPet($pet);
-        $pet = $this->petRepository->findByPet($pet);
+        $vacinas = $this->vacinaRepository->findByPet($pet_id);
+
+        $pet = $this->petRepository->findByPet($pet_id);
 
         return view('vacinas.index')
             ->with('vacinas', $vacinas)

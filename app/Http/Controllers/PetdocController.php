@@ -6,6 +6,7 @@ use App\Http\Requests\CreatePetdocRequest;
 use App\Http\Requests\UpdatePetdocRequest;
 use App\Repositories\PetdocRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\PetRepository;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -15,9 +16,10 @@ class PetdocController extends AppBaseController
     /** @var  PetdocRepository */
     private $petdocRepository;
 
-    public function __construct(PetdocRepository $petdocRepo)
+    public function __construct(PetdocRepository $petdocRepo, PetRepository $petRepository)
     {
         $this->petdocRepository = $petdocRepo;
+        $this->petRepository = $petRepository;
     }
 
     /**
@@ -27,12 +29,15 @@ class PetdocController extends AppBaseController
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index($pet_id = null,Request $request)
     {
-        $petdocs = $this->petdocRepository->all();
+        $petdocs = $this->petdocRepository->findByField('pet_id', $pet_id);
+
+        $pet = $this->petRepository->findByPet($pet_id);
 
         return view('petdocs.index')
-            ->with('petdocs', $petdocs);
+            ->with('petdocs', $petdocs)
+            ->with('pet', $pet);
     }
 
     /**
@@ -40,9 +45,10 @@ class PetdocController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create($pet_id)
     {
-        return view('petdocs.create');
+        $pet = $this->petRepository->findByPet($pet_id);
+        return view('petdocs.create')->with('pet', $pet);
     }
 
     /**
@@ -52,7 +58,7 @@ class PetdocController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreatePetdocRequest $request)
+    public function store($pet,CreatePetdocRequest $request)
     {
         $input = $request->all();
 
@@ -60,7 +66,7 @@ class PetdocController extends AppBaseController
 
         Flash::success('Petdoc salvo com sucesso.');
 
-        return redirect(route('petdocs.index'));
+        return redirect(route('petdocs.index', [$pet]));
     }
 
     /**
@@ -90,17 +96,17 @@ class PetdocController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit($pet_id, $id)
     {
         $petdoc = $this->petdocRepository->find($id);
-
+        $pet = $this->petRepository->findByPet($pet_id);
         if (empty($petdoc)) {
             Flash::error('Petdoc não encontrado');
 
             return redirect(route('petdocs.index'));
         }
 
-        return view('petdocs.edit')->with('petdoc', $petdoc);
+        return view('petdocs.edit')->with('petdoc', $petdoc)->with('pet', $pet);
     }
 
     /**
@@ -111,7 +117,7 @@ class PetdocController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdatePetdocRequest $request)
+    public function update($pet, $id, UpdatePetdocRequest $request)
     {
         $petdoc = $this->petdocRepository->find($id);
 
@@ -125,7 +131,7 @@ class PetdocController extends AppBaseController
 
         Flash::success('Petdoc atualizado com sucesso.');
 
-        return redirect(route('petdocs.index'));
+        return redirect(route('petdocs.index', [$pet]));
     }
 
     /**
@@ -137,7 +143,7 @@ class PetdocController extends AppBaseController
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($pet, $id)
     {
         $petdoc = $this->petdocRepository->find($id);
 
@@ -151,7 +157,7 @@ class PetdocController extends AppBaseController
 
         Flash::success('Petdoc deletado com sucesso.');
 
-        return redirect(route('petdocs.index'));
+        return redirect(route('petdocs.index', [$pet]));
     }
 
 

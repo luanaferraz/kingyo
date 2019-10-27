@@ -1,9 +1,9 @@
 
 <!-- Pet Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('pet_id', 'Pet Id:') !!}
-    {!! Form::number('pet_id', null, ['class' => 'form-control']) !!}
-</div>
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('pet_id', 'Pet Id:') !!}--}}
+{{--    {!! Form::number('pet_id', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 <!-- File Field -->
 
@@ -18,7 +18,7 @@
 </div>
 {{--    <input type="file" name="file">--}}
 
-
+<input type="hidden" name="pet_id" value="{!! $pet->id !!}">
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
