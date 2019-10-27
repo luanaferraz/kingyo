@@ -18,6 +18,7 @@
                     @include('medicacaos.table')
             </div>
         </div>
+
         <div class="text-center">
 
         </div>

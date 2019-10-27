@@ -48,3 +48,6 @@ Route::get('eventos/create/{pet}', ['as'=> 'eventos.create', 'uses' => 'EventoPe
 //Route::get('vacinas/create/{pet}', ['as'=> 'vacinas.create', 'uses' => 'VacinaController@create']);
 
 Route::resource('medicacaos', 'MedicacaoController');
+Route::get('medicacao/ativar/{medicacao}', ['as'=> 'medicacaos.ativar', 'uses' => 'MedicacaoController@ativar']);
+Route::get('medicacao/inativar/{medicacao}', ['as'=> 'medicacaos.inativar', 'uses' => 'MedicacaoController@inativar']);
+
