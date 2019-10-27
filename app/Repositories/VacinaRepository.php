@@ -40,4 +40,9 @@ class VacinaRepository extends BaseRepository
     {
         return Vacina::class;
     }
+
+    public function findByPet($pet)
+    {
+        return Vacina::where('pet_id',$pet)->orderBy('dataProxima')->get();
+    }
 }
