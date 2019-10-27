@@ -2,26 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="Adicionar pet ao evento">
-      <change afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PetdocController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CreatePetdocRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdatePetdocRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Petdoc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/PetdocRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/PetdocFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/model_schemas/Petdoc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/fields.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/show_fields.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MedicacaoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CreateMedicacaoRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateMedicacaoRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Medicacao.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/MedicacaoRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/MedicacaoFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/model_schemas/Medicacao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/medicacaos/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/medicacaos/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/medicacaos/fields.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/medicacaos/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/medicacaos/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/medicacaos/show_fields.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/medicacaos/table.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scaffold" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>

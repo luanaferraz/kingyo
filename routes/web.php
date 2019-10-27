@@ -29,6 +29,8 @@ Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterControlle
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('tutors', 'TutorController');
 Route::resource('pets', 'PetController');
+Route::resource('petdocs', 'PetdocController');
+
 
 
 Route::resource('eventoPets', 'EventoPetController');
@@ -43,3 +45,5 @@ Route::get('eventos/create/{pet}', ['as'=> 'eventos.create', 'uses' => 'EventoPe
 
 //Route::post('vacinas/store/{pet?}', ['as'=> 'vacinas.store', 'uses' => 'VacinaController@store']);
 //Route::get('vacinas/create/{pet}', ['as'=> 'vacinas.create', 'uses' => 'VacinaController@create']);
+
+Route::resource('medicacaos', 'MedicacaoController');

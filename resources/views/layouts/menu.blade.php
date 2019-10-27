@@ -25,3 +25,8 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Petdocs</span></a>
     </li>
+ <li class="nav-item {{ Request::is('medicacaos*') ? 'active' : '' }}">
+        <a class="nav-link" href="{!! route('medicacaos.index') !!}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Medicacaos</span></a>
+    </li>
