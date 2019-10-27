@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/medicacaos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medicacaos/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/medicacaos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medicacaos/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/medicacaos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medicacaos/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/medicacaos/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medicacaos/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/petdocs/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/petdocs/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/petdocs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/petdocs/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/petdocs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/petdocs/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/petdocs/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/petdocs/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Medicacao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Medicacao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medicacaos/fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medicacaos/fields.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -298,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572193666133</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Detalhes documentos">
+      <created>1572194918914</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572194918914</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +331,7 @@
     <MESSAGE value="Adicionar pet ao evento" />
     <MESSAGE value="Cadastrar, listar e alterar medicamento" />
     <MESSAGE value="Detalhes cadastro pet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Detalhes cadastro pet" />
+    <MESSAGE value="Detalhes documentos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Detalhes documentos" />
   </component>
 </project>
