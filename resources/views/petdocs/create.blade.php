@@ -12,7 +12,7 @@
 
             <div class="box-body">
                 <div class="row">
-                    {!! Form::open(['route' => 'petdocs.store','class'=> 'col-lg-12 form-row']) !!}
+                    {!! Form::open(['route' => 'petdocs.store','class'=> 'col-lg-12 form-row', 'enctype' => "multipart/form-data"]) !!}
 
                         @include('petdocs.fields')
 

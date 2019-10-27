@@ -121,7 +121,7 @@ class PetdocController extends AppBaseController
             return redirect(route('petdocs.index'));
         }
 
-        $petdoc = $this->petdocRepository->update($request->all(), $id);
+        $petdoc = $this->petdocRepository->update_with_upload($request->all(), $id);
 
         Flash::success('Petdoc atualizado com sucesso.');
 
@@ -147,7 +147,7 @@ class PetdocController extends AppBaseController
             return redirect(route('petdocs.index'));
         }
 
-        $this->petdocRepository->delete($id);
+        $this->petdocRepository->destroy_with_upload($id,$petdoc);
 
         Flash::success('Petdoc deletado com sucesso.');
 

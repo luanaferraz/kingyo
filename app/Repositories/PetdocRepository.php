@@ -2,12 +2,13 @@
 
 namespace App\Repositories;
 
-use App\Models\Orcamento;
+
 use App\Models\Petdoc;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManagerStatic as Image;
+
 
 /**
  * Class PetdocRepository
@@ -60,13 +61,13 @@ class PetdocRepository extends BaseRepository
 
     public function update_with_upload(array $attributes, $id)
     {
-        $orcamento = $this->findWithoutFail($id);
-        $file = isset ($attributes['foto']) ? $attributes['foto'] : '';
+        $petdocs = $this->findWithoutFail($id);
+        $file = isset ($attributes['file']) ? $attributes['file'] : '';
         if(!empty($file)){
-            \File::delete(public_path('uploads/orcamentos/'.$orcamento->foto));
-            \File::delete(public_path('uploads/orcamentos/sm'.$orcamento->foto));
+            \File::delete(public_path('uploads/petdocs/'.$petdocs->file));
+            \File::delete(public_path('uploads/petdocs/sm'.$petdocs->file));
 
-            $attributes['foto'] =  $this->imgUpload($file,'orcamentos');
+            $attributes['file'] =  $this->imgUpload($file,'petdocs');
         }
 
         // Have to skip presenter to get a model not some data
@@ -81,11 +82,11 @@ class PetdocRepository extends BaseRepository
         return $this->parserResult($model);
     }
 
-    function destroy_with_upload ($id, $orcamento) {
-        $imagem = $orcamento->foto;
-        if ($orcamento->destroy($id)) {
-            \File::delete(public_path('uploads/orcamentos/'.$imagem));
-            \File::delete(public_path('uploads/orcamentos/sm'.$imagem));
+    function destroy_with_upload ($id, $petdoc) {
+        $imagem = $petdoc->file;
+        if ($petdoc->destroy($id)) {
+            \File::delete(public_path('uploads/petdocs/'.$imagem));
+            \File::delete(public_path('uploads/petdocs/sm'.$imagem));
         }
     }
 

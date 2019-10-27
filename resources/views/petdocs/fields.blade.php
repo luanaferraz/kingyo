@@ -8,7 +8,7 @@
 <!-- File Field -->
 
 
-    <input type="file" name="image">
+    <input type="file" name="file">
 
 
 
