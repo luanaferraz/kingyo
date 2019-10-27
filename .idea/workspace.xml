@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="Listar pet">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="Adicionar pet ao evento">
+      <change afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PetdocController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CreatePetdocRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdatePetdocRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Petdoc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/PetdocRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/PetdocFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/model_schemas/Petdoc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/fields.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/show_fields.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/petdocs/table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +47,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
     <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
@@ -123,30 +142,27 @@
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1SlAt3RTvRFP8eU4eUh1ZqkTsDd" />
+  <component name="ProjectId" id="1SkAuvf88PN7IAZxSAdCfqwbTxd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\cuidaPet\public\images" />
       <recent name="C:\wamp64\www\cuidaPet\app\Http\Middleware" />
       <recent name="C:\wamp64\www\cuidaPet\public\js" />
+      <recent name="C:\wamp64\www\cuidaPet\public\images" />
       <recent name="C:\wamp64\www\cuidaPet\public\css" />
       <recent name="C:\wamp64\www\cuidaPet\resources\views\layouts" />
     </key>
@@ -163,11 +179,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.phpunit.xml">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="PetdocRepository.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/Repositories/PetdocRepository.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.PetdocRepository.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -189,8 +213,10 @@
       <workItem from="1571518806549" duration="3964000" />
       <workItem from="1571831696249" duration="94000" />
       <workItem from="1572016589770" duration="816000" />
-      <workItem from="1572128032075" duration="2153000" />
-      <workItem from="1572189663359" duration="507000" />
+      <workItem from="1572097447824" duration="13202000" />
+      <workItem from="1572122864915" duration="778000" />
+      <workItem from="1572130262240" duration="3985000" />
+      <workItem from="1572139183398" duration="134000" />
     </task>
     <task id="LOCAL-00001" summary="projeto">
       <created>1571058337872</created>
@@ -262,21 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571713015469</updated>
     </task>
-    <task id="LOCAL-00011" summary="Calendário">
-      <created>1572054550180</created>
+    <task id="LOCAL-00011" summary="Adicionar pet ao evento">
+      <created>1571714718614</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1572054550180</updated>
+      <updated>1571714718614</updated>
     </task>
-    <task id="LOCAL-00012" summary="Listar pet">
-      <created>1572107656677</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1572107656677</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +317,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="projeto" />
     <MESSAGE value="index" />
     <MESSAGE value="login" />
@@ -306,8 +326,6 @@
     <MESSAGE value="cadastrar tutor" />
     <MESSAGE value="Vacinas e Pets" />
     <MESSAGE value="Adicionar pet ao evento" />
-    <MESSAGE value="Calendário" />
-    <MESSAGE value="Listar pet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Listar pet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionar pet ao evento" />
   </component>
 </project>

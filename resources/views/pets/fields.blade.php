@@ -42,10 +42,12 @@
 </div>
 
 <!-- Tutor Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('tutor_id', 'Tutor Id:') !!}
-    {!! Form::number('tutor_id', null, ['class' => 'form-control']) !!}
-</div>
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('tutor_id', 'Tutor Id:') !!}--}}
+{{--    {!! Form::number('tutor_id', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
+
+<input type="hidden" name="tutor_id" value="{{Auth::user()->id  }}">
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

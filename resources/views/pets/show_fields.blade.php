@@ -27,7 +27,7 @@
     <div class="col-12 bg-light py-2 text-center">
         <i class="fas fa-syringe fa-5x pb-2"></i>
         <h5>Vacinas</h5>
-        <a href="#" class="card-link"></a>
+        <a href="{!! route('vacinas.index_pet', [$pet->id]) !!}" class="card-link"></a>
     </div>
 </div>
 

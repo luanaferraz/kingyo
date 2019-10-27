@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateVacinaRequest;
 use App\Http\Requests\UpdateVacinaRequest;
+use App\Repositories\PetRepository;
 use App\Repositories\VacinaRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -15,9 +16,10 @@ class VacinaController extends AppBaseController
     /** @var  VacinaRepository */
     private $vacinaRepository;
 
-    public function __construct(VacinaRepository $vacinaRepo)
+    public function __construct(VacinaRepository $vacinaRepo, PetRepository $petRepository)
     {
         $this->vacinaRepository = $vacinaRepo;
+        $this->petRepository = $petRepository;
     }
 
     /**
@@ -27,6 +29,17 @@ class VacinaController extends AppBaseController
      *
      * @return Response
      */
+    public function index_pet($pet = null,Request $request)
+    {
+
+        $vacinas = $this->vacinaRepository->findByPet($pet);
+        $pet = $this->petRepository->findByPet($pet);
+
+        return view('vacinas.index')
+            ->with('vacinas', $vacinas)
+            ->with('pet', $pet);
+    }
+
     public function index(Request $request)
     {
         $vacinas = $this->vacinaRepository->all();
@@ -34,6 +47,7 @@ class VacinaController extends AppBaseController
         return view('vacinas.index')
             ->with('vacinas', $vacinas);
     }
+
     public function getIndex()
     {
         $vacinas = Vacina::with('pet')->get();

@@ -2,25 +2,23 @@
 
 namespace App\Repositories;
 
-use App\Models\Vacina;
+use App\Models\Petdoc;
 use App\Repositories\BaseRepository;
 
 /**
- * Class VacinaRepository
+ * Class PetdocRepository
  * @package App\Repositories
- * @version October 23, 2019, 12:41 am UTC
+ * @version October 26, 2019, 6:03 pm UTC
 */
 
-class VacinaRepository extends BaseRepository
+class PetdocRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'nome',
-        'dataAplicacao',
-        'dataProxima',
-        'pet_id'
+        'pet_id',
+        'file'
     ];
 
     /**
@@ -38,11 +36,10 @@ class VacinaRepository extends BaseRepository
      **/
     public function model()
     {
-        return Vacina::class;
+        return Petdoc::class;
     }
 
-    public function findByPet($pet)
-    {
-        return Vacina::where('pet_id',$pet)->orderBy('dataProxima')->get();
-    }
+
+
 }
+

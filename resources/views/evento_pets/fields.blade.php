@@ -34,6 +34,7 @@
     {!! Form::date('data', null, ['class' => 'form-control','id'=>'data']) !!}
 </div>
 
+
 @section('scripts')
     <script type="text/javascript">
         $('#data').datetimepicker({
@@ -42,6 +43,11 @@
         })
     </script>
 @endsection
+
+<div class="form-group col-sm-6">
+    {!! Form::label('horario', 'Horário:') !!}
+    {!! Form::text('horario', null, ['class' => 'form-control','id'=>'horario']) !!}
+</div>
 
 <!-- Pet Id Field -->
 {{--<div class="form-group col-sm-6">--}}

@@ -14,6 +14,7 @@ $(function () {
 
     $('.phone').mask(SPMaskBehavior, spOptions);
     $('.date').mask('00/00/0000');
+    $('#horario').mask('00:00');
     $('.uf').mask('SS');
 
 });
