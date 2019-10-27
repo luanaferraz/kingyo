@@ -31,11 +31,37 @@
     </div>
 </div>
 
+
+<div class="col-12 col-md-3 py-3">
+    <div class="col-12 bg-light py-2 text-center">
+        <i class="fas fa-capsules fa-5x pb-2"></i>
+        <h5>Medicamentos</h5>
+        <a href="{!! route('medicacaos.index', [$pet->id]) !!}" class="card-link"></a>
+    </div>
+</div>
+
 <div class="col-12 col-md-3 py-3">
     <div class="col-12 bg-light py-2 text-center">
         <i class="fas fa-calendar-alt fa-5x pb-2"></i>
         <h5>Eventos</h5>
         <a href="{!! route('eventos.index', [$pet->id]) !!}" class="card-link"></a>
+    </div>
+</div>
+
+<div class="col-12 col-md-3 py-3">
+    <div class="col-12 bg-light py-2 text-center">
+        <i class="fas fa-folder-open fa-5x pb-2"></i>
+        <h5>Documentos</h5>
+        <a href="{!! route('petdocs.index', [$pet->id]) !!}" class="card-link"></a>
+    </div>
+</div>
+
+<div class="col-12 col-md-3 py-3">
+    <div class="col-12 bg-light py-2 text-center">
+        <i class="fas fa-camera fa-5x pb-2"></i>
+        <h5>Galeria</h5>
+{{--        falta arrumar a rota--}}
+{{--        <a href="{!! route('petdocs.index', [$pet->id]) !!}" class="card-link"></a>--}}
     </div>
 </div>
 

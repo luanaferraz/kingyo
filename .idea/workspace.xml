@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MedicacaoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MedicacaoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/MedicacaoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/MedicacaoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/medicacaos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medicacaos/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/medicacaos/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medicacaos/table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pets/show_fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pets/show_fields.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -308,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572195966041</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Ativar e Inativar documento">
+      <created>1572200003628</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1572200003628</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +346,7 @@
     <MESSAGE value="Detalhes cadastro pet" />
     <MESSAGE value="Detalhes documentos" />
     <MESSAGE value="Detalhes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Detalhes" />
+    <MESSAGE value="Ativar e Inativar documento" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ativar e Inativar documento" />
   </component>
 </project>
