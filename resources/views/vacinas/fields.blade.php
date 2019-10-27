@@ -35,11 +35,13 @@
 @endsection
 
 <!-- Pet Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('pet_id', 'Pet :') !!}
-    {!! Form::number('pet_id', null, ['class' => 'form-control']) !!}
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('pet_id', 'Pet :') !!}--}}
+{{--    {!! Form::number('pet_id', null, ['class' => 'form-control']) !!}--}}
 
-</div>
+{{--</div>--}}
+
+<input type="hidden" name="pet_id" value="{!! $pet->id !!}">
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
