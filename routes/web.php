@@ -32,6 +32,7 @@ Route::resource('pets', 'PetController');
 
 
 Route::resource('eventoPets', 'EventoPetController');
+Route::resource('petdocs', 'PetdocController');
 
 Route::get('vacinas/{pet?}', ['as'=> 'vacinas.index_pet', 'uses' => 'VacinaController@index_pet']);
 
