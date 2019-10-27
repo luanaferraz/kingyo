@@ -7,8 +7,16 @@
 
 <!-- File Field -->
 
+<div class="form-group col-sm-6">
+    <label for="foto" class="control-label">Arquivo:</label>
 
-    <input type="file" name="file">
+    <input type="file" name="file" class="form-control" id="foto" onchange="$('#nome_arquivo').val(this.value)" style="display: none">
+    <input type="text" name="nome_arquivo" id="nome_arquivo" class="form-control"
+           value="<?= isset($petdoc['foto']) ? $petdoc['foto'] : "" ?>" disabled>
+    <input type="button" class="btn btn-secondary" value="Selecione um arquivo" onclick="$('#foto').click();">
+    <span class="help-block">Tamanho da imagem 1300x560 pixels.</span>
+</div>
+{{--    <input type="file" name="file">--}}
 
 
 
