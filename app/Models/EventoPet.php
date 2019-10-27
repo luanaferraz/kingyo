@@ -39,7 +39,8 @@ class EventoPet extends Model
         'descricao',
         'data',
         'status',
-        'pet_id'
+        'pet_id',
+        'horario'
     ];
 
     /**
@@ -55,7 +56,8 @@ class EventoPet extends Model
         'descricao' => 'string',
         'data' => 'date',
         'status' => 'integer',
-        'pet_id' => 'integer'
+        'pet_id' => 'integer',
+        'horario' => 'time'
     ];
 
     /**
@@ -71,9 +73,9 @@ class EventoPet extends Model
     ];
 
 
-//    public function getDataAttribute($date){
-//        return Carbon::createFromFormat('Y-m-d', $date)->format('d/m/Y');
-//    }
+    public function getDataAttribute($date){
+        return Carbon::createFromFormat('Y-m-d', $date)->format('Y-m-d');
+    }
 
     /**
      * @return mixed
