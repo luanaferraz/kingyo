@@ -73,9 +73,9 @@ class EventoPet extends Model
     ];
 
 
-//    public function getDataAttribute($date){
-//        return Carbon::createFromFormat('Y-m-d', $date)->format('d/m/Y');
-//    }
+    public function getDataAttribute($date){
+        return Carbon::createFromFormat('Y-m-d', $date)->format('Y-m-d');
+    }
 
     /**
      * @return mixed

@@ -45,7 +45,7 @@
                         @foreach($eventoPets as $task)
                     {
                         title : '{{ $task->pet->nome}} - {{ $task->tipo }}',
-                        start : '{{$task->data }}'
+                        start : '{{$task->data }} {{$task->horario }}'
                     },
                     @endforeach
                 ]
