@@ -29,7 +29,7 @@ Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterControlle
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('tutors', 'TutorController');
 Route::resource('pets', 'PetController');
-Route::resource('petdocs', 'PetdocController');
+//Route::resource('petdocs', 'PetdocController');
 
 Route::resource('eventoPets', 'EventoPetController');
 //Route::resource('petdocs', 'PetdocController');
@@ -67,3 +67,11 @@ Route::get('medicamentos/{pet?}/{medicamentos}/edit', ['as'=> 'medicacaos.edit',
 Route::delete('medicamentos/{pet?}/{medicamentos}', ['as'=> 'medicacaos.destroy', 'uses' => 'MedicacaoController@destroy']);
 Route::get('medicamentos_ativar/{pet?}/{medicamentos}', ['as'=> 'medicacaos.ativar', 'uses' => 'MedicacaoController@ativar']);
 Route::get('medicamentos_desativar/{pet?}/{medicamentos}', ['as'=> 'medicacaos.inativar', 'uses' => 'MedicacaoController@inativar']);
+
+//Route::get('pets/{pet?}', ['as'=> 'pets.index', 'uses' => 'PetController@index']);
+//Route::post('pets/{pet?}', ['as'=> 'pets.store', 'uses' => 'PetController@store']);
+//Route::get('pets/create/{pet?}', ['as'=> 'pets.create', 'uses' => 'PetController@create']);
+//Route::put('pets/{pet?}/{documentos}', ['as'=> 'pets.update', 'uses' => 'PetController@update']);
+//Route::patch('pets/{pet?}/{documentos}', ['as'=> 'pets.update', 'uses' => 'PetController@update']);
+//Route::get('pets/{pet?}/{documentos}/edit', ['as'=> 'pets.edit', 'uses' => 'PetController@edit']);
+//Route::delete('pets/{pet?}/{documentos}', ['as'=> 'pets.destroy', 'uses' => 'PetController@destroy']);

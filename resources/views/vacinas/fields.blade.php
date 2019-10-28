@@ -46,5 +46,5 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('vacinas.index') !!}" class="btn btn-secondary">Cancelar</a>
+    <a href="{!! route('vacinas.index_pet',$pet->id) !!}" class="btn btn-secondary">Cancelar</a>
 </div>

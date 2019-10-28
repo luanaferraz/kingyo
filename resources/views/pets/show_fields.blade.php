@@ -48,5 +48,11 @@
     </div>
 </div>
 
-<a href="{!! route('petdocs.index', [$pet->id]) !!}" class="">Documentos</a>
-<a href="{!! route('medicacaos.index', [$pet->id]) !!}" class="">Medicação</a>
+<div class="col-12 col-md-3 py-3">
+    <div class="col-12 bg-light py-2 text-center">
+        <i class="fas fa-folder-open fa-5x pb-2"></i>
+        <h5>Documentos</h5>
+        <a href="{!! route('petdocs.index', [$pet->id]) !!}" class="card-link"></a>
+    </div>
+</div>
+

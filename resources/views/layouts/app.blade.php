@@ -36,6 +36,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
 
 
+
     <script>
         $(document).ready(function() {
             // page is now ready, initialize the calendar...
@@ -52,6 +53,7 @@
             })
         });
     </script>
+
 </head>
 <body id="page-top">
 
