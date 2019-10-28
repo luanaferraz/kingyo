@@ -21,8 +21,8 @@
 
 <!-- Hora Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('hora', 'Hora:') !!}
-    {!! Form::date('hora', null, ['class' => 'form-control','id'=>'hora']) !!}
+        {!! Form::label('hora', 'Horário:') !!}
+        {!! Form::text('hora', null, ['class' => 'form-control','id'=>'horario']) !!}
 </div>
 
 @section('scripts')

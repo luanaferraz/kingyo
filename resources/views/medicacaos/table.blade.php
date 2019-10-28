@@ -21,6 +21,10 @@
                     <div class='btn-group'>
                         <a href="{!! route('medicacaos.edit', [$pet->id, $medicacao->id]) !!}" class='btn btn-secondary btn-xs'><i class="fas fa-edit"></i></a>
                         {!! Form::button('<i class="fas fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Deseja realmente excluir?')"]) !!}
+                        <a href="{!! route('medicacaos.edit', [$medicacao->id]) !!}" class='btn btn-secondary btn-xs'><i class="fas fa-edit"></i></a>
+                        <a href="{!! route('medicacaos.ativar', [$medicacao->id]) !!}" class='btn btn-primary btn-xs'><i class="fas fa-check"></i></a>
+                        <a href="{!! route('medicacaos.inativar', [$medicacao->id]) !!}" class='btn btn-secondary btn-xs'><i class="fas fa-ban"></i></a>
+                        {!! Form::button('<i class="fas fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-primary btn-xs', 'onclick' => "return confirm('Deseja realmente excluir?')"]) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>

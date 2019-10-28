@@ -26,8 +26,17 @@
 <div class="col-12 col-md-3 py-3">
     <div class="col-12 bg-light py-2 text-center">
         <i class="fas fa-syringe fa-5x pb-2"></i>
-        <h5>Vacinas</h5>
+        <h5>Carteira de vacinação</h5>
         <a href="{!! route('vacinas.index_pet', [$pet->id]) !!}" class="card-link"></a>
+    </div>
+</div>
+
+
+<div class="col-12 col-md-3 py-3">
+    <div class="col-12 bg-light py-2 text-center">
+        <i class="fas fa-capsules fa-5x pb-2"></i>
+        <h5>Medicamentos</h5>
+        <a href="{!! route('medicacaos.index', [$pet->id]) !!}" class="card-link"></a>
     </div>
 </div>
 

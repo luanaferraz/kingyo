@@ -21,7 +21,7 @@ class Medicacao extends Model
     use SoftDeletes;
 
     public $table = 'medicacao';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -45,7 +45,7 @@ class Medicacao extends Model
         'id' => 'integer',
         'nome' => 'string',
         'data' => 'date',
-        'hora' => 'datetime',
+        'hora' => 'time',
         'pet_id' => 'integer'
     ];
 

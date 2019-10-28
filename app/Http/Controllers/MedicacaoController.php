@@ -157,6 +157,24 @@ class MedicacaoController extends AppBaseController
 
         Flash::success('Medicacao deletado com sucesso.');
 
+        return redirect(route('medicacao.index'));
+    }
+
+    public function ativar($id)
+    {
+//        $id = base64_decode($id);
+        $this->medicacaoRepository->ativar($id);
+        Flash::success('Medicação ativado(a) com sucesso.');
+        return redirect(route('medicacaos.index'));
+    }
+
+    public function inativar($id)
+    {
+//        $id = base64_decode($id);
+        $this->medicacaoRepository->inativar($id);
+        Flash::success('Medicaçao inativado(a) com sucesso.');
+        return redirect(route('medicacaos.index'));
         return redirect(route('medicacaos.index', [$pet]));
     }
+
 }

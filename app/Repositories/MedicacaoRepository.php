@@ -40,4 +40,25 @@ class MedicacaoRepository extends BaseRepository
     {
         return Medicacao::class;
     }
+
+    public function ativar($id)
+    {
+        $medicacaos = Medicacao::findOrFail($id);
+        $medicacaos->status = 1;
+        if ($medicacaos->save()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function inativar($id)
+    {
+        $medicacaos = Medicacao::findOrFail($id);
+        $medicacaos->status = 2;
+        if ($medicacaos->save()) {
+            return true;
+        }
+        return false;
+    }
+
 }

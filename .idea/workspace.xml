@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="" />
     <list default="true" id="a956a0d0-105d-43e7-826b-acdc119e494f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PetdocController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PetdocController.php" afterDir="false" />
@@ -123,45 +124,10 @@
       <find>body</find>
       <find>paine</find>
       <find>field is required.</find>
-      <find>Admin\BannerController</find>
     </findStrings>
-    <replaceStrings>
-      <replace>VacinaController</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/config/database.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/BaseRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/PetdocRepository.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PetController.php" />
-        <option value="$PROJECT_DIR$/resources/views/pets/fields.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/vacinas/fields.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/vacinas/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EventoPetController.php" />
-        <option value="$PROJECT_DIR$/resources/views/vacinas/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/vacinas/table.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/vacinas/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/evento_pets/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/petdocs/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/VacinaController.php" />
-        <option value="$PROJECT_DIR$/resources/views/pets/show_fields.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PetdocController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/petdocs/fields.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/petdocs/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/petdocs/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/petdocs/table.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" />
-      </list>
-    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
     <include_path>
@@ -265,11 +231,6 @@
       <path value="$PROJECT_DIR$/vendor/prettus/laravel-validation" />
       <path value="$PROJECT_DIR$/vendor/prettus/l5-repository" />
     </include_path>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
   </component>
   <component name="ProjectId" id="1SkAuvf88PN7IAZxSAdCfqwbTxd" />
   <component name="ProjectLevelVcsManager">
@@ -375,6 +336,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -546,36 +509,57 @@
       <updated>1572219034284</updated>
     </task>
     <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00012" summary="Cadastrar, listar e alterar medicamento">
+      <created>1572192181251</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1572192181251</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Detalhes cadastro pet">
+      <created>1572193666133</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572193666133</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Detalhes documentos">
+      <created>1572194918914</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572194918914</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Detalhes">
+      <created>1572195966041</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1572195966041</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Ativar e Inativar documento">
+      <created>1572200003628</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1572200003628</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Visualiazar carteira semi finalizado (falta muita coisa ta)">
+      <created>1572202317070</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1572202317070</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Visualiazar carteira semi finalizado (falta muita coisa ta)">
+      <created>1572204221075</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1572204221090</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19178000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -586,28 +570,8 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
           </value>
         </entry>
       </map>
@@ -864,5 +828,11 @@
         </state>
       </provider>
     </entry>
+    <MESSAGE value="Detalhes cadastro pet" />
+    <MESSAGE value="Detalhes documentos" />
+    <MESSAGE value="Detalhes" />
+    <MESSAGE value="Ativar e Inativar documento" />
+    <MESSAGE value="Visualiazar carteira semi finalizado (falta muita coisa ta)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Visualiazar carteira semi finalizado (falta muita coisa ta)" />
   </component>
 </project>
