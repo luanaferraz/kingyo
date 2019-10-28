@@ -10,21 +10,21 @@
 {{--            <span>Evento</span></a>--}}
 {{--    </li>--}}
 
- <li class="nav-item {{ Request::is('pets*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('pets.index') !!}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Pet</span></a>
-    </li>
- <li class="nav-item {{ Request::is('vacinas*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('vacinas.index') !!}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Vacinas</span></a>
-    </li>
- <li class="nav-item {{ Request::is('petdocs*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('petdocs.index') !!}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Documentos</span></a>
-    </li>
+{{-- <li class="nav-item {{ Request::is('pets*') ? 'active' : '' }}">--}}
+{{--        <a class="nav-link" href="{!! route('pets.index') !!}">--}}
+{{--            <i class="fas fa-fw fa-table"></i>--}}
+{{--            <span>Pet</span></a>--}}
+{{--    </li>--}}
+{{-- <li class="nav-item {{ Request::is('vacinas*') ? 'active' : '' }}">--}}
+{{--        <a class="nav-link" href="{!! route('vacinas.index') !!}">--}}
+{{--            <i class="fas fa-fw fa-table"></i>--}}
+{{--            <span>Vacinas</span></a>--}}
+{{--    </li>--}}
+{{-- <li class="nav-item {{ Request::is('petdocs*') ? 'active' : '' }}">--}}
+{{--        <a class="nav-link" href="{!! route('petdocs.index') !!}">--}}
+{{--            <i class="fas fa-fw fa-table"></i>--}}
+{{--            <span>Documentos</span></a>--}}
+{{--    </li>--}}
 {{-- <li class="nav-item {{ Request::is('pets*') ? 'active' : '' }}">--}}
 {{--        <a class="nav-link" href="{!! route('pets.index') !!}">--}}
 {{--            <i class="fas fa-fw fa-table"></i>--}}
@@ -40,8 +40,8 @@
 {{--            <i class="fas fa-fw fa-table"></i>--}}
 {{--            <span>Petdocs</span></a>--}}
 {{--    </li>--}}
- <li class="nav-item {{ Request::is('medicacaos*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('medicacaos.index') !!}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Medicacaos</span></a>
-    </li>
+{{-- <li class="nav-item {{ Request::is('medicacaos*') ? 'active' : '' }}">--}}
+{{--        <a class="nav-link" href="{!! route('medicacaos.index') !!}">--}}
+{{--            <i class="fas fa-fw fa-table"></i>--}}
+{{--            <span>Medicacaos</span></a>--}}
+{{--    </li>--}}
