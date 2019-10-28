@@ -4,7 +4,7 @@
     <section class="content-header d-flex">
         <div>
             <h1 class="pull-left">Medicação</h1>
-            <p class="pull-left">{!! $pet->nome !!}</p>
+            <p class="pull-left">{!!  (is_null($pet->nome))!!}</p>
         </div>
 
         <h1 class="pull-left">Medicamentos</h1>

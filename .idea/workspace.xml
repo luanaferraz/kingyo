@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/15722301385db653faa6513.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/sm15722301385db653faa6513.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medicacaos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medicacaos/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pets/fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pets/fields.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vacinas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vacinas/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PetController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/evento_pets/fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/evento_pets/fields.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
@@ -21,6 +27,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -662,12 +671,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -1002,5 +1005,6 @@
         </state>
       </provider>
     </entry>
+    <option name="LAST_COMMIT_MESSAGE" value="Madicamentos" />
   </component>
 </project>
