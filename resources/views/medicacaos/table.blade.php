@@ -17,9 +17,9 @@
             <td>{!! $medicacao->hora !!}</td>
             <td>{!! $medicacao->pet_id !!}</td>
                 <td>
-                    {!! Form::open(['route' => ['medicacaos.destroy', $medicacao->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['medicacaos.destroy', $pet->id, $medicacao->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{!! route('medicacaos.edit', [$medicacao->id]) !!}" class='btn btn-secondary btn-xs'><i class="fas fa-edit"></i></a>
+                        <a href="{!! route('medicacaos.edit', [$pet->id, $medicacao->id]) !!}" class='btn btn-secondary btn-xs'><i class="fas fa-edit"></i></a>
                         {!! Form::button('<i class="fas fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Deseja realmente excluir?')"]) !!}
                     </div>
                     {!! Form::close() !!}

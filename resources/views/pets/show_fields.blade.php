@@ -40,3 +40,4 @@
 </div>
 
 <a href="{!! route('petdocs.index', [$pet->id]) !!}" class="">Documentos</a>
+<a href="{!! route('medicacaos.index', [$pet->id]) !!}" class="">Medicação</a>

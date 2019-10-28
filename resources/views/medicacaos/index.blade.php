@@ -2,9 +2,13 @@
 
 @section('content')
     <section class="content-header d-flex">
-        <h1 class="pull-left">Medicação</h1>
+        <div>
+            <h1 class="pull-left">Medicação</h1>
+            <p class="pull-left">{!! $pet->nome !!}</p>
+        </div>
+
         <h1 class="ml-auto">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('medicacaos.create') !!}"><i class="fas fa-plus"></i></a>
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('medicacaos.create', [$pet->id]) !!}"><i class="fas fa-plus"></i></a>
         </h1>
     </section>
     <div class="content">

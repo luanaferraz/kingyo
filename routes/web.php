@@ -32,9 +32,9 @@ Route::resource('pets', 'PetController');
 Route::resource('petdocs', 'PetdocController');
 
 Route::resource('eventoPets', 'EventoPetController');
-Route::resource('petdocs', 'PetdocController');
+//Route::resource('petdocs', 'PetdocController');
 
-Route::resource('medicacaos', 'MedicacaoController');
+//Route::resource('medicacaos', 'MedicacaoController');
 
 Route::get('eventos/{pet?}', ['as'=> 'eventos.index', 'uses' => 'EventoPetController@index']);
 Route::post('eventos/store/{pet?}', ['as'=> 'eventos.store', 'uses' => 'EventoPetController@store']);
@@ -58,4 +58,10 @@ Route::patch('documentos/{pet?}/{documentos}', ['as'=> 'petdocs.update', 'uses' 
 Route::get('documentos/{pet?}/{documentos}/edit', ['as'=> 'petdocs.edit', 'uses' => 'PetdocController@edit']);
 Route::delete('documentos/{pet?}/{documentos}', ['as'=> 'petdocs.destroy', 'uses' => 'PetdocController@destroy']);
 
-
+Route::get('medicamentos/{pet?}', ['as'=> 'medicacaos.index', 'uses' => 'MedicacaoController@index']);
+Route::post('medicamentos/{pet?}', ['as'=> 'medicacaos.store', 'uses' => 'MedicacaoController@store']);
+Route::get('medicamentos/create/{pet?}', ['as'=> 'medicacaos.create', 'uses' => 'MedicacaoController@create']);
+Route::put('medicamentos/{pet?}/{medicamentos}', ['as'=> 'medicacaos.update', 'uses' => 'MedicacaoController@update']);
+Route::patch('medicamentos/{pet?}/{medicamentos}', ['as'=> 'medicacaos.update', 'uses' => 'MedicacaoController@update']);
+Route::get('medicamentos/{pet?}/{medicamentos}/edit', ['as'=> 'medicacaos.edit', 'uses' => 'MedicacaoController@edit']);
+Route::delete('medicamentos/{pet?}/{medicamentos}', ['as'=> 'medicacaos.destroy', 'uses' => 'MedicacaoController@destroy']);

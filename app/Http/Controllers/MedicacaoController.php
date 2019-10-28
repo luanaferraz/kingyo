@@ -6,6 +6,7 @@ use App\Http\Requests\CreateMedicacaoRequest;
 use App\Http\Requests\UpdateMedicacaoRequest;
 use App\Repositories\MedicacaoRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\PetRepository;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -15,9 +16,10 @@ class MedicacaoController extends AppBaseController
     /** @var  MedicacaoRepository */
     private $medicacaoRepository;
 
-    public function __construct(MedicacaoRepository $medicacaoRepo)
+    public function __construct(MedicacaoRepository $medicacaoRepo, PetRepository $petRepository)
     {
         $this->medicacaoRepository = $medicacaoRepo;
+        $this->petRepository = $petRepository;
     }
 
     /**
@@ -27,12 +29,14 @@ class MedicacaoController extends AppBaseController
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index($pet_id = null, Request $request)
     {
-        $medicacaos = $this->medicacaoRepository->all();
+        $medicacaos = $this->medicacaoRepository->findByField('pet_id',$pet_id);
+        $pet = $this->petRepository->findByPet($pet_id);
 
         return view('medicacaos.index')
-            ->with('medicacaos', $medicacaos);
+            ->with('medicacaos', $medicacaos)
+            ->with('pet', $pet);
     }
 
     /**
@@ -40,9 +44,10 @@ class MedicacaoController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create($pet_id)
     {
-        return view('medicacaos.create');
+        $pet = $this->petRepository->findByPet($pet_id);
+        return view('medicacaos.create')->with('pet', $pet);
     }
 
     /**
@@ -52,7 +57,7 @@ class MedicacaoController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateMedicacaoRequest $request)
+    public function store($pet,CreateMedicacaoRequest $request)
     {
         $input = $request->all();
 
@@ -60,7 +65,7 @@ class MedicacaoController extends AppBaseController
 
         Flash::success('Medicacao salvo com sucesso.');
 
-        return redirect(route('medicacaos.index'));
+        return redirect(route('medicacaos.index',[$pet]));
     }
 
     /**
@@ -90,9 +95,10 @@ class MedicacaoController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit($pet_id, $id)
     {
         $medicacao = $this->medicacaoRepository->find($id);
+        $pet = $this->petRepository->findByPet($pet_id);
 
         if (empty($medicacao)) {
             Flash::error('Medicacao não encontrado');
@@ -100,7 +106,7 @@ class MedicacaoController extends AppBaseController
             return redirect(route('medicacaos.index'));
         }
 
-        return view('medicacaos.edit')->with('medicacao', $medicacao);
+        return view('medicacaos.edit')->with('medicacao', $medicacao)->with('pet', $pet);
     }
 
     /**
@@ -111,7 +117,7 @@ class MedicacaoController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdateMedicacaoRequest $request)
+    public function update($pet, $id, UpdateMedicacaoRequest $request)
     {
         $medicacao = $this->medicacaoRepository->find($id);
 
@@ -125,7 +131,7 @@ class MedicacaoController extends AppBaseController
 
         Flash::success('Medicacao atualizado com sucesso.');
 
-        return redirect(route('medicacaos.index'));
+        return redirect(route('medicacaos.index', [$pet]));
     }
 
     /**
@@ -137,7 +143,7 @@ class MedicacaoController extends AppBaseController
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($pet, $id)
     {
         $medicacao = $this->medicacaoRepository->find($id);
 
@@ -151,6 +157,6 @@ class MedicacaoController extends AppBaseController
 
         Flash::success('Medicacao deletado com sucesso.');
 
-        return redirect(route('medicacaos.index'));
+        return redirect(route('medicacaos.index', [$pet]));
     }
 }
