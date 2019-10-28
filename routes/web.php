@@ -65,3 +65,5 @@ Route::put('medicamentos/{pet?}/{medicamentos}', ['as'=> 'medicacaos.update', 'u
 Route::patch('medicamentos/{pet?}/{medicamentos}', ['as'=> 'medicacaos.update', 'uses' => 'MedicacaoController@update']);
 Route::get('medicamentos/{pet?}/{medicamentos}/edit', ['as'=> 'medicacaos.edit', 'uses' => 'MedicacaoController@edit']);
 Route::delete('medicamentos/{pet?}/{medicamentos}', ['as'=> 'medicacaos.destroy', 'uses' => 'MedicacaoController@destroy']);
+Route::get('medicamentos_ativar/{pet?}/{medicamentos}', ['as'=> 'medicacaos.ativar', 'uses' => 'MedicacaoController@ativar']);
+Route::get('medicamentos_desativar/{pet?}/{medicamentos}', ['as'=> 'medicacaos.inativar', 'uses' => 'MedicacaoController@inativar']);
