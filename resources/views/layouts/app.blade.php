@@ -49,6 +49,7 @@
                         start : '{{$task->data }} {{$task->horario }}'
                     },
                     @endforeach
+            ]
             })
         });
     </script>

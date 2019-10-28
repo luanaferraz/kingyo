@@ -13,8 +13,8 @@
         @foreach($medicacaos as $medicacao)
             <tr>
                 <td>{!! $medicacao->nome !!}</td>
-            <td>{!! $medicacao->data !!}</td>
-            <td>{!! $medicacao->hora !!}</td>
+            <td>{!! $medicacao->data->format('d/m/y') !!}</td>
+                <td>{!! $medicacao->hora !!}</td>
             <td>{!! $medicacao->pet_id !!}</td>
                 <td>
                     {!! Form::open(['route' => ['medicacaos.destroy', $pet->id, $medicacao->id], 'method' => 'delete']) !!}
