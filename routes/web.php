@@ -31,23 +31,31 @@ Route::resource('tutors', 'TutorController');
 Route::resource('pets', 'PetController');
 Route::resource('petdocs', 'PetdocController');
 
-
-
 Route::resource('eventoPets', 'EventoPetController');
 Route::resource('petdocs', 'PetdocController');
 
-Route::get('vacinas/{pet?}', ['as'=> 'vacinas.index_pet', 'uses' => 'VacinaController@index_pet']);
-
-Route::resource('vacinas', 'VacinaController');
+Route::resource('medicacaos', 'MedicacaoController');
 
 Route::get('eventos/{pet?}', ['as'=> 'eventos.index', 'uses' => 'EventoPetController@index']);
 Route::post('eventos/store/{pet?}', ['as'=> 'eventos.store', 'uses' => 'EventoPetController@store']);
 Route::get('eventos/create/{pet}', ['as'=> 'eventos.create', 'uses' => 'EventoPetController@create']);
 
-//Route::post('vacinas/store/{pet?}', ['as'=> 'vacinas.store', 'uses' => 'VacinaController@store']);
-//Route::get('vacinas/create/{pet}', ['as'=> 'vacinas.create', 'uses' => 'VacinaController@create']);
+Route::get('vacinas/{pet?}', ['as'=> 'vacinas.index_pet', 'uses' => 'VacinaController@index_pet']);
+Route::get('vacinas', ['as'=> 'vacinas.index', 'uses' => 'VacinaController@index']);
+Route::post('vacinas/{pet?}', ['as'=> 'vacinas.store', 'uses' => 'VacinaController@store']);
+Route::get('vacinas/create/{pet?}', ['as'=> 'vacinas.create', 'uses' => 'VacinaController@create']);
+Route::put('vacinas/{pet?}/{vacinas}', ['as'=> 'vacinas.update', 'uses' => 'VacinaController@update']);
+Route::patch('vacinas/{pet?}/{vacinas}', ['as'=> 'vacinas.update', 'uses' => 'VacinaController@update']);
+Route::get('vacinas/{pet?}/{vacinas}/edit', ['as'=> 'vacinas.edit', 'uses' => 'VacinaController@edit']);
+Route::delete('vacinas_delete/{pet?}/{vacinas}', ['as'=> 'vacinas.destroy', 'uses' => 'VacinaController@destroy']);
 
-Route::resource('medicacaos', 'MedicacaoController');
-Route::get('medicacao/ativar/{medicacao}', ['as'=> 'medicacaos.ativar', 'uses' => 'MedicacaoController@ativar']);
-Route::get('medicacao/inativar/{medicacao}', ['as'=> 'medicacaos.inativar', 'uses' => 'MedicacaoController@inativar']);
+
+Route::get('documentos/{pet?}', ['as'=> 'petdocs.index', 'uses' => 'PetdocController@index']);
+Route::post('documentos/{pet?}', ['as'=> 'petdocs.store', 'uses' => 'PetdocController@store']);
+Route::get('documentos/create/{pet?}', ['as'=> 'petdocs.create', 'uses' => 'PetdocController@create']);
+Route::put('documentos/{pet?}/{documentos}', ['as'=> 'petdocs.update', 'uses' => 'PetdocController@update']);
+Route::patch('documentos/{pet?}/{documentos}', ['as'=> 'petdocs.update', 'uses' => 'PetdocController@update']);
+Route::get('documentos/{pet?}/{documentos}/edit', ['as'=> 'petdocs.edit', 'uses' => 'PetdocController@edit']);
+Route::delete('documentos/{pet?}/{documentos}', ['as'=> 'petdocs.destroy', 'uses' => 'PetdocController@destroy']);
+
 

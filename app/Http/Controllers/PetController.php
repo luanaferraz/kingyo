@@ -6,8 +6,10 @@ use App\Http\Requests\CreatePetRequest;
 use App\Http\Requests\UpdatePetRequest;
 use App\Repositories\PetRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\TutorRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Auth;
 use Response;
 
 class PetController extends AppBaseController
@@ -15,9 +17,10 @@ class PetController extends AppBaseController
     /** @var  PetRepository */
     private $petRepository;
 
-    public function __construct(PetRepository $petRepo)
+    public function __construct(PetRepository $petRepo, TutorRepository $tutorRepository)
     {
         $this->petRepository = $petRepo;
+        $this->tutoRepository = $tutorRepository;
     }
 
     /**
@@ -42,7 +45,9 @@ class PetController extends AppBaseController
      */
     public function create()
     {
-        return view('pets.create');
+        $tutor = $this->tutoRepository->findByField('usuario_id', Auth::user()->id)->first();
+
+        return view('pets.create')->with('tutor',$tutor);
     }
 
     /**

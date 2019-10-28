@@ -4,7 +4,7 @@
     <section class="content-header d-flex">
         <h1 class="pull-left">Documentos</h1>
         <h1 class="ml-auto">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('petdocs.create') !!}"><i class="fas fa-plus"></i></a>
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('petdocs.create', [$pet->id]) !!}"><i class="fas fa-plus"></i></a>
         </h1>
     </section>
     <div class="content">

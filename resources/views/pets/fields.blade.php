@@ -48,7 +48,7 @@
 {{--    {!! Form::number('tutor_id', null, ['class' => 'form-control']) !!}--}}
 {{--</div>--}}
 
-<input type="hidden" name="tutor_id" value="{{Auth::user()->id  }}">
+<input type="hidden" name="tutor_id" value="{{$tutor->id  }}">
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

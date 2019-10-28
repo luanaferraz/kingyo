@@ -6,7 +6,6 @@
                 <th>Vacina</th>
         <th>Data da Aplicação</th>
         <th>Próxima Vacina</th>
-        <th>Pet</th>
                 <th colspan="3">Ações</th>
             </tr>
         </thead>
@@ -17,11 +16,11 @@
                 <td>{!! $vacina->nome !!}</td>
             <td>{!! $vacina->dataAplicacao !!}</td>
             <td>{!! $vacina->dataProxima !!}</td>
-                <td>{{ !is_null($vacina->pet)?$vacina->pet->nome:'' }}</td>
+
                 <td>
-                    {!! Form::open(['route' => ['vacinas.destroy', $vacina->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['vacinas.destroy',$pet->id, $vacina->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{!! route('vacinas.edit', [$vacina->id]) !!}" class='btn btn-secondary btn-xs'><i class="fas fa-edit"></i></a>
+                        <a href="{!! route('vacinas.edit',[$pet->id, $vacina->id]) !!}" class='btn btn-secondary btn-xs'><i class="fas fa-edit"></i></a>
                         {!! Form::button('<i class="fas fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Deseja realmente excluir?')"]) !!}
                     </div>
                     {!! Form::close() !!}

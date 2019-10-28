@@ -56,9 +56,7 @@ class EventoPetController extends AppBaseController
      */
     public function create($pet_id = null)
     {
-        $pets = $this->petRepository->findPet(Auth::user()->id);
-        $pet = $this->petRepository->findByPet($pet_id);
-
+       $pet = $this->petRepository->findByPet($pet_id);
 
         return view('evento_pets.create')->with('pet', $pet);
     }
@@ -70,13 +68,13 @@ class EventoPetController extends AppBaseController
      *
      * @return Response
      */
-    public function store($pet = null, CreateEventoPetRequest $request)
+    public function store($pet, CreateEventoPetRequest $request)
     {
         $input = $request->all();
 
         $eventoPet = $this->eventoPetRepository->create($input);
 
-        Flash::success('Evento Pet salvo com sucesso.');
+        Flash::success('Evento salvo com sucesso.');
 
         return redirect(route('eventos.index', [$pet]));
     }

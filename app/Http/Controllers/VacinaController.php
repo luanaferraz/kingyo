@@ -29,11 +29,12 @@ class VacinaController extends AppBaseController
      *
      * @return Response
      */
-    public function index_pet($pet = null,Request $request)
+    public function index_pet($pet_id = null,Request $request)
     {
 
-        $vacinas = $this->vacinaRepository->findByPet($pet);
-        $pet = $this->petRepository->findByPet($pet);
+        $vacinas = $this->vacinaRepository->findByPet($pet_id);
+
+        $pet = $this->petRepository->findByPet($pet_id);
 
         return view('vacinas.index')
             ->with('vacinas', $vacinas)
@@ -58,10 +59,16 @@ class VacinaController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create($pet_id)
     {
-        return view('vacinas.create');
+        $pet = $this->petRepository->findByPet($pet_id);
+        return view('vacinas.create')->with('pet', $pet);
     }
+
+//    public function create()
+//    {
+//        return view('vacinas.create');
+//    }
 
     /**
      * Store a newly created Vacina in storage.
@@ -70,7 +77,7 @@ class VacinaController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateVacinaRequest $request)
+    public function store($pet,CreateVacinaRequest $request)
     {
         $input = $request->all();
 
@@ -78,8 +85,19 @@ class VacinaController extends AppBaseController
 
         Flash::success('Vacina salvo com sucesso.');
 
-        return redirect(route('vacinas.index'));
+        return redirect(route('vacinas.index_pet', [$pet]));
     }
+
+//    public function store(CreateVacinaRequest $request)
+//    {
+//        $input = $request->all();
+//
+//        $vacina = $this->vacinaRepository->create($input);
+//
+//        Flash::success('Vacina salvo com sucesso.');
+//
+//        return redirect(route('vacinas.index'));
+//    }
 
     /**
      * Display the specified Vacina.
@@ -108,17 +126,17 @@ class VacinaController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit($pet_id,$id)
     {
         $vacina = $this->vacinaRepository->find($id);
-
+        $pet = $this->petRepository->findByPet($pet_id);
         if (empty($vacina)) {
             Flash::error('Vacina não encontrado');
 
             return redirect(route('vacinas.index'));
         }
 
-        return view('vacinas.edit')->with('vacina', $vacina);
+        return view('vacinas.edit')->with('vacina', $vacina)->with('pet', $pet);
     }
 
     /**
@@ -129,7 +147,7 @@ class VacinaController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdateVacinaRequest $request)
+    public function update($pet,$id, UpdateVacinaRequest $request)
     {
         $vacina = $this->vacinaRepository->find($id);
 
@@ -141,9 +159,9 @@ class VacinaController extends AppBaseController
 
         $vacina = $this->vacinaRepository->update($request->all(), $id);
 
-        Flash::success('Vacina atualizado com sucesso.');
+        Flash::success('Vacina atualizada com sucesso.');
 
-        return redirect(route('vacinas.index'));
+        return redirect(route('vacinas.index_pet', [$pet] ));
     }
 
     /**
@@ -155,7 +173,7 @@ class VacinaController extends AppBaseController
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($pet, $id)
     {
         $vacina = $this->vacinaRepository->find($id);
 
@@ -169,7 +187,7 @@ class VacinaController extends AppBaseController
 
         Flash::success('Vacina deletado com sucesso.');
 
-        return redirect(route('vacinas.index'));
+        return redirect(route('vacinas.index_pet', [$pet]));
     }
 
 
