@@ -52,7 +52,7 @@ class PetRepository extends BaseRepository
 
     public function findByTutor($tutor)
     {
-        return Pet::where('tutor_id', $tutor)->where('status', 1)->orderBy('nome')->get();
+        return Pet::where('tutor_id', $tutor)->where('status', 1)->with('fotos')->orderBy('nome')->get();
     }
 
     public function findByPet($pet)

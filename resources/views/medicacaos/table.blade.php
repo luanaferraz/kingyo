@@ -5,7 +5,7 @@
                 <th>Nome</th>
         <th>Data</th>
         <th>Hora</th>
-        <th>Pet Id</th>
+        <th>Status</th>
                 <th colspan="3">Ações</th>
             </tr>
         </thead>
@@ -14,8 +14,8 @@
             <tr>
                 <td>{!! $medicacao->nome !!}</td>
             <td>{!! $medicacao->data !!}</td>
-            <td>{!! $medicacao->hora !!}</td>
-            <td>{!! $medicacao->pet_id !!}</td>
+            <td>{!! $medicacao->hora !!}h</td>
+            <td><span class="badge {{ $medicacao->status == 1 ? ' badge-success':' badge-warning' }}"> {{ $medicacao->status == 1 ? 'Ativo':'Inativo' }}</span></td>
                 <td>
                     {!! Form::open(['route' => ['medicacaos.destroy', $pet->id, $medicacao->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

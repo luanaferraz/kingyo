@@ -38,7 +38,3 @@
 
 <div id='calendar'></div>
 
-@section('scripts')
-
-
-@endsection

@@ -7,10 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>CuidaPet</title>
 
     <!-- Scripts -->
-{{--    <script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>--}}
+    {{--    <script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}" defer></script>
     <script src="{{ asset('js/all.min.js') }}" defer></script>
@@ -36,6 +36,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
 
 
+
     <script>
         $(document).ready(function() {
             // page is now ready, initialize the calendar...
@@ -44,23 +45,24 @@
                 events : [
                         @foreach($eventoPets as $task)
                     {
-                        title : '{{ $task->pet->nome}} - {{ $task->tipo }}',
+                        title : '{!! !is_null($task->pet)?$task->pet->nome:''!!} - {{ $task->tipo }}',
                         start : '{{$task->data }} {{$task->horario }}'
                     },
-                    @endforeach
+                @endforeach
                 ]
             })
         });
     </script>
+
 </head>
 <body id="page-top">
 
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    @include('layouts.sidebar')
+@include('layouts.sidebar')
 
-    <!-- Content Wrapper -->
+<!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
         <!-- Main Content -->

@@ -29,7 +29,7 @@ Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterControlle
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('tutors', 'TutorController');
 Route::resource('pets', 'PetController');
-Route::resource('petdocs', 'PetdocController');
+//Route::resource('petdocs', 'PetdocController');
 
 Route::resource('eventoPets', 'EventoPetController');
 //Route::resource('petdocs', 'PetdocController');
@@ -53,9 +53,6 @@ Route::delete('vacinas_delete/{pet?}/{vacinas}', ['as'=> 'vacinas.destroy', 'use
 Route::get('documentos/{pet?}', ['as'=> 'petdocs.index', 'uses' => 'PetdocController@index']);
 Route::post('documentos/{pet?}', ['as'=> 'petdocs.store', 'uses' => 'PetdocController@store']);
 Route::get('documentos/create/{pet?}', ['as'=> 'petdocs.create', 'uses' => 'PetdocController@create']);
-Route::put('documentos/{pet?}/{documentos}', ['as'=> 'petdocs.update', 'uses' => 'PetdocController@update']);
-Route::patch('documentos/{pet?}/{documentos}', ['as'=> 'petdocs.update', 'uses' => 'PetdocController@update']);
-Route::get('documentos/{pet?}/{documentos}/edit', ['as'=> 'petdocs.edit', 'uses' => 'PetdocController@edit']);
 Route::delete('documentos/{pet?}/{documentos}', ['as'=> 'petdocs.destroy', 'uses' => 'PetdocController@destroy']);
 
 Route::get('medicamentos/{pet?}', ['as'=> 'medicacaos.index', 'uses' => 'MedicacaoController@index']);
@@ -67,3 +64,10 @@ Route::get('medicamentos/{pet?}/{medicamentos}/edit', ['as'=> 'medicacaos.edit',
 Route::delete('medicamentos/{pet?}/{medicamentos}', ['as'=> 'medicacaos.destroy', 'uses' => 'MedicacaoController@destroy']);
 Route::get('medicamentos_ativar/{pet?}/{medicamentos}', ['as'=> 'medicacaos.ativar', 'uses' => 'MedicacaoController@ativar']);
 Route::get('medicamentos_desativar/{pet?}/{medicamentos}', ['as'=> 'medicacaos.inativar', 'uses' => 'MedicacaoController@inativar']);
+
+Route::get('fotos/{pet?}', ['as'=> 'fotos.index', 'uses' => 'FotoController@index']);
+Route::post('fotos/{pet?}', ['as'=> 'fotos.store', 'uses' => 'FotoController@store']);
+Route::get('fotos/create/{pet?}', ['as'=> 'fotos.create', 'uses' => 'FotoController@create']);
+Route::delete('fotos/{pet?}/{documentos}', ['as'=> 'fotos.destroy', 'uses' => 'FotoController@destroy']);
+
+Route::get('agenda', ['as'=> 'eventos.agenda', 'uses' => 'EventoPetController@agenda']);

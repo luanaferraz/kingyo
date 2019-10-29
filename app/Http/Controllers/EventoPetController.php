@@ -171,4 +171,11 @@ class EventoPetController extends AppBaseController
 
         return redirect(route('eventoPets.index'));
     }
+
+    public function agenda()
+    {
+
+
+        return view('evento_pets.agenda');
+    }
 }

@@ -4,8 +4,9 @@
     <section class="content-header d-flex">
         <div>
             <h1 class="pull-left">Vacinas</h1>
-            <p class="pull-left">{!! $pet->nome !!}</p>
+            <p class="pull-left">{!! $pet->nome !!}
         </div>
+
 
         <h1 class="ml-auto">
             <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('vacinas.create', [$pet->id]) !!}"><i class="fas fa-plus"></i></a>
