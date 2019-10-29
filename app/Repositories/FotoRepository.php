@@ -2,21 +2,19 @@
 
 namespace App\Repositories;
 
-
-use App\Models\Petdoc;
+use App\Models\Foto;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManagerStatic as Image;
 
-
 /**
- * Class PetdocRepository
+ * Class FotoRepository
  * @package App\Repositories
- * @version October 26, 2019, 6:03 pm UTC
+ * @version October 28, 2019, 11:19 pm UTC
 */
 
-class PetdocRepository extends BaseRepository
+class FotoRepository extends BaseRepository
 {
     /**
      * @var array
@@ -41,13 +39,13 @@ class PetdocRepository extends BaseRepository
      **/
     public function model()
     {
-        return Petdoc::class;
+        return Foto::class;
     }
 
     function create_with_upload ($attributes) {
 
         $file = $attributes['file'];
-        $attributes['file'] =  $this->imgUpload($file,'petdocs');
+        $attributes['file'] =  $this->imgUpload($file,'fotos');
         $temporarySkipPresenter = $this->skipPresenter;
         $this->skipPresenter(true);
         $model = parent::create($attributes);
@@ -61,13 +59,13 @@ class PetdocRepository extends BaseRepository
 
     public function update_with_upload(array $attributes, $id)
     {
-        $petdocs = $this->findWithoutFail($id);
+        $foto = $this->findWithoutFail($id);
         $file = isset ($attributes['file']) ? $attributes['file'] : '';
         if(!empty($file)){
-            \File::delete(public_path('uploads/petdocs/'.$petdocs->file));
-            \File::delete(public_path('uploads/petdocs/sm'.$petdocs->file));
+            \File::delete(public_path('uploads/fotos/'.$foto->file));
+            \File::delete(public_path('uploads/fotos/sm'.$foto->file));
 
-            $attributes['file'] =  $this->imgUpload($file,'petdocs');
+            $attributes['file'] =  $this->imgUpload($file,'fotos');
         }
 
         // Have to skip presenter to get a model not some data
@@ -82,11 +80,11 @@ class PetdocRepository extends BaseRepository
         return $this->parserResult($model);
     }
 
-    function destroy_with_upload ($id, $petdoc) {
-        $imagem = $petdoc->file;
-        if ($petdoc->destroy($id)) {
-            \File::delete(public_path('uploads/petdocs/'.$imagem));
-            \File::delete(public_path('uploads/petdocs/sm'.$imagem));
+    function destroy_with_upload ($id, $foto) {
+        $imagem = $foto->file;
+        if ($foto->destroy($id)) {
+            \File::delete(public_path('uploads/fotos/'.$imagem));
+            \File::delete(public_path('uploads/fotos/sm'.$imagem));
         }
     }
 
@@ -105,8 +103,4 @@ class PetdocRepository extends BaseRepository
 
         return $file_name;
     }
-
-
-
 }
-

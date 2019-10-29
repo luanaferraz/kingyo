@@ -13,8 +13,8 @@
                 <div class="col-12 col-md-6 my-2">
                     <div class="col-12 bg-light d-flex py-2">
 
-                        <div class="px-2 ">
-                            <img src="/images/patinha.png" class="img-fluid" width="80px">
+                        <div class="px-2 align-self-center">
+                            <img src="{!! !empty($pet->fotos[0]) ? '/uploads/fotos/'.$pet->fotos[0]->file: '/images/patinha.png' !!}" class="img-fluid" width="{!! !empty($pet->fotos[0]) ? '150px': '80px' !!}">
                         </div>
 
                         <div class="px-2">

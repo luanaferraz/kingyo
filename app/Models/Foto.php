@@ -2,27 +2,24 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Medicacao
+ * Class Foto
  * @package App\Models
- * @version October 27, 2019, 3:38 pm UTC
+ * @version October 28, 2019, 11:19 pm UTC
  *
  * @property \App\Models\Pet pet
- * @property string nome
- * @property string data
- * @property string|\Carbon\Carbon hora
  * @property integer pet_id
+ * @property string file
  */
-class Medicacao extends Model
+class Foto extends Model
 {
     use SoftDeletes;
 
-    public $table = 'medicacao';
-
+    public $table = 'foto';
+    
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -31,10 +28,8 @@ class Medicacao extends Model
 
 
     public $fillable = [
-        'nome',
-        'data',
-        'hora',
-        'pet_id'
+        'pet_id',
+        'file'
     ];
 
     /**
@@ -44,10 +39,8 @@ class Medicacao extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nome' => 'string',
-        'data' => 'date',
-        'hora' => 'time',
-        'pet_id' => 'integer'
+        'pet_id' => 'integer',
+        'file' => 'string'
     ];
 
     /**
@@ -56,9 +49,6 @@ class Medicacao extends Model
      * @var array
      */
     public static $rules = [
-        'nome' => 'required',
-        'data' => 'required',
-        'hora' => 'required',
         'pet_id' => 'required'
     ];
 
@@ -68,13 +58,5 @@ class Medicacao extends Model
     public function pet()
     {
         return $this->belongsTo(\App\Models\Pet::class, 'pet_id');
-    }
-
-    public function getDataAttribute($date){
-        return Carbon::createFromFormat('Y-m-d', $date)->format('d/m/Y');
-    }
-
-    public function getHoraAttribute($date){
-        return Carbon::createFromFormat('H:i:s', $date)->format('H:i');
     }
 }

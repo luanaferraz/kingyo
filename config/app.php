@@ -177,6 +177,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
+
     ],
 
     /*

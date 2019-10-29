@@ -34,7 +34,7 @@ class PetController extends AppBaseController
     {
         $pets = $this->petRepository->all();
 
-        return view('pets.index')
+        return view('home')
             ->with('pets', $pets);
     }
 
@@ -65,7 +65,7 @@ class PetController extends AppBaseController
 
         Flash::success('Pet salvo com sucesso.');
 
-        return redirect(route('pets.index'));
+        return redirect(route('home'));
     }
 
     /**
@@ -102,7 +102,7 @@ class PetController extends AppBaseController
         if (empty($pet)) {
             Flash::error('Pet não encontrado');
 
-            return redirect(route('pets.index'));
+            return redirect(route('home'));
         }
 
         return view('pets.edit')->with('pet', $pet)->with('tutor',$tutor);
@@ -150,7 +150,7 @@ class PetController extends AppBaseController
         if (empty($pet)) {
             Flash::error('Pet não encontrado');
 
-            return redirect(route('pets.index'));
+            return redirect(route('home'));
         }
 
         $this->petRepository->delete($id);

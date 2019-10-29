@@ -2,7 +2,7 @@
 <div class="col-12 bg-gradient-primary text-white d-flex py-2">
 
     <div class="px-2 align-self-center">
-        <img src="/images/patinha.png" class="img-fluid" width="80px">
+        <img src="{!! !empty($pet->fotos[0]) ? '/uploads/fotos/'.$pet->fotos[0]->file: '/images/patinha.png' !!}" class="img-fluid" width="{!! !empty($pet->fotos[0]) ? '150px': '80px' !!}">
     </div>
 
     <div class="px-2 align-self-center">
@@ -53,6 +53,14 @@
         <i class="fas fa-folder-open fa-5x pb-2"></i>
         <h5>Documentos</h5>
         <a href="{!! route('petdocs.index', [$pet->id]) !!}" class="card-link"></a>
+    </div>
+</div>
+
+<div class="col-12 col-md-3 py-3">
+    <div class="col-12 bg-light py-2 text-center">
+        <i class="fas fa-images fa-5x pb-2"></i>
+        <h5>Galeria</h5>
+        <a href="{!! route('fotos.index', [$pet->id]) !!}" class="card-link"></a>
     </div>
 </div>
 
