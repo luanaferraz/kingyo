@@ -63,7 +63,7 @@ class PetController extends AppBaseController
 
         $pet = $this->petRepository->create($input);
 
-        Flash::success('Pet salvo com sucesso.');
+        Flash::success('Pet cadastrado com sucesso.');
 
         return redirect(route('home'));
     }

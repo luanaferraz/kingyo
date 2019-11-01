@@ -62,7 +62,7 @@ class FotoController extends AppBaseController
 
         $foto = $this->fotoRepository->create_with_upload($input);
 
-        Flash::success('Foto salvo com sucesso.');
+        Flash::success('Foto salva com sucesso.');
 
         return redirect(route('fotos.index', [$pet]));
     }
@@ -99,7 +99,7 @@ class FotoController extends AppBaseController
         $foto = $this->fotoRepository->find($id);
 
         if (empty($foto)) {
-            Flash::error('Foto não encontrado');
+            Flash::error('Foto não encontrada');
 
             return redirect(route('fotos.index'));
         }
@@ -120,14 +120,14 @@ class FotoController extends AppBaseController
         $foto = $this->fotoRepository->find($id);
 
         if (empty($foto)) {
-            Flash::error('Foto não encontrado');
+            Flash::error('Foto não encontrada');
 
             return redirect(route('fotos.index'));
         }
 
         $foto = $this->fotoRepository->update($request->all(), $id);
 
-        Flash::success('Foto atualizado com sucesso.');
+        Flash::success('Foto atualizada com sucesso.');
 
         return redirect(route('fotos.index'));
     }
@@ -146,14 +146,14 @@ class FotoController extends AppBaseController
         $foto = $this->fotoRepository->find($id);
 
         if (empty($foto)) {
-            Flash::error('Foto não encontrado');
+            Flash::error('Foto não encontrada');
 
-            return redirect(route('fotos.index'));
+            return redirect(route('fotos.index', [$pet]));
         }
 
         $this->fotoRepository->destroy_with_upload($id,$foto);
 
-        Flash::success('Foto deletado com sucesso.');
+        Flash::success('Foto deletada com sucesso.');
 
         return redirect(route('fotos.index', [$pet]));
     }

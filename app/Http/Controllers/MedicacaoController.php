@@ -63,7 +63,7 @@ class MedicacaoController extends AppBaseController
 
         $medicacao = $this->medicacaoRepository->create($input);
 
-        Flash::success('Medicacao salvo com sucesso.');
+        Flash::success('Medicamento salvo com sucesso.');
 
         return redirect(route('medicacaos.index',[$pet]));
     }
@@ -80,7 +80,7 @@ class MedicacaoController extends AppBaseController
         $medicacao = $this->medicacaoRepository->find($id);
 
         if (empty($medicacao)) {
-            Flash::error('Medicacao not found');
+            Flash::error('Medicamento not found');
 
             return redirect(route('medicacaos.index'));
         }
@@ -101,7 +101,7 @@ class MedicacaoController extends AppBaseController
         $pet = $this->petRepository->findByPet($pet_id);
 
         if (empty($medicacao)) {
-            Flash::error('Medicacao não encontrado');
+            Flash::error('Medicamento não encontrado');
 
             return redirect(route('medicacaos.index'));
         }
@@ -122,14 +122,14 @@ class MedicacaoController extends AppBaseController
         $medicacao = $this->medicacaoRepository->find($id);
 
         if (empty($medicacao)) {
-            Flash::error('Medicacao não encontrado');
+            Flash::error('Medicamento não encontrado');
 
-            return redirect(route('medicacaos.index'));
+            return redirect(route('medicacaos.index', [$pet]));
         }
 
         $medicacao = $this->medicacaoRepository->update($request->all(), $id);
 
-        Flash::success('Medicacao atualizado com sucesso.');
+        Flash::success('Medicamento atualizado com sucesso.');
 
         return redirect(route('medicacaos.index', [$pet]));
     }
@@ -148,16 +148,16 @@ class MedicacaoController extends AppBaseController
         $medicacao = $this->medicacaoRepository->find($id);
 
         if (empty($medicacao)) {
-            Flash::error('Medicacao não encontrado');
+            Flash::error('Medicamento não encontrado');
 
-            return redirect(route('medicacaos.index'));
+            return redirect(route('medicacaos.index', [$pet]));
         }
 
         $this->medicacaoRepository->delete($id);
 
-        Flash::success('Medicacao deletado com sucesso.');
+        Flash::success('Medicamento deletado com sucesso.');
 
-        return redirect(route('medicacao.index', [$pet]));
+        return redirect(route('medicacaos.index', [$pet]));
     }
 
     public function ativar($pet,$id)

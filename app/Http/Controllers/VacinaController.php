@@ -83,7 +83,7 @@ class VacinaController extends AppBaseController
 
         $vacina = $this->vacinaRepository->create($input);
 
-        Flash::success('Vacina salvo com sucesso.');
+        Flash::success('Vacina salva com sucesso.');
 
         return redirect(route('vacinas.index_pet', [$pet]));
     }
@@ -131,7 +131,7 @@ class VacinaController extends AppBaseController
         $vacina = $this->vacinaRepository->find($id);
         $pet = $this->petRepository->findByPet($pet_id);
         if (empty($vacina)) {
-            Flash::error('Vacina não encontrado');
+            Flash::error('Vacina não encontrada');
 
             return redirect(route('vacinas.index'));
         }
@@ -152,7 +152,7 @@ class VacinaController extends AppBaseController
         $vacina = $this->vacinaRepository->find($id);
 
         if (empty($vacina)) {
-            Flash::error('Vacina não encontrado');
+            Flash::error('Vacina não encontrada');
 
             return redirect(route('vacinas.index'));
         }
@@ -178,9 +178,9 @@ class VacinaController extends AppBaseController
         $vacina = $this->vacinaRepository->find($id);
 
         if (empty($vacina)) {
-            Flash::error('Vacina não encontrado');
+            Flash::error('Vacina não encontrada');
 
-            return redirect(route('vacinas.index'));
+            return redirect(route('vacinas.index_pet', [$pet]));
         }
 
         $this->vacinaRepository->delete($id);
