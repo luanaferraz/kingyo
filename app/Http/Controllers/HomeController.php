@@ -34,4 +34,9 @@ class HomeController extends Controller
 
         return view('home')->with('pets', $pets);
     }
+
+    public function profissional()
+    {
+               return view('home_profissional');
+    }
 }
