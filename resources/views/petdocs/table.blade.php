@@ -15,6 +15,7 @@
                     {!! Form::open(['route' => ['petdocs.destroy', $pet->id, $petdoc->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
 {{--                        <a href="{!! route('petdocs.edit', [$petdoc->id]) !!}" class='btn btn-secondary btn-xs'><i class="fas fa-edit"></i></a>--}}
+                        <a href="/uploads/petdocs/{!! $petdoc->file !!}" target="_blank" class='btn btn-secondary btn-xs'><i class="fas fa-file"></i></a>
                         {!! Form::button('<i class="fas fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Deseja realmente excluir?')"]) !!}
                     </div>
                     {!! Form::close() !!}

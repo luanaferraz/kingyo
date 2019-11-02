@@ -14,7 +14,7 @@
     <input type="text" name="nome_arquivo" id="nome_arquivo" class="form-control"
            value="<?= isset($petdoc['file']) ? $petdoc['file'] : "" ?>" disabled>
     <input type="button" class="btn btn-secondary" value="Selecione um arquivo" onclick="$('#foto').click();">
-    <span class="help-block">Tamanho da imagem 1300x560 pixels.</span>
+    <span class="help-block">Tamanho da imagem 1280x720 pixels.</span>
 </div>
 
 <input type="hidden" name="pet_id" value="{!! $pet->id !!}">

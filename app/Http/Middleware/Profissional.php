@@ -3,7 +3,7 @@
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class Tutor {
+class Profissional {
 
     protected $auth;
     public function __construct(Guard $auth){
@@ -35,10 +35,10 @@ class Tutor {
         $response = $next($request);
 
         switch($this->auth->user()->role_id){
-            case 1:
-                break;
             case 2:
-                return redirect()->to('/profissional');
+                break;
+            case 1:
+                return redirect()->to('/home');
                 break;
         }
 		return $response;

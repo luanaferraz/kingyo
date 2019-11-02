@@ -62,7 +62,7 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-@include('layouts.sidebar')
+@include('layouts.sidebar_profissional')
 
 <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -282,7 +282,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; {{ config('app.name', 'Laravel') }} </span>
+                    <span>Copyright &copy; {{ config('app.name', 'CuidaPet') }} </span>
                 </div>
             </div>
         </footer>

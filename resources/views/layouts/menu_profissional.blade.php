@@ -27,20 +27,3 @@
     Menu
 </div>
 
-@foreach($petsMenu as $pet)
-    <li class="nav-item">
-        <a class="nav-link" href="{!! route('pets.show', [$pet->id]) !!}">
-            @if($pet->especie == 'Cão')
-                <i class="fas fa-dog"></i>
-            @elseif($pet->especie == 'Gato')
-                <i class="fas fa-cat"></i>
-            @elseif($pet->especie == 'Pássaro')
-                <i class="fas fa-dove"></i>
-            @elseif($pet->especie == 'Peixe')
-                <i class="fas fa-fish"></i>
-            @else
-                <i class="fas fa-bone"></i>
-            @endif
-            <span>{{$pet->nome}}</span></a>
-    </li>
-@endforeach

@@ -64,3 +64,16 @@
     </div>
 </div>
 
+<div class="col-12 py-3">
+
+    <h5 class="text-center"><i class="fas fa-images fa-1x"></i> Galeria</h5>
+    <div class="row d-flex justify-content-center ">
+               @foreach($pet->fotos as $foto)
+            <div class="col-md-2 col-6">
+                <a href="/uploads/fotos/{{$foto->file}}" data-lightbox="galeria">
+                    <img src="/uploads/fotos/{{$foto->file}}" class="img-thumbnail">
+                </a>
+            </div>
+        @endforeach
+    </div>
+</div>

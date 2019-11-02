@@ -64,7 +64,7 @@ class PetdocController extends AppBaseController
 
         $petdoc = $this->petdocRepository->create_with_upload($input);
 
-        Flash::success('Petdoc salvo com sucesso.');
+        Flash::success('Documento salvo com sucesso.');
 
         return redirect(route('petdocs.index', [$pet]));
     }
@@ -81,7 +81,7 @@ class PetdocController extends AppBaseController
         $petdoc = $this->petdocRepository->find($id);
 
         if (empty($petdoc)) {
-            Flash::error('Petdoc not found');
+            Flash::error('Documento not found');
 
             return redirect(route('petdocs.index'));
         }
@@ -101,7 +101,7 @@ class PetdocController extends AppBaseController
         $petdoc = $this->petdocRepository->find($id);
         $pet = $this->petRepository->findByPet($pet_id);
         if (empty($petdoc)) {
-            Flash::error('Petdoc não encontrado');
+            Flash::error('Documento não encontrado');
 
             return redirect(route('petdocs.index'));
         }
@@ -122,14 +122,14 @@ class PetdocController extends AppBaseController
         $petdoc = $this->petdocRepository->find($id);
 
         if (empty($petdoc)) {
-            Flash::error('Petdoc não encontrado');
+            Flash::error('Documento não encontrado');
 
             return redirect(route('petdocs.index'));
         }
 
         $petdoc = $this->petdocRepository->update_with_upload($request->all(), $id);
 
-        Flash::success('Petdoc atualizado com sucesso.');
+        Flash::success('Documento atualizado com sucesso.');
 
         return redirect(route('petdocs.index', [$pet]));
     }
@@ -148,14 +148,14 @@ class PetdocController extends AppBaseController
         $petdoc = $this->petdocRepository->find($id);
 
         if (empty($petdoc)) {
-            Flash::error('Petdoc não encontrado');
+            Flash::error('Documento não encontrado');
 
-            return redirect(route('petdocs.index'));
+            return redirect(route('petdocs.index', [$pet]));
         }
 
         $this->petdocRepository->destroy_with_upload($id,$petdoc);
 
-        Flash::success('Petdoc deletado com sucesso.');
+        Flash::success('Documento deletado com sucesso.');
 
         return redirect(route('petdocs.index', [$pet]));
     }
