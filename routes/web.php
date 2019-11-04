@@ -72,3 +72,6 @@ Route::group(['middleware' => ['auth','profissional']], function() {
 });
 
 Route::resource('tutors', 'TutorController');
+
+
+Route::resource('servicos', 'servicoController');

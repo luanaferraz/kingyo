@@ -1,3 +1,4 @@
+
 <!-- Sidebar - Brand -->
 <a class=" d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
     <div class="mx-3"> <img src="/images/logo.png" class="img-fluid sidebar-brand-img"> </div>
@@ -17,6 +18,12 @@
     <a class="nav-link" href="{{ url('/agenda') }}">
         <i class="far fa-calendar-alt"></i>
         <span>Agenda</span></a>
+</li>
+
+<li class="nav-item {{ Request::is('servicos*') ? 'active' : '' }}">
+    <a class="nav-link" href="{!! route('servicos.index') !!}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Serviços</span></a>
 </li>
 
 <!-- Divider -->
