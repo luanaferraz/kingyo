@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\ProfissionalRepository;
 use App\Repositories\TutorRepository;
 use App\User;
 use Illuminate\Auth\Events\Registered;
@@ -39,10 +40,11 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct(TutorRepository $tutorRepository)
+    public function __construct(TutorRepository $tutorRepository, ProfissionalRepository $profissionalRepository)
     {
         $this->middleware('guest');
         $this->tutorRepository = $tutorRepository;
+        $this->profissionalRepository = $profissionalRepository;
 
     }
 
@@ -52,40 +54,6 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-//    public function register(Request $request)
-//    {
-//        $validate = $this->validator($request->all());
-//
-//        dd($validate);
-//        die();
-//
-//        if($validate){
-//
-//            return response()->json([
-//                'Status' => 'FAIL',
-//                'Message' => $validate
-//            ]);
-//        }
-//
-//        event(new Registered($user = $this->create($request->all())));
-//
-//        $this->guard()->login($user);
-//
-//        return response()->json([
-//            'Status' => 'DONE',
-//            'Message' => 'Cadastro realizado com sucesso!'
-//        ]);
-//    }
-
-//    protected function validator(array $data)
-//    {
-//        return Validator::make($data, [
-//            'nome' => ['required', 'string', 'max:255'],
-//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-//            'password' => ['required', 'string', 'min:8', 'confirmed'],
-//        ]);
-//    }
-
 
     public function register(Request $request)
     {
@@ -114,20 +82,6 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        $validator = Validator::make($data, [
-            'nome' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-
-        if ($validator->fails()) {
-            $errors = $validator->errors()->all();
-            return $errors;
-        }
-        return false;
-    }
 
 
     /**
@@ -150,6 +104,62 @@ class RegisterController extends Controller
 
         return $usuario;
     }
+
+    public function  showRegistrationFormProfissional (){
+        return view ('auth.registerProfissional');
+    }
+
+    public function registerProfissional (Request $request)
+    {
+        $validate = $this->validator($request->all());
+
+        if($validate){
+            return response()->json([
+                'Status' => 'FAIL',
+                'Message' => $validate[0]
+            ]);
+        }
+
+        event(new Registered($user = $this->createProfissional($request->all())));
+
+        $this->guard()->login($user);
+
+        return response()->json([
+            'Status' => 'DONE',
+            'Message' => 'Cadastro realizado com sucesso!'
+        ]);
+    }
+
+    protected function createProfissional(array $data)
+    {
+        $usuario =  User::create([
+            'name' => $data['nome'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'role_id' => 2,
+        ]);
+
+        $data['usuario_id'] = $usuario->id;
+        $profissional = $this->profissionalRepository->create($data);
+
+        return $usuario;
+    }
+
+    protected function validator(array $data)
+    {
+        $validator = Validator::make($data, [
+            'nome' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            $errors = $validator->errors()->all();
+            return $errors;
+        }
+        return false;
+    }
+
 }
 
 
