@@ -64,6 +64,8 @@ Route::group(['middleware' => ['auth','tutor']], function() {
     Route::delete('fotos/{pet?}/{documentos}', ['as'=> 'fotos.destroy', 'uses' => 'FotoController@destroy']);
 
     Route::get('agenda', ['as'=> 'eventos.agenda', 'uses' => 'EventoPetController@agenda']);
+
+    Route::get('/search', ['as'=> 'search', 'uses' => 'CursoController@buscar']);
 });
 
 Route::group(['middleware' => ['auth','profissional']], function() {
