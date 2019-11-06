@@ -86,6 +86,9 @@
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Cadastre-se</a>
                         @endif
+                        @if (Route::has('registerProfissional'))
+                            <a href="{{ route('registerProfissional') }}">Seja um Profissional</a>
+                        @endif
 
                     @endauth
                 </div>

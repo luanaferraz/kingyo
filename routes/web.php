@@ -72,6 +72,14 @@ Route::group(['middleware' => ['auth','profissional']], function() {
 });
 
 Route::resource('tutors', 'TutorController');
+Route::resource('profissionals', 'ProfissionalController');
 
 
 Route::resource('servicos', 'servicoController');
+
+
+// Registration Routes...
+
+    Route::get('registerProfissional', ['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@showRegistrationFormProfissional'] );
+    Route::post('registerProfissional',['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@registerProfissional']);
+
