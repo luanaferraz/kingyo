@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.profissional')
 
 @section('content')
     <section class="content-header">

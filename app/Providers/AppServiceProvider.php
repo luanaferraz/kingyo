@@ -30,23 +30,27 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-
-
-
         view()->composer('*', function($view) {
             if (auth()->check()) {
 
 
-            $user = auth()->user();
-            $tutor = Tutor::where('usuario_id', $user->id)->first();
-            $pets = Pet::where('tutor_id', $tutor->id)->get();
-            $pets_id = Pet::where('tutor_id', $tutor->id)->pluck('id');
+                $user = auth()->user();
 
-            $eventoPets = EventoPet::whereIn('pet_id', $pets_id)->get();
+                if($user->role_id == 1){
+                    $tutor = Tutor::where('usuario_id', $user->id)->first();
 
-            View::share('petsMenu', $pets);
-            View::share('eventoPets', $eventoPets);
-        }
+
+                    $pets = Pet::where('tutor_id', $tutor->id)->get();
+                    $pets_id = Pet::where('tutor_id', $tutor->id)->pluck('id');
+
+                    $eventoPets = EventoPet::whereIn('pet_id', $pets_id)->get();
+
+                    View::share('petsMenu', $pets);
+                    View::share('eventoPets', $eventoPets);
+
+                }
+
+            }
         });
 
 

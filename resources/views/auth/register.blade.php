@@ -157,34 +157,11 @@
                 {!! Form::text('nome', null, ['class' => 'form-control']) !!}
             </div>
 
-{{--            <div class="form-group col-sm-4">--}}
-{{--                {!! Form::label('sobrenome', 'Sobrenome:') !!}--}}
-{{--                {!! Form::text('sobrenome', null, ['class' => 'form-control']) !!}--}}
-{{--            </div>--}}
-
-{{--            <!-- Cpf Field -->--}}
-{{--            <div class="form-group col-sm-4">--}}
-{{--                {!! Form::label('cpf', 'CPF:') !!}--}}
-{{--                {!! Form::text('cpf', null, ['class' => 'form-control cpf']) !!}--}}
-{{--            </div>--}}
-
-{{--            <!-- Data Nascimento Field -->--}}
-{{--            <div class="form-group col-sm-4">--}}
-{{--                {!! Form::label('data_nascimento', 'Data Nascimento:') !!}--}}
-{{--                {!! Form::text('data_nascimento', null, ['class' => 'form-control date']) !!}--}}
-{{--            </div>--}}
-
             <!-- Telefone Field -->
             <div class="form-group col-sm-4">
                 {!! Form::label('telefone', 'Telefone:') !!}
                 {!! Form::text('telefone', null, ['class' => 'form-control phone']) !!}
             </div>
-
-{{--            <!-- Cep Field -->--}}
-{{--            <div class="form-group col-sm-4">--}}
-{{--                {!! Form::label('cep', 'Cep:') !!}--}}
-{{--                {!! Form::text('cep', null, ['class' => 'form-control cep']) !!}--}}
-{{--            </div>--}}
 
             <!-- Rua Field -->
             <div class="form-group col-sm-6">
@@ -196,13 +173,6 @@
                 {!! Form::label('numero', 'Numero:') !!}
                 {!! Form::number('numero', null, ['class' => 'form-control']) !!}
             </div>
-
-{{--            <!-- Complemento Field -->--}}
-{{--            <div class="form-group col-sm-2">--}}
-{{--                {!! Form::label('complemento', 'Complemento:') !!}--}}
-{{--                {!! Form::text('complemento', null, ['class' => 'form-control']) !!}--}}
-{{--            </div>--}}
-
 
             <!-- Bairro Field -->
             <div class="form-group col-sm-4">
@@ -248,6 +218,8 @@
             </div>
 
             <input type="hidden" id="usuario_id" name="usuario_id" value="null">
+
+            <input type="hidden" id="role_id" name="role_id" value="1">
 
             {!! Form::close() !!}
 

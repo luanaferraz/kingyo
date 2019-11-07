@@ -6,11 +6,15 @@ use App\Http\Requests\CreateProfissionalRequest;
 use App\Http\Requests\UpdateProfissionalRequest;
 use App\Repositories\ProfissionalRepository;
 use App\Http\Controllers\AppBaseController;
+use App\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Response;
 
-class ProfissionalController extends AppBaseController
+class ProfissionalController extends Controller
 {
     /** @var  ProfissionalRepository */
     private $profissionalRepository;
@@ -152,5 +156,61 @@ class ProfissionalController extends AppBaseController
         Flash::success('Profissional deletado com sucesso.');
 
         return redirect(route('profissionals.index'));
+    }
+
+
+    public function  showRegistrationFormProfissional (){
+        return view ('profissionals.create');
+    }
+
+    public function registerProfissional (Request $request)
+    {
+        $validate = $this->validator($request->all());
+
+        if($validate){
+            return response()->json([
+                'Status' => 'FAIL',
+                'Message' => $validate[0]
+            ]);
+        }
+
+        event(new Registered($user = $this->createProfissional($request->all())));
+
+//        $this->guard()->login($user);
+
+        return response()->json([
+            'Status' => 'DONE',
+            'Message' => 'Cadastro realizado com sucesso!'
+        ]);
+    }
+
+    protected function createProfissional(array $data)
+    {
+        $usuario =  User::create([
+            'name' => $data['nome'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'role_id' => 2,
+        ]);
+
+        $data['usuario_id'] = $usuario->id;
+        $profissional = $this->profissionalRepository->create($data);
+
+        return $usuario;
+    }
+
+    protected function validator(array $data)
+    {
+        $validator = Validator::make($data, [
+            'nome' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            $errors = $validator->errors()->all();
+            return $errors;
+        }
+        return false;
     }
 }

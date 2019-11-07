@@ -39,22 +39,22 @@
 
 
 
-    <script>
-        $(document).ready(function() {
-            // page is now ready, initialize the calendar...
-            $('#calendar').fullCalendar({
-                // put your options and callbacks here
-                events : [
-                        @foreach($eventoPets as $task)
-                    {
-                        title : '{!! !is_null($task->pet)?$task->pet->nome:''!!} - {{ $task->tipo }}',
-                        start : '{{$task->data }} {{$task->horario }}'
-                    },
-                @endforeach
-                ]
-            })
-        });
-    </script>
+{{--    <script>--}}
+{{--        $(document).ready(function() {--}}
+{{--            // page is now ready, initialize the calendar...--}}
+{{--            $('#calendar').fullCalendar({--}}
+{{--                // put your options and callbacks here--}}
+{{--                events : [--}}
+{{--                        @foreach($eventoPets as $task)--}}
+{{--                    {--}}
+{{--                        title : '{!! !is_null($task->pet)?$task->pet->nome:''!!} - {{ $task->tipo }}',--}}
+{{--                        start : '{{$task->data }} {{$task->horario }}'--}}
+{{--                    },--}}
+{{--                @endforeach--}}
+{{--                ]--}}
+{{--            })--}}
+{{--        });--}}
+{{--    </script>--}}
 
 </head>
 <body id="page-top">

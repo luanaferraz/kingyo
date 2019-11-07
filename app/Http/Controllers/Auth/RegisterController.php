@@ -96,7 +96,7 @@ class RegisterController extends Controller
             'name' => $data['nome'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role_id' => 1,
+            'role_id' => $data['role_id'],
         ]);
 
         $data['usuario_id'] = $usuario->id;
@@ -107,42 +107,6 @@ class RegisterController extends Controller
 
     public function  showRegistrationFormProfissional (){
         return view ('auth.registerProfissional');
-    }
-
-    public function registerProfissional (Request $request)
-    {
-        $validate = $this->validator($request->all());
-
-        if($validate){
-            return response()->json([
-                'Status' => 'FAIL',
-                'Message' => $validate[0]
-            ]);
-        }
-
-        event(new Registered($user = $this->createProfissional($request->all())));
-
-        $this->guard()->login($user);
-
-        return response()->json([
-            'Status' => 'DONE',
-            'Message' => 'Cadastro realizado com sucesso!'
-        ]);
-    }
-
-    protected function createProfissional(array $data)
-    {
-        $usuario =  User::create([
-            'name' => $data['nome'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'role_id' => 2,
-        ]);
-
-        $data['usuario_id'] = $usuario->id;
-        $profissional = $this->profissionalRepository->create($data);
-
-        return $usuario;
     }
 
     protected function validator(array $data)
