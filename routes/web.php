@@ -75,3 +75,5 @@ Route::resource('tutors', 'TutorController');
 
 
 Route::resource('servicos', 'servicoController');
+
+Route::resource('eventoProfissional', 'evento_profissionalController');
