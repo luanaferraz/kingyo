@@ -16,6 +16,8 @@
         </div>
         <div class="col-12 col-md-10 offset-md-1">
 
+
+
             {!! Form::open(['route' => 'registerProfissional', 'class' => 'col-lg-12 form-row', 'id' => 'cadastroProfissional', 'name' => 'cadastroProfissional']) !!}
 
             <input type="hidden" id="redirect" value="{{URL::to(Route::getCurrentRoute()->getPrefix())}}">
@@ -29,6 +31,7 @@
             <div class="form-group col-sm-6">
                 {!! Form::label('profissao', 'Profissao:') !!}
                 {!! Form::text('profissao', null, ['class' => 'form-control']) !!}
+
             </div>
 
             <!-- Pais Field -->
@@ -40,7 +43,8 @@
             <!-- Estado Field -->
             <div class="form-group col-sm-6">
                 {!! Form::label('estado', 'Estado:') !!}
-                {!! Form::text('estado', null, ['class' => 'form-control']) !!}
+                {!! Form::select('estado',array('AC' => 'AC', 'AL' => 'AL','AP' => 'AP','AM' => 'AM','BA' => 'BA', 'CE' => 'CE', 'DF' => 'DF','ES' => 'ES', 'GO' => 'GO','MA' => 'MA', 'MT' => 'MT', 'MS' => 'MS','MG' => 'MG', 'PA' => 'PA','PB' => 'PB', 'PR' => 'PR', 'PE' => 'PE', 'PI' => 'PI', 'RJ'
+                => 'RJ', 'RN' => 'RN','RS' => 'RS', 'RO' => 'RO','RR' => 'RR','SC' => 'SC','SP' => 'SP','SE' => 'SE','TO' => 'TO' ), null, ['class' => 'form-control']) !!}
             </div>
 
             <!-- Cidade Field -->
@@ -67,10 +71,12 @@
                 {!! Form::text('numero', null, ['class' => 'form-control']) !!}
             </div>
 
+
             <!-- Telefone Field -->
             <div class="form-group col-sm-6">
+
                 {!! Form::label('telefone', 'Telefone:') !!}
-                {!! Form::text('telefone', null, ['class' => 'form-control']) !!}
+                {!! Form::text('telefone', null, ['class' => 'form-control phone']) !!}
             </div>
 
             <!-- Email Field -->
