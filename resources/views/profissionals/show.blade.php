@@ -1,17 +1,17 @@
-@extends('layouts.profissional')
+@extends('layouts.app')
 
 @section('content')
     <section class="content-header">
         <h1>
-            Serviço
+            Profissional
         </h1>
     </section>
     <div class="content">
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('servicos.show_fields')
-                    <a href="{!! route('servicos.index') !!}" class="btn btn-default">Voltar</a>
+                    @include('profissionals.show_fields')
+                    <a href="{!! route('profissionals.index') !!}" class="btn btn-default">Back</a>
                 </div>
             </div>
         </div>

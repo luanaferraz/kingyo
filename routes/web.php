@@ -64,10 +64,27 @@ Route::group(['middleware' => ['auth','tutor']], function() {
     Route::delete('fotos/{pet?}/{documentos}', ['as'=> 'fotos.destroy', 'uses' => 'FotoController@destroy']);
 
     Route::get('agenda', ['as'=> 'eventos.agenda', 'uses' => 'EventoPetController@agenda']);
+
+    Route::get('/search', ['as'=> 'search', 'uses' => 'CursoController@buscar']);
 });
 
 Route::group(['middleware' => ['auth','profissional']], function() {
     Route::get('/profissional', 'HomeController@profissional');
+    Route::resource('servicos', 'servicoController');
+});
+
+Route::resource('tutors', 'TutorController');
+Route::resource('profissionals', 'ProfissionalController');
+
+
+
+
+
+
+    Route::get('profissional/cadastrar', ['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@showRegistrationFormProfissional'] );
+    Route::post('profissional/cadastrar',['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@registerProfissional']);
+
+
 
 });
 

@@ -1,9 +1,9 @@
-@extends('layouts.profissional')
+@extends('layouts.app')
 
 @section('content')
     <section class="content-header">
         <h1>
-            Serviço
+            Profissional
         </h1>
    </section>
    <div class="content">
@@ -11,9 +11,9 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($servico, ['route' => ['servicos.update', $servico->id], 'method' => 'patch', 'class'=> 'col-lg-12 form-row']) !!}
+                   {!! Form::model($profissional, ['route' => ['profissionals.update', $profissional->id], 'method' => 'patch', 'class'=> 'col-lg-12 form-row']) !!}
 
-                        @include('servicos.fields')
+                        @include('profissionals.fields')
 
                    {!! Form::close() !!}
                </div>
