@@ -2,29 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/evento_profissionalController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Createevento_profissionalRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Updateevento_profissionalRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/evento_profissional.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/evento_profissionalRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/evento_profissionalFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/model_schemas/evento_profissional.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/evento_profissional/agenda.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/evento_profissional/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/evento_profissional/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/evento_profissional/fields.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/evento_profissional/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/evento_profissional/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/evento_profissional/show_fields.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/evento_profissional/table.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfissionalFavoritoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CreateProfissionalFavoritoRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateProfissionalFavoritoRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ProfissionalFavorito.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/ProfissionalFavoritoRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ProfissionalFavoritoControllerFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ProfissionalFavoritoFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/fotos/15728073315dbf22a3d5031.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/fotos/15728239305dbf637ae0e4f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/fotos/sm15728073315dbf22a3d5031.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/fotos/sm15728239305dbf637ae0e4f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/15728073435dbf22af0d238.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/15728239415dbf638552963.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/sm15728073435dbf22af0d238.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/sm15728239415dbf638552963.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/model_schemas/ProfissionalFavorito.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/model_schemas/ProfissionalFavoritoController.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/fields.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/show_fields.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu_profissional.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu_profissional.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/servicos/fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/servicos/fields.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/registerProfissional.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/registerProfissional.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,10 +49,6 @@
       <find>body</find>
       <find>paine</find>
       <find>field is required.</find>
-      <find>Re</find>
-      <find>btn-p</find>
-      <find>showRegistrationForm</find>
-      <find>si</find>
     </findStrings>
     <execution>
       <executable />
@@ -166,8 +168,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/evento_profissionals" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -179,18 +180,12 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\cuidaPet\resources\views\auth" />
-      <recent name="C:\wamp64\www\cuidaPet\resources\views\layouts" />
-      <recent name="C:\wamp64\www\cuidaPet\resources\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\cuidaPet\resources\views\evento_profissionals" />
-      <recent name="C:\wamp64\www\cuidaPet\resources\views\auth" />
       <recent name="C:\wamp64\www\cuidaPet\resources\views\layouts" />
       <recent name="C:\wamp64\www\cuidaPet\resources\views" />
       <recent name="C:\wamp64\www\cuidaPet\app\Http\Middleware" />
       <recent name="C:\wamp64\www\cuidaPet\public\css" />
+      <recent name="C:\wamp64\www\cuidaPet\public\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -249,12 +244,7 @@
       <workItem from="1572662197867" duration="1822000" />
       <workItem from="1572810533382" duration="1839000" />
       <workItem from="1572881706109" duration="205000" />
-      <workItem from="1572972510514" duration="7421000" />
-      <workItem from="1572993154516" duration="2156000" />
-      <workItem from="1573165534935" duration="214000" />
-      <workItem from="1573166911758" duration="10000" />
-      <workItem from="1573167011030" duration="1027000" />
-      <workItem from="1573168191631" duration="2367000" />
+      <workItem from="1573260897241" duration="1201000" />
     </task>
     <task id="LOCAL-00001" summary="projeto">
       <created>1571058337872</created>
@@ -403,21 +393,7 @@
       <option name="project" value="LOCAL" />
       <updated>1572610879422</updated>
     </task>
-    <task id="LOCAL-00022" summary="galeria">
-      <created>1572993327551</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1572993327551</updated>
-    </task>
-    <task id="LOCAL-00023" summary="galeria">
-      <created>1573002696225</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1573002696225</updated>
-    </task>
-    <option name="localTasksCounter" value="24" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
