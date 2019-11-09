@@ -66,7 +66,6 @@ Route::group(['middleware' => ['auth','tutor']], function() {
     Route::get('agenda', ['as'=> 'eventos.agenda', 'uses' => 'EventoPetController@agenda']);
 
     Route::get('/search', ['as'=> 'search', 'uses' => 'CursoController@buscar']);
-});
 
 Route::group(['middleware' => ['auth','profissional']], function() {
     Route::get('/profissional', 'HomeController@profissional');
@@ -74,21 +73,20 @@ Route::group(['middleware' => ['auth','profissional']], function() {
 });
 
 Route::resource('tutors', 'TutorController');
-Route::resource('profissionals', 'ProfissionalController');
+Route::resource('profissionals', 'ProfissionalController');//
 
 
-
-
-
-
-    Route::get('profissional/cadastrar', ['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@showRegistrationFormProfissional'] );
-    Route::post('profissional/cadastrar',['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@registerProfissional']);
 
 
 
 });
 
 Route::resource('tutors', 'TutorController');
+Route::resource('profissionals', 'ProfissionalController');
+
+Route::get('profissional/cadastrar', ['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@showRegistrationFormProfissional'] );
+Route::post('profissional/cadastrar',['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@registerProfissional']);
+
 
 
 Route::resource('servicos', 'servicoController');
