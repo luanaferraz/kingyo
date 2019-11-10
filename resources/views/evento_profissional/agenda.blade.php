@@ -1,5 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.profissional')
 
 @section('content')
-    <div id='calendar'></div>
+    <div id="calendar_profissional"></div>
 @endsection

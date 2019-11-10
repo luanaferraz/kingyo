@@ -39,22 +39,22 @@
 
 
 
-{{--    <script>--}}
-{{--        $(document).ready(function() {--}}
-{{--            // page is now ready, initialize the calendar...--}}
-{{--            $('#calendar').fullCalendar({--}}
-{{--                // put your options and callbacks here--}}
-{{--                events : [--}}
-{{--                        @foreach($eventoPets as $task)--}}
-{{--                    {--}}
-{{--                        title : '{!! !is_null($task->pet)?$task->pet->nome:''!!} - {{ $task->tipo }}',--}}
-{{--                        start : '{{$task->data }} {{$task->horario }}'--}}
-{{--                    },--}}
-{{--                @endforeach--}}
-{{--                ]--}}
-{{--            })--}}
-{{--        });--}}
-{{--    </script>--}}
+    <script>
+        $(document).ready(function() {
+            // page is now ready, initialize the calendar...
+            $('#calendar_profissional').fullCalendar({
+                // put your options and callbacks here
+                events : [
+                        @foreach($eventoProfissional as $profissional)
+                    {
+                        title : '{!! !is_null($profissional->profissional)?$profissional->profissional->nome:''!!} - {{ $profissional->tipo }}',
+                        start : '{{$profissional->data }} {{$profissional->horario }}'
+                    },
+                    @endforeach
+                ]
+            })
+        });
+    </script>
 
 </head>
 <body id="page-top">
@@ -236,7 +236,7 @@
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="{!! route('tutors.index') !!}">
+                            <a class="dropdown-item" href="{!! route('profissionals.index') !!}">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile
                             </a>

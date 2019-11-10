@@ -86,11 +86,15 @@ Route::resource('profissionals', 'ProfissionalController');
 
 
 
-});
-
 Route::resource('tutors', 'TutorController');
 
 
 Route::resource('servicos', 'servicoController');
 
-Route::resource('eventoProfissional', 'evento_profissionalController');
+Route::resource('eventoProfissional', 'EventoProfissionalController');
+
+Route::resource('evento_profissional', 'EventoProfissionalController');
+
+Route::resource('profissionals', 'ProfissionalController');
+
+

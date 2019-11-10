@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -79,4 +80,6 @@ class evento_profissional extends Model
     {
         return $this->belongsTo(\App\Models\Profissional::class, 'profissional_id');
     }
+
+
 }

@@ -14,16 +14,16 @@
         <span>Home</span></a>
 </li>
 
-<li class="nav-item active">
-    <a class="nav-link" href="{{ url('/agenda') }}">
-        <i class="far fa-calendar-alt"></i>
-        <span>Agenda</span></a>
-</li>
+{{--<li class="nav-item active">--}}
+{{--    <a class="nav-link" href="{{ url('/agenda') }}">--}}
+{{--        <i class="far fa-calendar-alt"></i>--}}
+{{--        <span>Agenda</span></a>--}}
+{{--</li>--}}
 
 <li class="nav-item {{ Request::is('eventoProfissional*') ? 'active' : '' }}">
     <a class="nav-link" href="{!! route('eventoProfissional.index') !!}">
         <i class="fas fa-fw fa-table"></i>
-        <span>Evento do Profissional</span></a>
+        <span>Agenda</span></a>
 </li>
 
 <li class="nav-item {{ Request::is('servicos*') ? 'active' : '' }}">
