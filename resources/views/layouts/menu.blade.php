@@ -10,7 +10,7 @@
 <li class="nav-item active">
     <a class="nav-link" href="{{ url('/home') }}">
         <i class="fas fa-paw"></i>
-        <span>Home</span></a>
+        <span>Meus Pets</span></a>
 </li>
 
 <li class="nav-item active">
@@ -19,12 +19,18 @@
         <span>Agenda</span></a>
 </li>
 
+<li class="nav-item active">
+    <a class="nav-link" href="{{ url('/profissionals') }}">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Encontre um Profissional</span></a>
+</li>
+
 <!-- Divider -->
 <hr class="sidebar-divider">
 
 <!-- Heading -->
 <div class="sidebar-heading">
-    Menu
+    Pets
 </div>
 
 @foreach($petsMenu as $pet)

@@ -100,6 +100,8 @@ class RegisterController extends Controller
         ]);
 
         $data['usuario_id'] = $usuario->id;
+
+
         $tutor = $this->tutorRepository->create($data);
 
         return $usuario;

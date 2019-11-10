@@ -11038,14 +11038,6 @@ body.sidebar-toggled footer.sticky-footer {
   top: 1px;
 }
 
-.content {
-  /*text-align: center;*/
-}
-
-/*.title {*/
-/*  font-size: 84px;*/
-/*}*/
-
 .links > a {
   color: #ffffff;
   padding: 0 25px;
@@ -11083,17 +11075,6 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 
-
-.btn-login{
-  background-color: #B2CC85;
-  color: white;
-}
-
-.btn-login:hover{
-  background-color: #5E8844;
-  color: white;
-}
-
 .border-radius-50{
   border-radius: 50%;
 }
@@ -11113,4 +11094,90 @@ body.sidebar-toggled footer.sticky-footer {
 
 .fc-content{
   color: #ffffff!important;
+}
+
+/* SELECT 2*/
+
+#cidades-container ul {
+  list-style: none;
+  padding: 0;
+  display: flow-root;
+  margin: 5px 0 0 0;
+}
+
+.tag-selected {
+  display: block;
+  width: 100%;
+  list-style: none;
+  background-color: #EE822E;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: default;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 7px 12px;
+}
+
+.destroy-tag-selected {
+  color: #fff!important;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2px;
+  float: right;
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.destroy-tag-selected:hover {
+  text-decoration: none;
+}
+
+.select2-selection__choice {
+  display: none;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+.paginacao{
+  display: flex;
+}
+
+.paginacao ul{
+  flex-wrap: wrap!important;
+  margin-left: auto;
+}
+
+.select2-search__field{
+  display: block;
+  width: 100%!important;
+  height: 100%!important;
+  padding: 0.375rem 0.75rem!important;
+  font-size: 1rem!important;
+  font-weight: 400!important;
+  line-height: 1.5!important;
+  color: #6e707e!important;
+  background-color: #fff!important;
+  background-clip: padding-box!important;
+  border: 1px solid #d1d3e2!important;
+  border-radius: 0.35rem!important;
+  margin-top: 0!important;
+}
+
+.select2-search, .select2-selection__rendered{
+  width: 100%!important;
 }

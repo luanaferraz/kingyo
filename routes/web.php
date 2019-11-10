@@ -65,7 +65,7 @@ Route::group(['middleware' => ['auth','tutor']], function() {
 
     Route::get('agenda', ['as'=> 'eventos.agenda', 'uses' => 'EventoPetController@agenda']);
 
-    Route::get('/search', ['as'=> 'search', 'uses' => 'CursoController@buscar']);
+
 });
 
 Route::group(['middleware' => ['auth','profissional']], function() {
@@ -77,7 +77,8 @@ Route::resource('tutors', 'TutorController');
 Route::resource('profissionals', 'ProfissionalController');
 
 
-
+Route::get('/search', ['as'=> 'search', 'uses' => 'ProfissionalController@buscar']);
+Route::get('/cidades_select', 'ProfissionalController@cidades_select');
 
 
 

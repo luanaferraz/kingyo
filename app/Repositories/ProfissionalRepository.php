@@ -2,8 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Models\Admin\Propriedade;
 use App\Models\Profissional;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class ProfissionalRepository
@@ -46,5 +48,53 @@ class ProfissionalRepository extends BaseRepository
     public function model()
     {
         return Profissional::class;
+    }
+
+    public function buscar($data)
+    {
+        $resultado = Profissional::select('*');
+
+        if (!empty($data['nome']))
+            $resultado->where('nome', 'LIKE',  '%' .$data['nome']. '%' );
+
+
+        if (!empty($data['cidades'])) {
+            $resultado->whereIn('cidade',  $data['cidades']);
+        }
+
+        return $resultado->paginate(9);
+    }
+
+    public function listar_drop($term,$page){
+
+        $resultCount = 10;
+
+        $offset = ($page - 1) * $resultCount;
+
+
+        $breeds = Profissional::select(DB::raw("cidade as text"))
+            ->having('text', 'LIKE',  '%' .$term. '%')
+            ->groupBy('text')
+            ->orderBy('text', 'asc')->skip($offset)->take($resultCount)->get(['text']);
+
+
+        $count = Profissional::select(DB::raw("cidade as text"))
+            ->having('text', 'LIKE',  '%' .$term. '%')
+            ->groupBy('text')
+            ->get()->count();
+
+
+
+        $endCount = $offset + $resultCount;
+        $morePages = $count > $endCount;
+
+        $results = array(
+            "results" => $breeds,
+            "pagination" => array(
+                "more" => $morePages
+            )
+        );
+
+        return response()->json($results);
     }
 }
