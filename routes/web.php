@@ -69,18 +69,18 @@ Route::group(['middleware' => ['auth','tutor']], function() {
 });
 
 Route::group(['middleware' => ['auth','profissional']], function() {
-    Route::get('/profissional', 'HomeController@profissional');
-    Route::resource('servicos', 'servicoController');
+
 });
 
 Route::resource('tutors', 'TutorController');
 Route::resource('profissionals', 'ProfissionalController');//
 
 
+Route::get('/profissional', 'HomeController@profissional');
+Route::resource('servicos', 'servicoController');
 
 
 
-});
 
 Route::resource('tutors', 'TutorController');
 Route::resource('profissionals', 'ProfissionalController');
@@ -91,6 +91,8 @@ Route::post('profissional/cadastrar',['as' => 'registerProfissional', 'uses' => 
 
 
 Route::resource('servicos', 'servicoController');
+
+Route::resource('eventoProfissional', 'EventoProfissionalController');
 
 
 Route::resource('profissionalFavoritos', 'ProfissionalFavoritoController');

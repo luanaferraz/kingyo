@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>CuidaPet</title>
+    <title>Kingyo</title>
 
     <!-- Scripts -->
     {{--    <script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>--}}
@@ -282,7 +282,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; {{ config('app.name', 'Laravel') }} </span>
+                    <span>Copyright Kingyo </span>
                 </div>
             </div>
         </footer>

@@ -2,35 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52af69e6-9e60-4c82-a8bc-509d023b9765" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfissionalFavoritoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CreateProfissionalFavoritoRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateProfissionalFavoritoRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/ProfissionalFavorito.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/ProfissionalFavoritoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ProfissionalFavoritoControllerFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ProfissionalFavoritoFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/fotos/15728073315dbf22a3d5031.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/fotos/15728239305dbf637ae0e4f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/fotos/sm15728073315dbf22a3d5031.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/fotos/sm15728239305dbf637ae0e4f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/15728073435dbf22af0d238.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/15728239415dbf638552963.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/sm15728073435dbf22af0d238.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/petdocs/sm15728239415dbf638552963.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/model_schemas/ProfissionalFavorito.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/model_schemas/ProfissionalFavoritoController.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/fields.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/show_fields.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profissional_favoritos/table.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/kingyo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/kingyocolorido.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/pet2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,16 +24,6 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>body</find>
-      <find>paine</find>
-      <find>field is required.</find>
-    </findStrings>
     <execution>
       <executable />
     </execution>
@@ -169,7 +142,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -182,11 +155,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\cuidaPet\public\images" />
       <recent name="C:\wamp64\www\cuidaPet\resources\views\layouts" />
       <recent name="C:\wamp64\www\cuidaPet\resources\views" />
       <recent name="C:\wamp64\www\cuidaPet\app\Http\Middleware" />
       <recent name="C:\wamp64\www\cuidaPet\public\css" />
-      <recent name="C:\wamp64\www\cuidaPet\public\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -253,6 +226,7 @@
       <workItem from="1573168191631" duration="2367000" />
       <workItem from="1573259159952" duration="2127000" />
       <workItem from="1573260897241" duration="1201000" />
+      <workItem from="1573324620254" duration="13120000" />
     </task>
     <task id="LOCAL-00001" summary="projeto">
       <created>1571058337872</created>
