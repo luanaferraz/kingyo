@@ -16,6 +16,8 @@
     {!! Form::number('profissional_id', null, ['class' => 'form-control']) !!}
 </div>
 
+{{--<input type="hidden" name="profissional_id" value="{!! $profissional->id !!}">--}}
+
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}

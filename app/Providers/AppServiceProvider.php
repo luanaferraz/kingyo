@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\evento_profissional;
 use App\Models\EventoPet;
 
 use App\Models\Pet;
+use App\Models\Profissional;
 use App\Models\Tutor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -48,13 +50,14 @@ class AppServiceProvider extends ServiceProvider
 
                 }
 
+                if($user->role_id == 2){
+                    $profissional = Profissional::where('usuario_id', $user->id)->first();
+
+                    $eventoProfissional = evento_profissional::where('profissional_id', $profissional->id)->get();
+                    View::share('eventoProfissional', $eventoProfissional);
+
+                }
             }
         });
-
-
-
-
-
-
     }
 }

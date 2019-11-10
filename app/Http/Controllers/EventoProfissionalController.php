@@ -6,12 +6,13 @@ use App\Http\Requests\Createevento_profissionalRequest;
 use App\Http\Requests\Updateevento_profissionalRequest;
 use App\Repositories\evento_profissionalRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\ProfissionalRepository;
 use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Facades\Auth;
 use Response;
 
-class evento_profissionalController extends AppBaseController
+class eventoProfissionalController extends AppBaseController
 {
     /** @var  evento_profissionalRepository */
     private $eventoProfissionalRepository;
@@ -44,7 +45,6 @@ class evento_profissionalController extends AppBaseController
      */
     public function create()
     {
-        return view('evento_profissional.create');
 
         $profissional = $this->profissionalRepository->findByField('usuario_id', Auth::user()->id)->first();
 
@@ -103,7 +103,7 @@ class evento_profissionalController extends AppBaseController
         if (empty($eventoProfissional)) {
             Flash::error('Evento Profissional não encontrado');
 
-            return redirect(route('eventoProfissional.index'));
+            return redirect(route('evento_Profissional.index'));
         }
 
         return view('evento_profissional.edit')->with('eventoProfissional', $eventoProfissional);
@@ -124,14 +124,14 @@ class evento_profissionalController extends AppBaseController
         if (empty($eventoProfissional)) {
             Flash::error('Evento Profissional não encontrado');
 
-            return redirect(route('eventoProfissional.index'));
+            return redirect(route('evento_Profissional.index'));
         }
 
         $eventoProfissional = $this->eventoProfissionalRepository->update($request->all(), $id);
 
         Flash::success('Evento Profissional atualizado com sucesso.');
 
-        return redirect(route('eventoProfissional.index'));
+        return redirect(route('evento_Profissional.index'));
     }
 
     /**
@@ -150,13 +150,13 @@ class evento_profissionalController extends AppBaseController
         if (empty($eventoProfissional)) {
             Flash::error('Evento Profissional não encontrado');
 
-            return redirect(route('eventoProfissional.index'));
+            return redirect(route('evento_Profissional.index'));
         }
 
         $this->eventoProfissionalRepository->delete($id);
 
         Flash::success('Evento Profissional deletado com sucesso.');
 
-        return redirect(route('eventoProfissional.index'));
+        return redirect(route('evento_Profissional.index'));
     }
 }

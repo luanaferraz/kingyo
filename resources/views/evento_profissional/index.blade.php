@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.profissional')
 
 @section('content')
     <section class="content-header d-flex">
@@ -7,7 +7,7 @@
        </div>
 
         <h1 class="ml-auto">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('eventoProfissional.create') !!}"><i class="fas fa-plus"></i></a>
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('evento_profissional.create') !!}"><i class="fas fa-plus"></i></a>
 {{--            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! isset($pet) ? route('eventos.create', [$pet->id]) : route('eventoPets.create') !!}"><i class="fas fa-plus"></i></a>--}}
         </h1>
     </section>

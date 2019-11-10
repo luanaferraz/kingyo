@@ -79,3 +79,10 @@ Route::get('/cadastro', ['as' => 'cadastro', 'uses' => 'Auth\RegisterController@
 Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterController@register']);
 
 Route::resource('profissionalFavoritos', 'ProfissionalFavoritoController');
+Route::resource('eventoProfissional', 'EventoProfissionalController');
+
+Route::resource('evento_profissional', 'EventoProfissionalController');
+
+Route::resource('profissionals', 'ProfissionalController');
+
+

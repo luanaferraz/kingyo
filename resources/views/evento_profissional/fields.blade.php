@@ -44,10 +44,10 @@
 @endsection
 
 {{--<!-- Profissional Id Field -->--}}
-<div class="form-group col-sm-6">
-    {!! Form::label('profissional_id', 'Profissional Id:') !!}
-    {!! Form::number('profissional_id', null, ['class' => 'form-control']) !!}
-</div>
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('profissional_id', 'Profissional Id:') !!}--}}
+{{--    {!! Form::number('profissional_id', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 <!-- Horario Field -->
 <div class="form-group col-sm-6">

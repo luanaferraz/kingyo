@@ -32,7 +32,7 @@
 <li class="nav-item {{ Request::is('eventoProfissional*') ? 'active' : '' }}">
     <a class="nav-link" href="{!! route('eventoProfissional.index') !!}">
         <i class="fas fa-fw fa-table"></i>
-        <span>Evento do Profissional</span></a>
+        <span>Agenda</span></a>
 </li>
 
 <li class="nav-item {{ Request::is('servicos*') ? 'active' : '' }}">
@@ -40,3 +40,6 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Serviços</span></a>
 </li>
+
+
+
