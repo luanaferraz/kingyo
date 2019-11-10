@@ -100,6 +100,7 @@ class RegisterController extends Controller
         ]);
 
         $data['usuario_id'] = $usuario->id;
+
         if ( $data['role_id'] == 1){
         $tutor = $this->tutorRepository->create($data);}
         else if ( $data['role_id'] == 2){

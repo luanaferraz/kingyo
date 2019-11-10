@@ -2,9 +2,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>CuidaPet</title>
+
+        <title>Kingyo</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -20,12 +21,14 @@
         <!-- Styles -->
     </head>
     <body class="bg-pet">
+
         <div class="flex-center position-ref full-height d-flex">
             <div class="top-left ">
-                <img src="/images/logo.png" class="img-fluid w-25">
+                <img src="/images/kingyo.png" class="img-fluid w-25">
             </div>
+
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right nav-item links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -44,7 +47,10 @@
 
             <div class="content">
 
+
             </div>
         </div>
+
+
     </body>
 </html>

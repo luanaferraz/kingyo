@@ -5,13 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateProfissionalRequest;
 use App\Http\Requests\UpdateProfissionalRequest;
 use App\Repositories\ProfissionalRepository;
-use App\Http\Controllers\AppBaseController;
-use App\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request as Ajax;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use Flash;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use Response;
 
 class ProfissionalController extends Controller
@@ -36,7 +33,7 @@ class ProfissionalController extends Controller
         $profissionals = $this->profissionalRepository->all();
 
         return view('profissionals.index')
-            ->with('profissionals', $profissionals);
+            ->with('profissionais', $profissionals);
     }
 
     /**
@@ -159,58 +156,26 @@ class ProfissionalController extends Controller
     }
 
 
-    public function  showRegistrationFormProfissional (){
-        return view ('profissionals.create');
+    public function buscar()
+    {
+        $data = Request::all();
+        $profissionais = $this->profissionalRepository->buscar($data);
+
+
+        return view('profissionals.index', compact( 'profissionais','value','area','tipos'));
     }
 
-    public function registerProfissional (Request $request)
-    {
-        $validate = $this->validator($request->all());
+    public function cidades_select(Ajax $request){
 
-        if($validate){
-            return response()->json([
-                'Status' => 'FAIL',
-                'Message' => $validate[0]
-            ]);
+        if ($request->ajax())
+        {
+            $page = Request::input('page');
+            $term = Request::input("term");
+
+            $clientes = $this->profissionalRepository->listar_drop($term,$page);
+
+            return $clientes;
         }
-
-        event(new Registered($user = $this->createProfissional($request->all())));
-
-//        $this->guard()->login($user);
-
-        return response()->json([
-            'Status' => 'DONE',
-            'Message' => 'Cadastro realizado com sucesso!'
-        ]);
     }
 
-    protected function createProfissional(array $data)
-    {
-        $usuario =  User::create([
-            'name' => $data['nome'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'role_id' => 2,
-        ]);
-
-        $data['usuario_id'] = $usuario->id;
-        $profissional = $this->profissionalRepository->create($data);
-
-        return $usuario;
-    }
-
-    protected function validator(array $data)
-    {
-        $validator = Validator::make($data, [
-            'nome' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-
-        if ($validator->fails()) {
-            $errors = $validator->errors()->all();
-            return $errors;
-        }
-        return false;
-    }
 }
