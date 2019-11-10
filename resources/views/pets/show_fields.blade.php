@@ -1,4 +1,3 @@
-
 <div class="col-12 bg-gradient-primary text-white d-flex py-2">
 
     <div class="px-2 align-self-center">

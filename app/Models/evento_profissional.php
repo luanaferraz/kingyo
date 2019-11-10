@@ -81,5 +81,4 @@ class evento_profissional extends Model
         return $this->belongsTo(\App\Models\Profissional::class, 'profissional_id');
     }
 
-
 }
