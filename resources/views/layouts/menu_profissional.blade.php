@@ -20,6 +20,12 @@
         <span>Agenda</span></a>
 </li>
 
+<li class="nav-item {{ Request::is('eventoProfissional*') ? 'active' : '' }}">
+    <a class="nav-link" href="{!! route('eventoProfissional.index') !!}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Evento do Profissional</span></a>
+</li>
+
 <li class="nav-item {{ Request::is('servicos*') ? 'active' : '' }}">
     <a class="nav-link" href="{!! route('servicos.index') !!}">
         <i class="fas fa-fw fa-table"></i>

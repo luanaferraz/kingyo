@@ -1,6 +1,6 @@
 <!-- Sidebar - Brand -->
 <a class=" d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
-    <div class="mx-3"> <img src="/images/logo.png" class="img-fluid sidebar-brand-img"> </div>
+    <div class="mx-3"> <img src="/images/kingyo.png" class="img-fluid sidebar-brand-img"> </div>
 </a>
 
 <!-- Divider -->
@@ -50,3 +50,8 @@
             <span>{{$pet->nome}}</span></a>
     </li>
 @endforeach
+ <li class="nav-item {{ Request::is('profissionalFavoritos*') ? 'active' : '' }}">
+        <a class="nav-link" href="{!! route('profissionalFavoritos.index') !!}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Profissional Favoritos</span></a>
+    </li>

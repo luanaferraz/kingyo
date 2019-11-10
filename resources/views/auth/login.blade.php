@@ -4,7 +4,7 @@
 @section('content')
 
     <div class="login-logo col-md-6 col-12 d-flex mt-5 justify-content-center">
-        <a href="{{ url('/home') }}" class="align-self-center "><img src="/images/logocolorido.png" class="img-fluid"></a>
+        <a href="{{ url('/home') }}" class=" "><img src="/images/kingyocolorido.png" class=" img-fluid align-self-center bg-transparent" alt="Responsive image"></a>
     </div>
 
     <!-- /.login-logo -->
