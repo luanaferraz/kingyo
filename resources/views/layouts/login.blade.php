@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <title>CuidaPet</title>
-{{--    @if(isset($keywords_for_layout))--}}
-{{--        <meta name="keywords" content="{{$keywords_for_layout}}" >--}}
-{{--    @endif--}}
-{{--    @if(isset($description_for_layout))--}}
-{{--        <meta name="description" content="{{$description_for_layout}}" >--}}
-{{--    @endif--}}
+    <title>Kingyo</title>
 
 <!-- css -->
     <link rel="stylesheet" href="/css/app.css">

@@ -1,7 +1,7 @@
 
 @extends('layouts.login')
 @php
-    $title_for_layout = 'Cadastre-se - CuidaPet';
+    $title_for_layout = 'Kingyo';
 @endphp
 
 @section('content')
@@ -10,7 +10,7 @@
 
         <div class="col-12 col-md-10 offset-md-1 pt-3">
             <div class="col-12 title">
-                <h3>CADASTRE-SE</h3>
+                <h3>CADASTRA-SE</h3>
                 <span></span>
             </div>
         </div>
