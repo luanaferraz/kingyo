@@ -17,12 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-
-Route::get('/cadastro', ['as' => 'cadastro', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
-Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterController@register']);
-
-
 Route::group(['middleware' => ['auth','tutor']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
 
@@ -65,40 +59,24 @@ Route::group(['middleware' => ['auth','tutor']], function() {
 
     Route::get('agenda', ['as'=> 'eventos.agenda', 'uses' => 'EventoPetController@agenda']);
 
-
+    Route::get('/search', ['as'=> 'search', 'uses' => 'ProfissionalController@buscar']);
+    Route::get('/cidades_select', 'ProfissionalController@cidades_select');
 });
 
 Route::group(['middleware' => ['auth','profissional']], function() {
 
+    Route::get('/profissional', 'HomeController@profissional');
+    Route::resource('servicos', 'servicoController');
+    Route::resource('eventoProfissional', 'EventoProfissionalController');
 });
 
 Route::resource('tutors', 'TutorController');
 Route::resource('profissionals', 'ProfissionalController');//
 
-
-Route::get('/profissional', 'HomeController@profissional');
-Route::resource('servicos', 'servicoController');
-
-
-
-
-Route::resource('tutors', 'TutorController');
-Route::resource('profissionals', 'ProfissionalController');
-
 Route::get('profissional/cadastrar', ['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@showRegistrationFormProfissional'] );
 Route::post('profissional/cadastrar',['as' => 'registerProfissional', 'uses' => 'Auth\RegisterController@registerProfissional']);
-
-Route::get('/search', ['as'=> 'search', 'uses' => 'ProfissionalController@buscar']);
-Route::get('/cidades_select', 'ProfissionalController@cidades_select');
-
-
-Route::resource('tutors', 'TutorController');
-
-
-Route::resource('servicos', 'servicoController');
-
-Route::resource('eventoProfissional', 'EventoProfissionalController');
-
+Route::get('/cadastro', ['as' => 'cadastro', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterController@register']);
 
 Route::resource('profissionalFavoritos', 'ProfissionalFavoritoController');
 Route::resource('eventoProfissional', 'EventoProfissionalController');

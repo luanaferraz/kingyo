@@ -81,4 +81,7 @@ class evento_profissional extends Model
         return $this->belongsTo(\App\Models\Profissional::class, 'profissional_id');
     }
 
+    public function getDataAttribute($date){
+        return Carbon::createFromFormat('Y-m-d', $date)->format('Y-m-d');
+    }
 }

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>CuidaPet</title>
+    <title>Kingyo</title>
 
     <!-- Scripts -->
     {{--    <script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>--}}
@@ -47,7 +47,7 @@
                 events : [
                         @foreach($eventoProfissional as $profissional)
                     {
-                        title : '{!! !is_null($profissional->profissional)?$profissional->profissional->nome:''!!} - {{ $profissional->tipo }}',
+                        title : '{{ $profissional->descricao }} ({{ $profissional->tipo }}) ',
                         start : '{{$profissional->data }} {{$profissional->horario }}'
                     },
                     @endforeach
@@ -79,18 +79,18 @@
                 </button>
 
                 <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+            {{--                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">--}}
+            {{--                    <div class="input-group">--}}
+            {{--                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">--}}
+            {{--                        <div class="input-group-append">--}}
+            {{--                            <button class="btn btn-primary" type="button">--}}
+            {{--                                <i class="fas fa-search fa-sm"></i>--}}
+            {{--                            </button>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </form>--}}
 
-                <!-- Topbar Navbar -->
+            <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
                     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -219,10 +219,9 @@
                     </li>
 
                     <div class="topbar-divider d-none d-sm-block"></div>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                    <a class="dropdown-item align-self-center" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i> Sair
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -282,7 +281,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; {{ config('app.name', 'CuidaPet') }} </span>
+                    <span>Copyright &copy; {{ config('app.name', 'Kingyo') }} </span>
                 </div>
             </div>
         </footer>
