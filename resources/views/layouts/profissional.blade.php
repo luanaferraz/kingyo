@@ -47,7 +47,7 @@
                 events : [
                         @foreach($eventoProfissional as $profissional)
                     {
-                        title : '{!! !is_null($profissional->profissional)?$profissional->profissional->nome:''!!} - {{ $profissional->tipo }}',
+                        title : '{{ $profissional->descricao }} ({{ $profissional->tipo }}) ',
                         start : '{{$profissional->data }} {{$profissional->horario }}'
                     },
                     @endforeach
