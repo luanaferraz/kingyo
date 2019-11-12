@@ -1,22 +1,16 @@
 <!-- Descricao Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('descricao', 'Descricao:') !!}
+    {!! Form::label('descricao', 'Descrição:') !!}
     {!! Form::text('descricao', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Custo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('custo', 'Custo:') !!}
-    {!! Form::number('custo', null, ['class' => 'form-control']) !!}
+    {!! Form::text('custo', null, ['class' => 'form-control money']) !!}
 </div>
 
-<!-- Profissional Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('profissional_id', 'Profissional Id:') !!}
-    {!! Form::number('profissional_id', null, ['class' => 'form-control']) !!}
-</div>
-
-{{--<input type="hidden" name="profissional_id" value="{!! $profissional->id !!}">--}}
+<input type="hidden" name="profissional_id" value="{!! $profissional->id !!}">
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

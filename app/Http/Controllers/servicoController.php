@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateservicoRequest;
 use App\Http\Requests\UpdateservicoRequest;
+use App\Repositories\ProfissionalRepository;
 use App\Repositories\servicoRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Auth;
 use Response;
 
 class servicoController extends AppBaseController
@@ -15,9 +17,10 @@ class servicoController extends AppBaseController
     /** @var  servicoRepository */
     private $servicoRepository;
 
-    public function __construct(servicoRepository $servicoRepo)
+    public function __construct(servicoRepository $servicoRepo, ProfissionalRepository $profissionalRepository)
     {
         $this->servicoRepository = $servicoRepo;
+        $this->profissionalRepository = $profissionalRepository;
     }
 
     /**
@@ -29,7 +32,8 @@ class servicoController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $servicos = $this->servicoRepository->all();
+        $profissional = $this->profissionalRepository->findByField('usuario_id', Auth::user()->id)->first();
+        $servicos = $this->servicoRepository->findByField('profissional_id', $profissional->id);
 
         return view('servicos.index')
             ->with('servicos', $servicos);
@@ -42,7 +46,9 @@ class servicoController extends AppBaseController
      */
     public function create()
     {
-        return view('servicos.create');
+        $profissional = $this->profissionalRepository->findByField('usuario_id', Auth::user()->id)->first();
+
+        return view('servicos.create')->with('profissional',$profissional);
     }
 
     /**
@@ -100,7 +106,9 @@ class servicoController extends AppBaseController
             return redirect(route('servicos.index'));
         }
 
-        return view('servicos.edit')->with('servico', $servico);
+        $profissional = $this->profissionalRepository->findByField('usuario_id', Auth::user()->id)->first();
+
+        return view('servicos.edit')->with('servico', $servico)->with('profissional',$profissional);
     }
 
     /**

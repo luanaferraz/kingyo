@@ -32,7 +32,8 @@ class eventoProfissionalController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $eventoProfissional = $this->eventoProfissionalRepository->all();
+        $profissional = $this->profissionalRepository->findByField('usuario_id', Auth::user()->id)->first();
+        $eventoProfissional = $this->eventoProfissionalRepository->findByField('profissional_id', $profissional->id);
 
         return view('evento_profissional.index')
             ->with('eventoProfissional', $eventoProfissional);
