@@ -85,4 +85,8 @@ Route::resource('evento_profissional', 'EventoProfissionalController');
 
 Route::resource('profissionals', 'ProfissionalController');
 
+Route::resource('profissionals', 'ProfissionalController');
+
+Route::resource('pacientes', 'PetController');
+
 
