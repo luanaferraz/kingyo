@@ -62,4 +62,9 @@ class servico extends Model
     {
         return $this->belongsTo(\App\Models\Profissional::class, 'profissional_id');
     }
+
+    public function getCustoAttribute($valor){
+        if(!empty($valor))
+            return "R$ ".number_format($valor, 2, ",", ".");
+    }
 }

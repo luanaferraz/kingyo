@@ -2,9 +2,8 @@
     <table class="table" id="servicos-table">
         <thead class="bg-gradient-primary text-white">
             <tr>
-                <th>Tipo de serviço</th>
+                <th>Serviço</th>
         <th>Custo</th>
-        <th>Profissional Id</th>
                 <th colspan="3">Ações</th>
             </tr>
         </thead>
@@ -13,7 +12,6 @@
             <tr>
                 <td>{!! $servico->descricao !!}</td>
             <td>{!! $servico->custo !!}</td>
-            <td>{!! $servico->profissional_id !!}</td>
                 <td>
                     {!! Form::open(['route' => ['servicos.destroy', $servico->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

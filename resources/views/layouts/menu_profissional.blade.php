@@ -8,19 +8,17 @@
 <hr class="sidebar-divider my-0">
 
 <!-- Nav Item - Dashboard -->
-<li class="nav-item active">
+<li class="nav-item {{ Request::is('profissional') ? 'active' : '' }}">
     <a class="nav-link" href="{{ url('/profissional') }}">
         <i class="fas fa-paw"></i>
-        <span>Home</span></a>
+        <span>Meus Pacientes</span></a>
 </li>
 
-<li class="nav-item active">
-    <a class="nav-link" href="{{ url('/profissional/agenda') }}">
+<li class="nav-item {{ Request::is('eventoProfissional*') ? 'active' : '' }}">
+    <a class="nav-link" href="{!! route('eventoProfissional.index') !!}">
         <i class="far fa-calendar-alt"></i>
         <span>Agenda</span></a>
 </li>
-
-
 <!-- Divider -->
 <hr class="sidebar-divider">
 
@@ -29,11 +27,7 @@
     Menu
 </div>
 
-<li class="nav-item {{ Request::is('eventoProfissional*') ? 'active' : '' }}">
-    <a class="nav-link" href="{!! route('eventoProfissional.index') !!}">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Agenda</span></a>
-</li>
+
 
 <li class="nav-item {{ Request::is('servicos*') ? 'active' : '' }}">
     <a class="nav-link" href="{!! route('servicos.index') !!}">
