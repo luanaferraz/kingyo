@@ -25,7 +25,7 @@
                         <div class="px-2 align-self-center ml-auto">
                             {!! Form::open(['route' => ['pacientes.destroy', $paciente->pet->id], 'method' => 'delete']) !!}
                             <div class='btn-group'>
-                                <a href="{!! route('pets.show', [$paciente->pet->id]) !!}" class='btn btn-secondary border-right-dark btn-xs'><i class="fas fa-bars"></i></a>
+                                <a href="{!! route('ficha', [$paciente->pet->id]) !!}" class='btn btn-secondary border-right-dark btn-xs'><i class="fas fa-bars"></i></a>
 {{--                                <a href="{!! route('pets.edit', [$paciente->id]) !!}" class='btn btn-secondary border-right-dark btn-xs'><i class="fas fa-edit"></i></a>--}}
 {{--                                {!! Form::button('<i class="fas fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Deseja realmente excluir?')"]) !!}--}}
                             </div>

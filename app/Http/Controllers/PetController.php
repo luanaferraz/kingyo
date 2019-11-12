@@ -159,4 +159,17 @@ class PetController extends AppBaseController
 
         return redirect(route('home'));
     }
+
+    public function ficha($id)
+    {
+        $pet = $this->petRepository->find($id);
+
+        if (empty($pet)) {
+            Flash::error('Pet not found');
+
+            return redirect(route('pets.index'));
+        }
+
+        return view('pets.ficha')->with('pet', $pet);
+    }
 }

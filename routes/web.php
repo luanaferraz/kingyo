@@ -70,6 +70,7 @@ Route::group(['middleware' => ['auth','profissional']], function() {
     Route::get('/profissional', 'HomeController@profissional');
     Route::resource('servicos', 'servicoController');
     Route::resource('eventoProfissional', 'EventoProfissionalController');
+    Route::get('ficha/{pet?}', ['as'=> 'ficha', 'uses' => 'PetController@ficha']);
 });
 
 Route::resource('tutors', 'TutorController');
