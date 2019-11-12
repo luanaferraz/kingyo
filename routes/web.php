@@ -61,6 +61,8 @@ Route::group(['middleware' => ['auth','tutor']], function() {
 
     Route::get('/search', ['as'=> 'search', 'uses' => 'ProfissionalController@buscar']);
     Route::get('/cidades_select', 'ProfissionalController@cidades_select');
+
+    Route::get('/favoritos', ['as'=> 'favoritos', 'uses' => 'ProfissionalFavoritoController@favoritos']);
 });
 
 Route::group(['middleware' => ['auth','profissional']], function() {

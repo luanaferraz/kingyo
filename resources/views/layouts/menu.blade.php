@@ -20,10 +20,19 @@
 </li>
 
 <li class="nav-item active">
+    <a class="nav-link" href="{{ url('/favoritos') }}">
+        <i class="fas fa-heart"></i>
+        <span>Profissionais Favoritos</span></a>
+
+</li>
+
+<li class="nav-item active">
     <a class="nav-link" href="{{ url('/profissionals') }}">
         <i class="fas fa-map-marker-alt"></i>
         <span>Encontre um Profissional</span></a>
 </li>
+
+
 
 <!-- Divider -->
 <hr class="sidebar-divider">

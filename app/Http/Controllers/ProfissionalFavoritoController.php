@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateProfissionalFavoritoRequest;
 use App\Http\Requests\UpdateProfissionalFavoritoRequest;
+use App\Models\Pet;
+use App\Models\Tutor;
 use App\Repositories\ProfissionalFavoritoRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -152,5 +154,16 @@ class ProfissionalFavoritoController extends AppBaseController
         Flash::success('Profissional Favorito deletado com sucesso.');
 
         return redirect(route('profissionalFavoritos.index'));
+    }
+
+    public function favoritos(Request $request)
+    {
+        $tutor = Tutor::where('usuario_id', auth()->user()->id)->first();
+        $pets_id = Pet::where('tutor_id', $tutor->id)->pluck('id');
+
+        $favoritos = $this->profissionalFavoritoRepository->findByPets($pets_id);
+
+        return view('profissional_favoritos.favoritos')
+            ->with('favoritos', $favoritos);
     }
 }

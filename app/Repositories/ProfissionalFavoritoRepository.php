@@ -37,4 +37,10 @@ class ProfissionalFavoritoRepository extends BaseRepository
     {
         return ProfissionalFavorito::class;
     }
+    public function findByPets($pets_id)
+    {
+        $favoritos = ProfissionalFavorito::whereIn('pet_id', $pets_id)->groupBy('profissional_id')->get();
+
+        return $favoritos;
+    }
 }
