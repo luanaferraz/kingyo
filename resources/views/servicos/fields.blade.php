@@ -6,7 +6,7 @@
 
 <!-- Custo Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('custo', 'Custo:') !!}
+    {!! Form::label('custo', 'Custo(R$):') !!}
     {!! Form::text('custo', null, ['class' => 'form-control money']) !!}
 </div>
 

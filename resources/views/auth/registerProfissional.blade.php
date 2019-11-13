@@ -10,7 +10,7 @@
 
         <div class="col-12 col-md-10 offset-md-1 pt-3">
             <div class="col-12 title">
-                <h3>CADASTRA-SE</h3>
+                <h3>Cadastro de Profissional</h3>
                 <span></span>
             </div>
         </div>
@@ -29,14 +29,14 @@
 
             <!-- Profissao Field -->
             <div class="form-group col-sm-6">
-                {!! Form::label('profissao', 'Profissao:') !!}
+                {!! Form::label('profissao', 'Profissão:') !!}
                 {!! Form::text('profissao', null, ['class' => 'form-control']) !!}
 
             </div>
 
             <!-- Pais Field -->
             <div class="form-group col-sm-6">
-                {!! Form::label('pais', 'Pais:') !!}
+                {!! Form::label('pais', 'País:') !!}
                 {!! Form::text('pais', null, ['class' => 'form-control']) !!}
             </div>
 
@@ -60,14 +60,14 @@
             </div>
 
             <!-- Rua Field -->
-            <div class="form-group col-sm-6">
+            <div class="form-group col-sm-12">
                 {!! Form::label('rua', 'Rua:') !!}
                 {!! Form::text('rua', null, ['class' => 'form-control']) !!}
             </div>
 
             <!-- Numero Field -->
             <div class="form-group col-sm-6">
-                {!! Form::label('numero', 'Numero:') !!}
+                {!! Form::label('numero', 'Número:') !!}
                 {!! Form::text('numero', null, ['class' => 'form-control']) !!}
             </div>
 
@@ -111,7 +111,10 @@
                     <div class="form-group col-sm-12">
                         {{--{!! Form::submit('Cadastrar', ['class' => 'btn btn-primary']) !!}--}}
 
-                        <input type="button" value="CADASTRAR" id="cadastrar" class="btn btn-primary">
+                        <input type="button" value="Cadastrar" id="cadastrar" class="btn btn-primary">
+                        <a href="{!! url('/') !!}" class="btn btn-secondary">Cancelar</a>
+
+
                     </div>
                 </div>
 

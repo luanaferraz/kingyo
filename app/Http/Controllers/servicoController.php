@@ -64,7 +64,7 @@ class servicoController extends AppBaseController
 
         $servico = $this->servicoRepository->create($input);
 
-        Flash::success('Servico salvo com sucesso.');
+        Flash::success('Serviço salvo com sucesso.');
 
         return redirect(route('servicos.index'));
     }
@@ -81,7 +81,7 @@ class servicoController extends AppBaseController
         $servico = $this->servicoRepository->find($id);
 
         if (empty($servico)) {
-            Flash::error('Servico not found');
+            Flash::error('Serviço not found');
 
             return redirect(route('servicos.index'));
         }
@@ -101,7 +101,7 @@ class servicoController extends AppBaseController
         $servico = $this->servicoRepository->find($id);
 
         if (empty($servico)) {
-            Flash::error('Servico não encontrado');
+            Flash::error('Serviço não encontrado');
 
             return redirect(route('servicos.index'));
         }
@@ -124,14 +124,14 @@ class servicoController extends AppBaseController
         $servico = $this->servicoRepository->find($id);
 
         if (empty($servico)) {
-            Flash::error('Servico não encontrado');
+            Flash::error('Serviço não encontrado');
 
             return redirect(route('servicos.index'));
         }
 
         $servico = $this->servicoRepository->update($request->all(), $id);
 
-        Flash::success('Servico atualizado com sucesso.');
+        Flash::success('Serviço atualizado com sucesso.');
 
         return redirect(route('servicos.index'));
     }
@@ -150,14 +150,14 @@ class servicoController extends AppBaseController
         $servico = $this->servicoRepository->find($id);
 
         if (empty($servico)) {
-            Flash::error('Servico não encontrado');
+            Flash::error('Serviço não encontrado');
 
             return redirect(route('servicos.index'));
         }
 
         $this->servicoRepository->delete($id);
 
-        Flash::success('Servico deletado com sucesso.');
+        Flash::success('Serviço deletado com sucesso.');
 
         return redirect(route('servicos.index'));
     }

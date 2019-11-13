@@ -44,7 +44,7 @@
 
     <!-- Numero Field -->
     <div class="form-group col-sm-6">
-        {!! Form::label('numero', 'Numero:') !!}
+        {!! Form::label('numero', 'Número:') !!}
         {!! Form::text('numero', null, ['class' => 'form-control']) !!}
     </div>
 

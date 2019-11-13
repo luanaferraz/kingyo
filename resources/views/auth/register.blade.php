@@ -142,7 +142,7 @@
 
         <div class="col-12 col-md-10 offset-md-1 pt-3">
             <div class="col-12 title">
-                <h3>CADASTRA-SE</h3>
+                <h3>Cadastro Tutor</h3>
                 <span></span>
             </div>
         </div>
@@ -188,9 +188,10 @@
             </div>
 
             <!-- Estado Field -->
-            <div class="form-group col-sm-2">
+            <div class="form-group col-sm-6">
                 {!! Form::label('estado', 'Estado:') !!}
-                {!! Form::text('estado', null, ['class' => 'form-control uf']) !!}
+                {!! Form::select('estado',array('AC' => 'AC', 'AL' => 'AL','AP' => 'AP','AM' => 'AM','BA' => 'BA', 'CE' => 'CE', 'DF' => 'DF','ES' => 'ES', 'GO' => 'GO','MA' => 'MA', 'MT' => 'MT', 'MS' => 'MS','MG' => 'MG', 'PA' => 'PA','PB' => 'PB', 'PR' => 'PR', 'PE' => 'PE', 'PI' => 'PI', 'RJ'
+                => 'RJ', 'RN' => 'RN','RS' => 'RS', 'RO' => 'RO','RR' => 'RR','SC' => 'SC','SP' => 'SP','SE' => 'SE','TO' => 'TO' ), null, ['class' => 'form-control']) !!}
             </div>
 
             <!-- Email Field -->
@@ -230,8 +231,9 @@
         <!-- Submit Field -->
         <div class="form-group col-sm-12">
             {{--{!! Form::submit('Cadastrar', ['class' => 'btn btn-primary']) !!}--}}
+            <input type="button" value="Cadastrar" id="cadastrar" class="btn btn-primary">
+            <a href="{!! url('/') !!}" class="btn btn-secondary">Cancelar</a>
 
-            <input type="button" value="CADASTRAR" id="cadastrar" class="btn btn-primary">
         </div>
     </div>
 
