@@ -42,9 +42,9 @@ class ProfissionalFavoritoController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create($profissional, $tutor)
     {
-        return view('profissional_favoritos.create');
+        return redirect(route('favoritos.store',[$profissional, $tutor]));
     }
 
     /**
@@ -54,15 +54,16 @@ class ProfissionalFavoritoController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateProfissionalFavoritoRequest $request)
+    public function store($profissional, $tutor,  CreateProfissionalFavoritoRequest $request)
     {
         $input = $request->all();
 
+//        dd($input);
         $profissionalFavorito = $this->profissionalFavoritoRepository->create($input);
 
         Flash::success('Profissional Favorito salvo com sucesso.');
 
-        return redirect(route('profissionalFavoritos.index'));
+        return redirect(route('favoritos'));
     }
 
     /**
@@ -159,10 +160,10 @@ class ProfissionalFavoritoController extends AppBaseController
 
     public function favoritos(Request $request)
     {
-        $tutor = Tutor::where('usuario_id', auth()->user()->id)->first();
-        $pets_id = Pet::where('tutor_id', $tutor->id)->pluck('id');
+        $tutor = Tutor::where('usuario_id', auth()->user()->id)->pluck('id');
+//        $pets_id = Pet::where('tutor_id', $tutor->id)->pluck('id');
 
-        $favoritos = $this->profissionalFavoritoRepository->findByPets($pets_id);
+        $favoritos = $this->profissionalFavoritoRepository->findByPets($tutor);
 
         return view('profissional_favoritos.favoritos')
             ->with('favoritos', $favoritos);

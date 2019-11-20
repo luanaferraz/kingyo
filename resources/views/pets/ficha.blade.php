@@ -83,7 +83,7 @@
                             <thead class="bg-light">
                             <tr>
                                 <th>Data</th>
-                                <th>Pet</th>
+{{--                                <th>Pet</th>--}}
                                 <th>Tipo</th>
                                 <th>Descrição</th>
                             </tr>
@@ -92,7 +92,7 @@
                             @foreach($pet->eventoPets as $eventoPet)
                                 <tr>
                                     <td>{!!$eventoPet->data !!}</td>
-                                    <td>{!! $eventoPet->pet_id !!}</td>
+{{--                                    <td>{!! $eventoPet->pet_id !!}</td>--}}
                                     <td>{!! $eventoPet->tipo !!}</td>
                                     <td>{!! $eventoPet->descricao !!}</td>
                                 </tr>
