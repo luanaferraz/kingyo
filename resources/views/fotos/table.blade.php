@@ -4,7 +4,7 @@
             <tr>
                         <th>Foto</th>
                 <th colspan="3">Ações</th>
-            </tr>
+            </tr>4
         </thead>
         <tbody>
         @foreach($fotos as $foto)

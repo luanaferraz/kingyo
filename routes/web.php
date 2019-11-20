@@ -92,4 +92,6 @@ Route::resource('profissionals', 'ProfissionalController');
 
 Route::resource('pacientes', 'PetController');
 
+Route::get('/fale-conosco', ['as'=> 'fale_conosco', 'uses' => 'EmailController@fale_conosco']);
+Route::get('/contato_envia', ['as'=> 'contato_envia', 'uses' => 'EmailController@contato_envia']);
 
