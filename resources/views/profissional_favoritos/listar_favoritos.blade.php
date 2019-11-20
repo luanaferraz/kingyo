@@ -5,7 +5,7 @@
             <th>Nome</th>
             <th>Endereço</th>
             <th>Telefone</th>
-            <th colspan="3">Ações</th>
+            <th colspan="3">Favoritar</th>
         </tr>
         </thead>
         <tbody>
@@ -18,7 +18,7 @@
                 <td>
                     {!! Form::open(['route' => ['profissionals.destroy', $favorito->profissional->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{!! route('profissionals.index') !!}" class='btn btn-secondary btn-xs alert-danger'><i class="fas fa-heart "></i></a>
+{{--                        <a href="{!! route('profissionalFavoritos.create') !!}" class='btn btn-secondary btn-xs alert-danger'><i class="fas fa-heart "></i></a>--}}
                     </div>
                     {!! Form::close() !!}
                 </td>

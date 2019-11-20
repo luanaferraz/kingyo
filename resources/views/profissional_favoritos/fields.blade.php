@@ -1,8 +1,14 @@
-<!-- Pet Id Field -->
+<!-- Profissional Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('pet_id', 'Pet Id:') !!}
-    {!! Form::number('pet_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('profissional_id', 'Profissional Id:') !!}
+    {!! Form::number('profissional_id', null, ['class' => 'form-control']) !!}
 </div>
+
+<!-- Pet Id Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('pet_id', 'Pet Id:') !!}
+        {!! Form::number('pet_id', null, ['class' => 'form-control']) !!}
+    </div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

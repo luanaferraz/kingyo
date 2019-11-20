@@ -19,7 +19,7 @@ class ProfissionalFavorito extends Model
     use SoftDeletes;
 
     public $table = 'profissionalfavorito';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -28,7 +28,8 @@ class ProfissionalFavorito extends Model
 
 
     public $fillable = [
-        'pet_id'
+        'tutor_id',
+        'profissional_id'
     ];
 
     /**
@@ -38,7 +39,7 @@ class ProfissionalFavorito extends Model
      */
     protected $casts = [
         'profissional_id' => 'integer',
-        'pet_id' => 'integer'
+        'tutor_id' => 'integer'
     ];
 
     /**
@@ -47,15 +48,15 @@ class ProfissionalFavorito extends Model
      * @var array
      */
     public static $rules = [
-        'pet_id' => 'required'
+        'tutor_id' => 'required'
     ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function pet()
+    public function tutor()
     {
-        return $this->belongsTo(\App\Models\Pet::class, 'pet_id');
+        return $this->belongsTo(\App\Models\Pet::class, 'tutor_id');
     }
 
     /**

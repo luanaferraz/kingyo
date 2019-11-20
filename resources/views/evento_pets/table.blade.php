@@ -38,3 +38,29 @@
 
 <div id='calendar'></div>
 
+<br />
+<br />
+
+<div class="table-responsive">
+    <table class="table" id="eventoPets-table">
+        <thead class="bg-light">
+        <tr>
+            <th>Data</th>
+{{--            <th>Profissional</th>--}}
+            <th>Tipo</th>
+            <th>Descrição</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($pet->eventoPets as $eventoPet)
+            <tr>
+                <td>{!!$eventoPet->data !!}</td>
+{{--                <td>{!! sprintf("%s%s",$eventoPet->profissional_id,profissional_nome) !!}</td>--}}
+                {{--                <td>{!! $eventoPet->profissional_id !!}</td>--}}
+                <td>{!! $eventoPet->tipo !!}</td>
+                <td>{!! $eventoPet->descricao !!}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+</div>

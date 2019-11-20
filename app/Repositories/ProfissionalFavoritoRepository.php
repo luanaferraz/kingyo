@@ -17,7 +17,7 @@ class ProfissionalFavoritoRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'pet_id'
+        'tutor_id'
     ];
 
     /**
@@ -37,9 +37,9 @@ class ProfissionalFavoritoRepository extends BaseRepository
     {
         return ProfissionalFavorito::class;
     }
-    public function findByPets($pets_id)
+    public function findByPets($tutors_id)
     {
-        $favoritos = ProfissionalFavorito::whereIn('pet_id', $pets_id)->groupBy('profissional_id')->get();
+        $favoritos = ProfissionalFavorito::whereIn('tutor_id', $tutors_id)->groupBy('profissional_id')->get();
 
         return $favoritos;
     }
