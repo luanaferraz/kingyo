@@ -113,6 +113,7 @@ class ProfissionalFavoritoController extends AppBaseController
      *
      * @return Response
      */
+
     public function update($id, UpdateProfissionalFavoritoRequest $request)
     {
         $profissionalFavorito = $this->profissionalFavoritoRepository->find($id);

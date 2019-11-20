@@ -8,7 +8,7 @@
         </h1>
     </section>
     <div class="content">
-        
+
         <div class="clearfix"></div>
 
         @include('flash::message')
