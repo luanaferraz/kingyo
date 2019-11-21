@@ -44,4 +44,11 @@ class TutorRepository extends BaseRepository
     {
         return Tutor::class;
     }
+
+    public function findByIds($ids)
+    {
+        return Tutor::whereIn('id',$ids)->get();
+    }
+
+
 }

@@ -41,7 +41,10 @@ class HomeController extends Controller
 
     public function profissional(){
         $profissional = $this->profissionalRepository->findByField('usuario_id', Auth::user()->id)->first();
-        $pacientes = $this->profissionalFavoritoRepository->findByField('profissional_id',$profissional->id);
-        return view('home_profissional')->with('pacientes', $pacientes);
+        $pacientes = $this->profissionalFavoritoRepository->findByField('profissional_id',$profissional->id)->pluck('tutor_id');
+
+        $tutores = $this->tutorRepository->findByIds($pacientes);
+//        dd($tutores[0]->pet);
+        return view('home_profissional')->with('tutores', $tutores);
     }
 }
