@@ -50,7 +50,7 @@ class ProfissionalRepository extends BaseRepository
         return Profissional::class;
     }
 
-    public function buscar($data)
+    public function buscar($data,$favoritos)
     {
         $resultado = Profissional::select('*');
 
@@ -61,6 +61,9 @@ class ProfissionalRepository extends BaseRepository
         if (!empty($data['cidades'])) {
             $resultado->whereIn('cidade',  $data['cidades']);
         }
+
+
+            $resultado->whereNotIn('id', $favoritos );
 
         return $resultado->paginate(9);
     }

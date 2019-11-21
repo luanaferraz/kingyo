@@ -46,6 +46,7 @@ class AppServiceProvider extends ServiceProvider
                     $eventoPets = EventoPet::whereIn('pet_id', $pets_id)->get();
 
                     View::share('petsMenu', $pets);
+                    View::share('tutor_id', $tutor->id);
                     View::share('eventoPets', $eventoPets);
 
                 }

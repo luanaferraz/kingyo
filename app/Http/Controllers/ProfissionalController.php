@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateProfissionalRequest;
 use App\Http\Requests\UpdateProfissionalRequest;
+use App\Repositories\ProfissionalFavoritoRepository;
 use App\Repositories\ProfissionalRepository;
+use App\Repositories\TutorRepository;
 use Illuminate\Http\Request as Ajax;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
 use Flash;
@@ -16,9 +19,11 @@ class ProfissionalController extends Controller
     /** @var  ProfissionalRepository */
     private $profissionalRepository;
 
-    public function __construct(ProfissionalRepository $profissionalRepo)
+    public function __construct(ProfissionalRepository $profissionalRepo, TutorRepository $tutorRepository ,ProfissionalFavoritoRepository $profissionalFavoritoRepository)
     {
         $this->profissionalRepository = $profissionalRepo;
+        $this->tutorRepository = $tutorRepository;
+        $this->profissionalFavoritoRepository = $profissionalFavoritoRepository;
     }
 
     /**
@@ -30,6 +35,10 @@ class ProfissionalController extends Controller
      */
     public function index(Request $request)
     {
+        $tutor = $this->tutorRepository->findByField('usuario_id', Auth::user()->id)->pluck('id');
+
+        $favoritos = $this->profissionalFavoritoRepository->findByField('tutor_id', $tutor)->pluck('profissional_id');
+
         $profissionals = $this->profissionalRepository->all();
 
         return view('profissionals.index')
@@ -159,7 +168,12 @@ class ProfissionalController extends Controller
     public function buscar()
     {
         $data = Request::all();
-        $profissionais = $this->profissionalRepository->buscar($data);
+
+        $tutor = $this->tutorRepository->findByField('usuario_id', Auth::user()->id)->pluck('id');
+
+        $favoritos = $this->profissionalFavoritoRepository->findByField('tutor_id', $tutor)->pluck('profissional_id');
+
+        $profissionais = $this->profissionalRepository->buscar($data,$favoritos);
 
 
         return view('profissionals.index', compact( 'profissionais','value','area','tipos'));
