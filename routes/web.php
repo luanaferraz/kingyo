@@ -81,7 +81,7 @@ Route::post('profissional/cadastrar',['as' => 'registerProfissional', 'uses' => 
 Route::get('/cadastro', ['as' => 'cadastro', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
 Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterController@register']);
 
-Route::resource('profissionalFavoritos', 'ProfissionalFavoritoController');
+//Route::resource('profissionalFavoritos', 'ProfissionalFavoritoController');
 Route::resource('eventoProfissional', 'EventoProfissionalController');
 
 Route::resource('evento_profissional', 'EventoProfissionalController');
@@ -98,3 +98,5 @@ Route::get('profissionalFavoritos/', ['as'=> 'profissionalFavoritos.index', 'use
 Route::post('favorito/{profissional}/{tutor}', ['as'=> 'favoritos.store', 'uses' => 'ProfissionalFavoritoController@store']);
 Route::get('favorito/{profissional}/{tutor}', ['as'=> 'favoritos.create', 'uses' => 'ProfissionalFavoritoController@create']);
 
+Route::post('avaliacao/{id}/{avaliacao}', ['as'=> 'avaliacao.update', 'uses' => 'ProfissionalFavoritoController@update']);
+Route::get('avaliacao/{id}/{avaliacao}', ['as'=> 'avaliacao.edit', 'uses' => 'ProfissionalFavoritoController@update']);

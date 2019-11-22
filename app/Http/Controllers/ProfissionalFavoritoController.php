@@ -93,17 +93,21 @@ class ProfissionalFavoritoController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit($id,$avaliacao)
     {
+        dd($id);
+
         $profissionalFavorito = $this->profissionalFavoritoRepository->find($id);
 
-        if (empty($profissionalFavorito)) {
-            Flash::error('Profissional Favorito não encontrado');
+//        if (empty($profissionalFavorito)) {
+//            Flash::error('Profissional Favorito não encontrado');
+//
+//            return redirect(route('profissionalFavoritos.index'));
+//        }
 
-            return redirect(route('profissionalFavoritos.index'));
-        }
+//        return view('profissional_favoritos.edit')->with('profissionalFavorito', $profissionalFavorito);
+        return redirect(route('favoritos.update',[$id,$avaliacao]));
 
-        return view('profissional_favoritos.edit')->with('profissionalFavorito', $profissionalFavorito);
     }
 
     /**
@@ -115,9 +119,9 @@ class ProfissionalFavoritoController extends AppBaseController
      * @return Response
      */
 
-    public function update($id, UpdateProfissionalFavoritoRequest $request)
+    public function update($id, $avaliacao)
     {
-        $profissionalFavorito = $this->profissionalFavoritoRepository->find($id);
+        $profissionalFavorito = $this->profissionalFavoritoRepository->findByField('id',$id)->first();
 
         if (empty($profissionalFavorito)) {
             Flash::error('Profissional Favorito não encontrado');
@@ -125,11 +129,11 @@ class ProfissionalFavoritoController extends AppBaseController
             return redirect(route('profissionalFavoritos.index'));
         }
 
-        $profissionalFavorito = $this->profissionalFavoritoRepository->update($request->all(), $id);
+        $profissionalFavorito = $this->profissionalFavoritoRepository->update_avaliacao($id,$avaliacao,$profissionalFavorito->profissional_id,$profissionalFavorito->tutor_id);
 
         Flash::success('Profissional Favorito atualizado com sucesso.');
 
-        return redirect(route('profissionalFavoritos.index'));
+        return redirect(route('favoritos'));
     }
 
     /**

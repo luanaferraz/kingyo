@@ -29,7 +29,9 @@ class ProfissionalFavorito extends Model
 
     public $fillable = [
         'tutor_id',
-        'profissional_id'
+        'profissional_id',
+        'id',
+        'avaliacao'
     ];
 
     /**
@@ -38,8 +40,10 @@ class ProfissionalFavorito extends Model
      * @var array
      */
     protected $casts = [
+        'id' => 'integer',
         'profissional_id' => 'integer',
-        'tutor_id' => 'integer'
+        'tutor_id' => 'integer',
+        'avaliacao' => 'integer'
     ];
 
     /**

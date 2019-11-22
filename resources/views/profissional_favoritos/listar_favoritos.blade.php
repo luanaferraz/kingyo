@@ -5,7 +5,7 @@
             <th>Nome</th>
             <th>Endereço</th>
             <th>Telefone</th>
-            <th colspan="3">Favoritar</th>
+            <th colspan="3">Avaliar</th>
         </tr>
         </thead>
         <tbody>
@@ -23,42 +23,53 @@
                     {!! Form::close() !!}
                 </td>
                 <td>
-                    <div class="rating">
+                    {!! Form::open(['route' => ['avaliacao.update', $favorito->id,  '4'], 'method' => 'post']) !!}
+                    <input type="hidden" name="id" value="{{$favorito->id}}">
 
-                        <label>
-                            <input type="radio" name="stars" value="1" />
-                            <span class="icon">★</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="stars" value="2" />
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="stars" value="3" />
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="stars" value="4" />
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="stars" value="5" />
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                            <span class="icon">★</span>
-                        </label>
+                    <div class='btn-group'>
+                        <div class="rating">
+
+                            <label>
+                                <input type="radio" name="avaliacao" value="1" />
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="avaliacao" value="2" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="avaliacao" value="3" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="avaliacao" value="4" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="avaliacao" value="5" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                        </div>
+
+                        {!! Form::button('<i class="fas fa-paw "></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Deseja avaliar este profissional?')"]) !!}
                     </div>
+                    {!! Form::close() !!}
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
 </div>
+
+
+

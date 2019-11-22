@@ -2,8 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Models\Profissional;
 use App\Models\ProfissionalFavorito;
 use App\Repositories\BaseRepository;
+use Illuminate\Container\Container as Application;
 
 /**
  * Class ProfissionalFavoritoRepository
@@ -42,5 +44,18 @@ class ProfissionalFavoritoRepository extends BaseRepository
         $favoritos = ProfissionalFavorito::whereIn('tutor_id', $tutors_id)->groupBy('profissional_id')->get();
 
         return $favoritos;
+    }
+
+    public function update_avaliacao($id,$avaliacao,$profissional,$tutor)
+    {
+        ProfissionalFavorito::where('id',$id)->delete;
+
+        $profissionalFavorito = new ProfissionalFavorito();
+        $profissionalFavorito->id = $id;
+        $profissionalFavorito->profissional_id = $profissional;
+        $profissionalFavorito->tutor_id = $tutor;
+        $profissionalFavorito->avaliacao = $avaliacao;
+        $profissionalFavorito->save();
+
     }
 }
