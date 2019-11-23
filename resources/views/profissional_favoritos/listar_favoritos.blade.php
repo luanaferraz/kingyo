@@ -15,13 +15,13 @@
 {{--                <td>{!! $profissional->profissao !!}</td>--}}
                 <td>{!! $favorito->profissional->rua !!}, nº{!! $favorito->profissional->numero !!} {!! $favorito->profissional->bairro !!} - {!! $favorito->profissional->cidade !!} | {!! $favorito->profissional->estado !!}</td>
                 <td><a href="tel:{!! $favorito->profissional->telefone !!}">{!! $favorito->profissional->telefone !!}</a></td>
-                <td>
-                    {!! Form::open(['route' => ['profissionals.destroy', $favorito->profissional->id], 'method' => 'delete']) !!}
-                    <div class='btn-group'>
+{{--                <td>--}}
+{{--                    {!! Form::open(['route' => ['profissionals.destroy', $favorito->profissional->id], 'method' => 'delete']) !!}--}}
+{{--                    <div class='btn-group'>--}}
 {{--                        <a href="{!! route('profissionalFavoritos.create') !!}" class='btn btn-secondary btn-xs alert-danger'><i class="fas fa-heart "></i></a>--}}
-                    </div>
-                    {!! Form::close() !!}
-                </td>
+{{--                    </div>--}}
+{{--                    {!! Form::close() !!}--}}
+{{--                </td>--}}
                 <td>
                     {!! Form::open(['route' => ['avaliacao.update', $favorito->id], 'method' => 'post']) !!}
 
