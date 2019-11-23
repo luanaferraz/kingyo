@@ -60,7 +60,7 @@ class ProfissionalFavorito extends Model
      **/
     public function tutor()
     {
-        return $this->belongsTo(\App\Models\Pet::class, 'tutor_id');
+        return $this->belongsTo(\App\Models\Tutor::class, 'tutor_id');
     }
 
     /**
