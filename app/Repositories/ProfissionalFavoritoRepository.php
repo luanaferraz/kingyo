@@ -46,9 +46,9 @@ class ProfissionalFavoritoRepository extends BaseRepository
         return $favoritos;
     }
 
-    public function update_avaliacao($id,$avaliacao,$profissional,$tutor)
+    public function update_avaliacao($input)
     {
-        ProfissionalFavorito::where('id',$id)->delete;
+        ProfissionalFavorito::where('id',$id)->delete();
 
         $profissionalFavorito = new ProfissionalFavorito();
         $profissionalFavorito->id = $id;

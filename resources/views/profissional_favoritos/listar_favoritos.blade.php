@@ -23,8 +23,10 @@
                     {!! Form::close() !!}
                 </td>
                 <td>
-                    {!! Form::open(['route' => ['avaliacao.update', $favorito->id,  '4'], 'method' => 'post']) !!}
-                    <input type="hidden" name="id" value="{{$favorito->id}}">
+                    {!! Form::open(['route' => ['avaliacao.update', $favorito->id], 'method' => 'post']) !!}
+
+                    <input type="hidden" name="profissional_id" value="{{$favorito->profissional->id}}">
+                    <input type="hidden" name="tutor_id" value="{{$favorito->tutor->id}}">
 
                     <div class='btn-group'>
                         <div class="rating">

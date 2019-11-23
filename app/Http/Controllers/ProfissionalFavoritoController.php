@@ -95,7 +95,7 @@ class ProfissionalFavoritoController extends AppBaseController
      */
     public function edit($id,$avaliacao)
     {
-        dd($id);
+        dd($avaliacao);
 
         $profissionalFavorito = $this->profissionalFavoritoRepository->find($id);
 
@@ -106,7 +106,7 @@ class ProfissionalFavoritoController extends AppBaseController
 //        }
 
 //        return view('profissional_favoritos.edit')->with('profissionalFavorito', $profissionalFavorito);
-        return redirect(route('favoritos.update',[$id,$avaliacao]));
+        return redirect(route('avaliacao.update',[$id,$avaliacao]));
 
     }
 
@@ -119,8 +119,11 @@ class ProfissionalFavoritoController extends AppBaseController
      * @return Response
      */
 
-    public function update($id, $avaliacao)
+    public function update($id,UpdateProfissionalFavoritoRequest $request)
     {
+        $input = $request->all();
+//        dd($input['id']);
+
         $profissionalFavorito = $this->profissionalFavoritoRepository->findByField('id',$id)->first();
 
         if (empty($profissionalFavorito)) {
@@ -129,7 +132,7 @@ class ProfissionalFavoritoController extends AppBaseController
             return redirect(route('profissionalFavoritos.index'));
         }
 
-        $profissionalFavorito = $this->profissionalFavoritoRepository->update_avaliacao($id,$avaliacao,$profissionalFavorito->profissional_id,$profissionalFavorito->tutor_id);
+        $profissionalFavorito = $this->profissionalFavoritoRepository->update($input,$id);
 
         Flash::success('Profissional Favorito atualizado com sucesso.');
 
