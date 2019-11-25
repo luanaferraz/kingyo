@@ -70,9 +70,5 @@ class ProfissionalFavorito extends Model
     {
         return $this->belongsTo(\App\Models\Profissional::class, 'profissional_id');
     }
-
-    public function getAvaliacaoAttribute()
-    {
-        return $this->average('avaliacao');
-    }
+    
 }
