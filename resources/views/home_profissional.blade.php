@@ -3,6 +3,21 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <section class="col-3 py-3 btn-light">
+                <h5 class="pull-left">Minha Avaliação</h5>
+
+                @if( $avaliacao[0]->total != 0 )
+                    @for($i =1; $i <=  $avaliacao[0]->nota ; $i++)
+                        <i class="fa fa-star"></i>
+                    @endfor
+                    <p class="mb-0">Nota {!! $avaliacao[0]->nota !!} em 5</p>
+                    <p class="mb-0">Baseado em {!! $avaliacao[0]->total !!} {!! $avaliacao[0]->total > 1 ? 'avaliações': 'avaliação' !!}</p>
+                @else
+                    <p>Você ainda não foi avaliado por nenhum paciente</p>
+                @endif
+
+            </section>
+
             <section class="col-12 d-flex">
                 <h1 class="pull-left">Pacientes</h1>
 

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
  * Class ProfissionalRepository
  * @package App\Repositories
  * @version November 2, 2019, 4:26 am UTC
-*/
+ */
 
 class ProfissionalRepository extends BaseRepository
 {
@@ -63,7 +63,7 @@ class ProfissionalRepository extends BaseRepository
         }
 
 
-            $resultado->whereNotIn('id', $favoritos );
+        $resultado->whereNotIn('id', $favoritos );
 
         return $resultado->paginate(9);
     }
@@ -99,5 +99,16 @@ class ProfissionalRepository extends BaseRepository
         );
 
         return response()->json($results);
+    }
+
+    public function selectAll()
+    {
+        $avaliacao = DB::table('profissional')
+            ->leftJoin('profissionalfavorito', 'profissional.id', '=', 'profissionalfavorito.profissional_id')
+            ->select('profissional.*','profissionalfavorito.*',DB::raw('round(AVG(avaliacao),0) as nota'))
+            ->groupBy('profissional.id')
+            ->get();
+//dd($avaliacao);
+        return $avaliacao;
     }
 }

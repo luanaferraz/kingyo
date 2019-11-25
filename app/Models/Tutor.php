@@ -92,4 +92,12 @@ class Tutor extends Model
     {
         return $this->hasMany(\App\Models\Pet::class, 'tutor_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function profissionalfavoritos()
+    {
+        return $this->hasMany(\App\Models\Profissionalfavorito::class, 'tutor_id');
+    }
 }

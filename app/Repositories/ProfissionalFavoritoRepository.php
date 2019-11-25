@@ -6,12 +6,13 @@ use App\Models\Profissional;
 use App\Models\ProfissionalFavorito;
 use App\Repositories\BaseRepository;
 use Illuminate\Container\Container as Application;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class ProfissionalFavoritoRepository
  * @package App\Repositories
  * @version November 8, 2019, 10:38 pm UTC
-*/
+ */
 
 class ProfissionalFavoritoRepository extends BaseRepository
 {
@@ -39,23 +40,23 @@ class ProfissionalFavoritoRepository extends BaseRepository
     {
         return ProfissionalFavorito::class;
     }
-    public function findByPets($tutors_id)
+    public function findByTutor($tutors_id)
     {
         $favoritos = ProfissionalFavorito::whereIn('tutor_id', $tutors_id)->groupBy('profissional_id')->get();
 
         return $favoritos;
     }
 
-    public function update_avaliacao($input)
+    public function avaliacao($profissional)
     {
-        ProfissionalFavorito::where('id',$id)->delete();
+        $avaliacao = DB::table('profissionalfavorito')
+            ->select(DB::raw('round(AVG(avaliacao),0) as nota'),DB::raw('count(*) as total'))
+            ->where('profissional_id', $profissional)
+            ->where('avaliacao', '!=', 0)
+            ->get();
 
-        $profissionalFavorito = new ProfissionalFavorito();
-        $profissionalFavorito->id = $id;
-        $profissionalFavorito->profissional_id = $profissional;
-        $profissionalFavorito->tutor_id = $tutor;
-        $profissionalFavorito->avaliacao = $avaliacao;
-        $profissionalFavorito->save();
-
+        return $avaliacao;
     }
+
+
 }

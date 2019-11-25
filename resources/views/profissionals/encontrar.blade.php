@@ -5,6 +5,7 @@
             <th>Nome</th>
             <th>Endereço</th>
             <th>Telefone</th>
+            <th>Avaliação</th>
             <th colspan="3">Favoritar</th>
         </tr>
         </thead>
@@ -14,6 +15,16 @@
                 <td>{!! $profissional->nome !!} <br> <strong>{!! $profissional->profissao !!}</strong></td>
                 <td>{!! $profissional->rua !!}, nº{!! $profissional->numero !!} {!! $profissional->bairro !!} - {!! $profissional->cidade !!} | {!! $profissional->estado !!}</td>
                 <td><a href="tel:{!! $profissional->telefone !!}">{!! $profissional->telefone !!}</a></td>
+                <td>
+                    @if( $profissional->nota != null && $profissional->nota != 0 )
+                        @for($i =1; $i <=  $profissional->nota ; $i++)
+                            <i class="fa fa-star"></i>
+                        @endfor
+                        <p class="mb-0">Nota {!! $profissional->nota !!} em 5</p>
+                    @else
+                        <p>Nenhuma avaliação</p>
+                    @endif
+                </td>
                 <td>
                     {!! Form::open(['route' => ['favoritos.store', $profissional->id, '4'], 'method' => 'post']) !!}
                     <div class='btn-group'>

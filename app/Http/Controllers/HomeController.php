@@ -9,6 +9,7 @@ use App\Repositories\ProfissionalRepository;
 use App\Repositories\TutorRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -40,11 +41,11 @@ class HomeController extends Controller
     }
 
     public function profissional(){
-        $profissional = $this->profissionalRepository->findByField('usuario_id', Auth::user()->id)->first();
-        $pacientes = $this->profissionalFavoritoRepository->findByField('profissional_id',$profissional->id)->pluck('tutor_id');
-
+        $profissional = $this->profissionalRepository->findByField('usuario_id', Auth::user()->id)->pluck('id');
+        $pacientes = $this->profissionalFavoritoRepository->findByField('profissional_id',$profissional)->pluck('tutor_id');
         $tutores = $this->tutorRepository->findByIds($pacientes);
-//        dd($tutores[0]->pet);
-        return view('home_profissional')->with('tutores', $tutores);
+        $avaliacao = $this->profissionalFavoritoRepository->avaliacao($profissional);
+
+        return view('home_profissional',compact('avaliacao'))->with('tutores', $tutores);
     }
 }

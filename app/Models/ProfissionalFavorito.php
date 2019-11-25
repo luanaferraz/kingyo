@@ -60,7 +60,7 @@ class ProfissionalFavorito extends Model
      **/
     public function tutor()
     {
-        return $this->belongsTo(\App\Models\Pet::class, 'tutor_id');
+        return $this->belongsTo(\App\Models\Tutor::class, 'tutor_id');
     }
 
     /**
@@ -69,5 +69,10 @@ class ProfissionalFavorito extends Model
     public function profissional()
     {
         return $this->belongsTo(\App\Models\Profissional::class, 'profissional_id');
+    }
+
+    public function getAvaliacaoAttribute()
+    {
+        return $this->average('avaliacao');
     }
 }
