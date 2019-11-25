@@ -42,9 +42,9 @@ class ProfissionalFavoritoController extends AppBaseController
      *
      * @return Response
      */
-    public function create($profissional, $tutor)
+    public function create()
     {
-        return redirect(route('favoritos.store',[$profissional, $tutor]));
+        return redirect(route('favoritos.store'));
     }
 
     /**
@@ -54,11 +54,10 @@ class ProfissionalFavoritoController extends AppBaseController
      *
      * @return Response
      */
-    public function store($profissional, $tutor,  CreateProfissionalFavoritoRequest $request)
+    public function store(CreateProfissionalFavoritoRequest $request)
     {
         $input = $request->all();
 
-//        dd($input);
         $profissionalFavorito = $this->profissionalFavoritoRepository->create($input);
 
         Flash::success('Profissional Favorito salvo com sucesso.');

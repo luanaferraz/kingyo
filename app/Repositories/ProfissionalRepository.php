@@ -105,7 +105,7 @@ class ProfissionalRepository extends BaseRepository
     {
         $avaliacao = DB::table('profissional')
             ->leftJoin('profissionalfavorito', 'profissional.id', '=', 'profissionalfavorito.profissional_id')
-            ->select('profissional.*','profissionalfavorito.*',DB::raw('round(AVG(avaliacao),0) as nota'))
+            ->select('profissional.*','profissionalfavorito.profissional_id','profissionalfavorito.tutor_id',DB::raw('round(AVG(avaliacao),0) as nota'))
             ->groupBy('profissional.id')
             ->get();
 //dd($avaliacao);

@@ -65,8 +65,8 @@ Route::group(['middleware' => ['auth','tutor']], function() {
     Route::get('/favoritos', ['as'=> 'favoritos', 'uses' => 'ProfissionalFavoritoController@favoritos']);
 
     Route::get('profissionalFavoritos/', ['as'=> 'profissionalFavoritos.index', 'uses' => 'ProfissionalFavoritoController@index']);
-    Route::post('favorito/{profissional}/{tutor}', ['as'=> 'favoritos.store', 'uses' => 'ProfissionalFavoritoController@store']);
-    Route::get('favorito/{profissional}/{tutor}', ['as'=> 'favoritos.create', 'uses' => 'ProfissionalFavoritoController@create']);
+    Route::post('favorito/', ['as'=> 'favoritos.store', 'uses' => 'ProfissionalFavoritoController@store']);
+    Route::get('favorito/', ['as'=> 'favoritos.create', 'uses' => 'ProfissionalFavoritoController@create']);
 
     Route::post('avaliacao/{id}', ['as'=> 'avaliacao.update', 'uses' => 'ProfissionalFavoritoController@update']);
     Route::get('avaliacao/{id}/{avaliacao}', ['as'=> 'avaliacao.edit', 'uses' => 'ProfissionalFavoritoController@edit']);

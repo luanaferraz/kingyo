@@ -26,7 +26,7 @@
                     @endif
                 </td>
                 <td>
-                    {!! Form::open(['route' => ['favoritos.store', $profissional->id, '4'], 'method' => 'post']) !!}
+                    {!! Form::open(['route' => ['favoritos.store'], 'method' => 'post']) !!}
                     <div class='btn-group'>
                         <input type="hidden" name="profissional_id" value="{{$profissional->id}}">
                         <input type="hidden" name="tutor_id" value="{{$tutor_id}}">
