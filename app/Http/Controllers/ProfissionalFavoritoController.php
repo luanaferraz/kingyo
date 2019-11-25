@@ -168,9 +168,8 @@ class ProfissionalFavoritoController extends AppBaseController
     public function favoritos(Request $request)
     {
         $tutor = Tutor::where('usuario_id', auth()->user()->id)->pluck('id');
-//        $pets_id = Pet::where('tutor_id', $tutor->id)->pluck('id');
 
-        $favoritos = $this->profissionalFavoritoRepository->findByPets($tutor);
+        $favoritos = $this->profissionalFavoritoRepository->findByTutor($tutor);
 
         return view('profissional_favoritos.favoritos')
             ->with('favoritos', $favoritos);

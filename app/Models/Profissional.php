@@ -121,4 +121,17 @@ class Profissional extends Model
     {
         return $this->hasMany(\App\Models\Servico::class, 'profissional_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function profissionalfavoritos()
+    {
+        return $this->hasMany(\App\Models\Profissionalfavorito::class, 'profissional_id');
+    }
+
+    public function getAvaliacaoAttribute()
+    {
+        return $this->profissionalfavoritos()->average('avaliacao');
+    }
 }

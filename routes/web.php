@@ -63,6 +63,13 @@ Route::group(['middleware' => ['auth','tutor']], function() {
     Route::get('/cidades_select', 'ProfissionalController@cidades_select');
 
     Route::get('/favoritos', ['as'=> 'favoritos', 'uses' => 'ProfissionalFavoritoController@favoritos']);
+
+    Route::get('profissionalFavoritos/', ['as'=> 'profissionalFavoritos.index', 'uses' => 'ProfissionalFavoritoController@index']);
+    Route::post('favorito/{profissional}/{tutor}', ['as'=> 'favoritos.store', 'uses' => 'ProfissionalFavoritoController@store']);
+    Route::get('favorito/{profissional}/{tutor}', ['as'=> 'favoritos.create', 'uses' => 'ProfissionalFavoritoController@create']);
+
+    Route::post('avaliacao/{id}', ['as'=> 'avaliacao.update', 'uses' => 'ProfissionalFavoritoController@update']);
+    Route::get('avaliacao/{id}/{avaliacao}', ['as'=> 'avaliacao.edit', 'uses' => 'ProfissionalFavoritoController@edit']);
 });
 
 Route::group(['middleware' => ['auth','profissional']], function() {
@@ -71,6 +78,12 @@ Route::group(['middleware' => ['auth','profissional']], function() {
     Route::resource('servicos', 'servicoController');
     Route::resource('eventoProfissional', 'EventoProfissionalController');
     Route::get('ficha/{pet?}', ['as'=> 'ficha', 'uses' => 'PetController@ficha']);
+
+    Route::resource('pacientes', 'PetController');
+
+    Route::resource('eventoProfissional', 'EventoProfissionalController');
+
+    Route::resource('evento_profissional', 'EventoProfissionalController');
 });
 
 Route::resource('tutors', 'TutorController');
@@ -82,22 +95,15 @@ Route::get('/cadastro', ['as' => 'cadastro', 'uses' => 'Auth\RegisterController@
 Route::post('/cadastro', ['as' => 'cadastrar', 'uses' => 'Auth\RegisterController@register']);
 
 //Route::resource('profissionalFavoritos', 'ProfissionalFavoritoController');
-Route::resource('eventoProfissional', 'EventoProfissionalController');
 
-Route::resource('evento_profissional', 'EventoProfissionalController');
 
 Route::resource('profissionals', 'ProfissionalController');
 
 Route::resource('profissionals', 'ProfissionalController');
 
-Route::resource('pacientes', 'PetController');
+
 
 Route::get('/fale-conosco', ['as'=> 'fale_conosco', 'uses' => 'EmailController@fale_conosco']);
 Route::get('/contato_envia', ['as'=> 'contato_envia', 'uses' => 'EmailController@contato_envia']);
 
-Route::get('profissionalFavoritos/', ['as'=> 'profissionalFavoritos.index', 'uses' => 'ProfissionalFavoritoController@index']);
-Route::post('favorito/{profissional}/{tutor}', ['as'=> 'favoritos.store', 'uses' => 'ProfissionalFavoritoController@store']);
-Route::get('favorito/{profissional}/{tutor}', ['as'=> 'favoritos.create', 'uses' => 'ProfissionalFavoritoController@create']);
 
-Route::post('avaliacao/{id}', ['as'=> 'avaliacao.update', 'uses' => 'ProfissionalFavoritoController@update']);
-Route::get('avaliacao/{id}/{avaliacao}', ['as'=> 'avaliacao.edit', 'uses' => 'ProfissionalFavoritoController@edit']);
