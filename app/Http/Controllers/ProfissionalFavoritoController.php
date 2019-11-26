@@ -133,7 +133,7 @@ class ProfissionalFavoritoController extends AppBaseController
 
         $profissionalFavorito = $this->profissionalFavoritoRepository->update($input,$id);
 
-        Flash::success('Profissional Favorito atualizado com sucesso.');
+        Flash::success('Avaliação salva com sucesso.');
 
         return redirect(route('favoritos'));
     }

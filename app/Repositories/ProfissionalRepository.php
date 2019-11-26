@@ -52,7 +52,10 @@ class ProfissionalRepository extends BaseRepository
 
     public function buscar($data,$favoritos)
     {
-        $resultado = Profissional::select('*');
+        $resultado = DB::table('profissional')
+            ->leftJoin('profissionalfavorito', 'profissional.id', '=', 'profissionalfavorito.profissional_id')
+            ->select('profissional.*','profissionalfavorito.profissional_id','profissionalfavorito.tutor_id',DB::raw('round(AVG(avaliacao),0) as nota'))
+            ->groupBy('profissional.id');
 
         if (!empty($data['nome']))
             $resultado->where('nome', 'LIKE',  '%' .$data['nome']. '%' );
@@ -62,8 +65,6 @@ class ProfissionalRepository extends BaseRepository
             $resultado->whereIn('cidade',  $data['cidades']);
         }
 
-
-        $resultado->whereNotIn('id', $favoritos );
 
         return $resultado->paginate(9);
     }

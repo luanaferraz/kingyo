@@ -59,8 +59,4 @@
             <span>{{$pet->nome}}</span></a>
     </li>
 @endforeach
- <li class="nav-item {{ Request::is('profissionalFavoritos*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('profissionalFavoritos.index') !!}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Profissional Favoritos</span></a>
-    </li>
+

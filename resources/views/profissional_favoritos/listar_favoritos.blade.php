@@ -5,60 +5,63 @@
             <th>Nome</th>
             <th>Endereço</th>
             <th>Telefone</th>
+            <th>Avaliação</th>
             <th colspan="3">Avaliar</th>
         </tr>
         </thead>
         <tbody>
         @foreach($favoritos as $favorito)
             <tr>
-                <td>{!! $favorito->profissional->nome !!} <br> <strong>{!! $favorito->profissional->profissao !!}</strong></td>
-                <td>{!! $favorito->profissional->rua !!}, nº{!! $favorito->profissional->numero !!} {!! $favorito->profissional->bairro !!} - {!! $favorito->profissional->cidade !!} | {!! $favorito->profissional->estado !!}</td>
-                <td><a href="tel:{!! $favorito->profissional->telefone !!}">{!! $favorito->profissional->telefone !!}</a></td>
-
+                <td>{!! $favorito->nome !!} <br> <strong>{!! $favorito->profissao !!}</strong></td>
+                <td>{!! $favorito->rua !!}, nº{!! $favorito->numero !!} {!! $favorito->bairro !!} <br> {!! $favorito->cidade !!} | {!! $favorito->estado !!}</td>
+                <td><a href="tel:{!! $favorito->telefone !!}">{!! $favorito->telefone !!}</a></td>
                 <td>
-
-
-                    {!! Form::open(['route' => ['avaliacao.update', $favorito->id], 'method' => 'post']) !!}
-                    <input type="hidden" name="profissional_id" value="{{$favorito->profissional->id}}">
-                    <input type="hidden" name="tutor_id" value="{{$favorito->tutor->id}}">
+                    @if( $favorito->nota != null && $favorito->nota != 0 )
+                        @for($i =1; $i <=  $favorito->nota ; $i++)
+                            <i class="fa fa-star star"></i>
+                        @endfor
+                        <p class="mb-0">Nota {!! $favorito->nota !!} de 5</p>
+                    @else
+                        <p>Nenhuma avaliação</p>
+                    @endif
+                </td>
+                <td>
+                    {!! Form::open(['route' => ['avaliacao.update', $favorito->idfavorito ], 'method' => 'post']) !!}
+                    <input type="hidden" name="profissional_id" value="{{$favorito->profissional_id}}">
+                    <input type="hidden" name="tutor_id" value="{{$favorito->tutor_id}}">
 
                     <div class='btn-group'>
                         <div class="rating">
-{{--                            <input type="radio"  id="option1" name="status" value="0"   >OFF</label>--}}
-
-{{--                            <input type="radio" name="avaliacao" checked="checked" value="{{$favorito->avaliacao}} >--}}
-{{--                            <p><input type="radio" name="tipo" value="CP" {{ $conta->tipo == 'CP' ? 'checked' : '' }}> Conta Poupança</p>--}}
-
 
                             <label>
                                 <input type="radio" name="avaliacao" value="1" {{ ($favorito->avaliacao == "1")?'checked'  : ""}}/>
-                                <span class="icon">★</span>
+                                <span class="icon fa fa-star"></span>
                             </label>
                             <label>
                                 <input type="radio" name="avaliacao" value="2" {{ ($favorito->avaliacao == "2")?'checked'  : ""}} />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
                             </label>
                             <label>
                                 <input type="radio" name="avaliacao" value="3" {{ ($favorito->avaliacao == "3")?'checked'  : ""}} />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
                             </label>
                             <label>
                                 <input type="radio" name="avaliacao" value="4" {{ ($favorito->avaliacao == "4")?'checked'  : ""}}/>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
                             </label>
                             <label>
                                 <input type="radio" name="avaliacao" value="5" {{ ($favorito->avaliacao == "5")?'checked'  : ""}}/>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
+                                <span class="icon fa fa-star"></span>
                             </label>
                         </div>
 

@@ -11193,8 +11193,8 @@ body.sidebar-toggled footer.sticky-footer {
     display: inline-block;
     position: relative;
     height: 50px;
-    line-height: 30px;
-    font-size: 30px;
+    line-height: 20px;
+    font-size: 20px;
 }
 
 .rating label {
@@ -11253,4 +11253,11 @@ body.sidebar-toggled footer.sticky-footer {
 .rating label input:focus:not(:checked) ~ .icon:last-child {
     color: #000;
     text-shadow: 0 0 5px #EE822E;
+}
+
+.red{
+  color: #e74a3b;
+}
+.star{
+  color: #EE822E;
 }

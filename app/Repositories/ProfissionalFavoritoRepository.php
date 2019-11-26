@@ -42,7 +42,14 @@ class ProfissionalFavoritoRepository extends BaseRepository
     }
     public function findByTutor($tutors_id)
     {
-        $favoritos = ProfissionalFavorito::whereIn('tutor_id', $tutors_id)->groupBy('profissional_id')->get();
+//        $favoritos = ProfissionalFavorito::whereIn('tutor_id', $tutors_id)->groupBy('profissional_id')->get();
+
+        $favoritos = DB::table('profissional')
+            ->leftJoin('profissionalfavorito', 'profissional.id', '=', 'profissionalfavorito.profissional_id')
+            ->select('profissional.*','profissionalfavorito.profissional_id','profissionalfavorito.tutor_id','profissionalfavorito.avaliacao',DB::raw('profissionalfavorito.id as idfavorito '),DB::raw('round(AVG(avaliacao),0) as nota'))
+            ->whereIn('tutor_id', $tutors_id)
+            ->groupBy('profissional.id')
+            ->get();
 
         return $favoritos;
     }
