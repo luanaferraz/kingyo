@@ -19,7 +19,6 @@
 </head>
 <body class="homepage">
 
-
 <!-- Header -->
 
 <div id="header">
